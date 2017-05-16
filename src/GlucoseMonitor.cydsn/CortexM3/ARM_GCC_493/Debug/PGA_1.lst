@@ -1,0 +1,1390 @@
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"PGA_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.PGA_1_Enable,"ax",%progbits
+  19              		.align	2
+  20              		.global	PGA_1_Enable
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	PGA_1_Enable, %function
+  24              	PGA_1_Enable:
+  25              	.LFB1:
+  26              		.file 1 "Generated_Source\\PSoC5\\PGA_1.c"
+   1:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/PGA_1.c **** * File Name: PGA_1.c  
+   3:Generated_Source\PSoC5/PGA_1.c **** * Version 2.0
+   4:Generated_Source\PSoC5/PGA_1.c **** *
+   5:Generated_Source\PSoC5/PGA_1.c **** * Description:
+   6:Generated_Source\PSoC5/PGA_1.c **** *  This file provides the source code to the API for the PGA 
+   7:Generated_Source\PSoC5/PGA_1.c **** *  User Module.
+   8:Generated_Source\PSoC5/PGA_1.c **** *
+   9:Generated_Source\PSoC5/PGA_1.c **** * Note:
+  10:Generated_Source\PSoC5/PGA_1.c **** *
+  11:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+  12:Generated_Source\PSoC5/PGA_1.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/PGA_1.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:Generated_Source\PSoC5/PGA_1.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:Generated_Source\PSoC5/PGA_1.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+  17:Generated_Source\PSoC5/PGA_1.c **** 
+  18:Generated_Source\PSoC5/PGA_1.c **** #include "PGA_1.h"
+  19:Generated_Source\PSoC5/PGA_1.c **** 
+  20:Generated_Source\PSoC5/PGA_1.c **** #if (!CY_PSOC5A)
+  21:Generated_Source\PSoC5/PGA_1.c ****     #if (CYDEV_VARIABLE_VDDA == 1u)
+  22:Generated_Source\PSoC5/PGA_1.c ****         #include "CyScBoostClk.h"
+  23:Generated_Source\PSoC5/PGA_1.c ****     #endif /* (CYDEV_VARIABLE_VDDA == 1u) */
+  24:Generated_Source\PSoC5/PGA_1.c **** #endif /* (!CY_PSOC5A) */
+  25:Generated_Source\PSoC5/PGA_1.c **** 
+  26:Generated_Source\PSoC5/PGA_1.c **** #if (CY_PSOC5A)
+  27:Generated_Source\PSoC5/PGA_1.c ****     static PGA_1_BACKUP_STRUCT  PGA_1_P5backup;
+  28:Generated_Source\PSoC5/PGA_1.c **** #endif /* (CY_ PSOC5A) */
+  29:Generated_Source\PSoC5/PGA_1.c **** 
+  30:Generated_Source\PSoC5/PGA_1.c **** uint8 PGA_1_initVar = 0u;
+  31:Generated_Source\PSoC5/PGA_1.c **** 
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 2
+
+
+  32:Generated_Source\PSoC5/PGA_1.c **** 
+  33:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************   
+  34:Generated_Source\PSoC5/PGA_1.c **** * Function Name: PGA_1_Init
+  35:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+  36:Generated_Source\PSoC5/PGA_1.c **** *
+  37:Generated_Source\PSoC5/PGA_1.c **** * Summary:
+  38:Generated_Source\PSoC5/PGA_1.c **** *  Initialize component's parameters to the parameters set by user in the 
+  39:Generated_Source\PSoC5/PGA_1.c **** *  customizer of the component placed onto schematic. Usually called in 
+  40:Generated_Source\PSoC5/PGA_1.c **** *  PGA_1_Start().
+  41:Generated_Source\PSoC5/PGA_1.c **** *
+  42:Generated_Source\PSoC5/PGA_1.c **** * Parameters:
+  43:Generated_Source\PSoC5/PGA_1.c **** *  void
+  44:Generated_Source\PSoC5/PGA_1.c **** *
+  45:Generated_Source\PSoC5/PGA_1.c **** * Return:
+  46:Generated_Source\PSoC5/PGA_1.c **** *  void
+  47:Generated_Source\PSoC5/PGA_1.c **** *
+  48:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+  49:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_Init(void) 
+  50:Generated_Source\PSoC5/PGA_1.c **** {
+  51:Generated_Source\PSoC5/PGA_1.c ****     /* Set PGA mode */
+  52:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_CR0_REG = PGA_1_MODE_PGA;      
+  53:Generated_Source\PSoC5/PGA_1.c ****     /* Set non-inverting PGA mode and reference mode */
+  54:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_CR1_REG |= PGA_1_PGA_NINV;  
+  55:Generated_Source\PSoC5/PGA_1.c ****     /* Set default gain and ref mode */
+  56:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_CR2_REG = PGA_1_VREF_MODE;
+  57:Generated_Source\PSoC5/PGA_1.c ****     /* Set gain and compensation */
+  58:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_SetGain(PGA_1_DEFAULT_GAIN);
+  59:Generated_Source\PSoC5/PGA_1.c ****     /* Set power */
+  60:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_SetPower(PGA_1_DEFAULT_POWER);
+  61:Generated_Source\PSoC5/PGA_1.c **** }
+  62:Generated_Source\PSoC5/PGA_1.c **** 
+  63:Generated_Source\PSoC5/PGA_1.c **** 
+  64:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************   
+  65:Generated_Source\PSoC5/PGA_1.c **** * Function Name: PGA_1_Enable
+  66:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+  67:Generated_Source\PSoC5/PGA_1.c **** *
+  68:Generated_Source\PSoC5/PGA_1.c **** * Summary:
+  69:Generated_Source\PSoC5/PGA_1.c **** *  Enables the PGA block operation.
+  70:Generated_Source\PSoC5/PGA_1.c **** *
+  71:Generated_Source\PSoC5/PGA_1.c **** * Parameters:
+  72:Generated_Source\PSoC5/PGA_1.c **** *  void
+  73:Generated_Source\PSoC5/PGA_1.c **** *
+  74:Generated_Source\PSoC5/PGA_1.c **** * Return:
+  75:Generated_Source\PSoC5/PGA_1.c **** *  void
+  76:Generated_Source\PSoC5/PGA_1.c **** *
+  77:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+  78:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_Enable(void) 
+  79:Generated_Source\PSoC5/PGA_1.c **** {
+  27              		.loc 1 79 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  80:Generated_Source\PSoC5/PGA_1.c ****     /* This is to restore the value of register CR1 and CR2 which is saved 
+  81:Generated_Source\PSoC5/PGA_1.c ****       in prior to the modifications in stop() API */
+  82:Generated_Source\PSoC5/PGA_1.c ****     #if (CY_PSOC5A)
+  83:Generated_Source\PSoC5/PGA_1.c ****         if(PGA_1_P5backup.enableState == 1u)
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 3
+
+
+  84:Generated_Source\PSoC5/PGA_1.c ****         {
+  85:Generated_Source\PSoC5/PGA_1.c ****             PGA_1_CR1_REG = PGA_1_P5backup.scCR1Reg;
+  86:Generated_Source\PSoC5/PGA_1.c ****             PGA_1_CR2_REG = PGA_1_P5backup.scCR2Reg;
+  87:Generated_Source\PSoC5/PGA_1.c ****             PGA_1_P5backup.enableState = 0u;
+  88:Generated_Source\PSoC5/PGA_1.c ****         }
+  89:Generated_Source\PSoC5/PGA_1.c ****     #endif /* CY_PSOC5A */   
+  90:Generated_Source\PSoC5/PGA_1.c **** 
+  91:Generated_Source\PSoC5/PGA_1.c ****     /* Enable power to the Amp in Active mode*/
+  92:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_PM_ACT_CFG_REG |= PGA_1_ACT_PWR_EN;
+  32              		.loc 1 92 0
+  33 0000 084A     		ldr	r2, .L2
+  34 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  35 0004 43F00103 		orr	r3, r3, #1
+  36 0008 1370     		strb	r3, [r2]
+  93:Generated_Source\PSoC5/PGA_1.c **** 
+  94:Generated_Source\PSoC5/PGA_1.c ****     /* Enable power to the Amp in Alternative Active mode*/
+  95:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_PM_STBY_CFG_REG |= PGA_1_STBY_PWR_EN;
+  37              		.loc 1 95 0
+  38 000a 1032     		adds	r2, r2, #16
+  39 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  40 000e 43F00103 		orr	r3, r3, #1
+  41 0012 1370     		strb	r3, [r2]
+  96:Generated_Source\PSoC5/PGA_1.c ****     
+  97:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_PUMP_CR1_REG |= PGA_1_PUMP_CR1_SC_CLKSEL;
+  42              		.loc 1 97 0
+  43 0014 02F5A552 		add	r2, r2, #5280
+  44 0018 1E32     		adds	r2, r2, #30
+  45 001a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  46 001c 43F08003 		orr	r3, r3, #128
+  47 0020 1370     		strb	r3, [r2]
+  48 0022 7047     		bx	lr
+  49              	.L3:
+  50              		.align	2
+  51              	.L2:
+  52 0024 A9430040 		.word	1073759145
+  53              		.cfi_endproc
+  54              	.LFE1:
+  55              		.size	PGA_1_Enable, .-PGA_1_Enable
+  56              		.section	.text.PGA_1_Stop,"ax",%progbits
+  57              		.align	2
+  58              		.global	PGA_1_Stop
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	PGA_1_Stop, %function
+  62              	PGA_1_Stop:
+  63              	.LFB3:
+  98:Generated_Source\PSoC5/PGA_1.c ****     
+  99:Generated_Source\PSoC5/PGA_1.c ****     #if (!CY_PSOC5A)
+ 100:Generated_Source\PSoC5/PGA_1.c ****         #if (CYDEV_VARIABLE_VDDA == 1u)
+ 101:Generated_Source\PSoC5/PGA_1.c ****             if(CyScPumpEnabled == 1u)
+ 102:Generated_Source\PSoC5/PGA_1.c ****             {
+ 103:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_BSTCLK_REG &= (uint8)(~PGA_1_BST_CLK_INDEX_MASK);
+ 104:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_BSTCLK_REG |= PGA_1_BST_CLK_EN | CyScBoostClk__INDEX;
+ 105:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_SC_MISC_REG |= PGA_1_PUMP_FORCE;
+ 106:Generated_Source\PSoC5/PGA_1.c ****                 CyScBoostClk_Start();
+ 107:Generated_Source\PSoC5/PGA_1.c ****             }
+ 108:Generated_Source\PSoC5/PGA_1.c ****             else
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 4
+
+
+ 109:Generated_Source\PSoC5/PGA_1.c ****             {
+ 110:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_BSTCLK_REG &= (uint8)(~PGA_1_BST_CLK_EN);
+ 111:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_SC_MISC_REG &= (uint8)(~PGA_1_PUMP_FORCE);
+ 112:Generated_Source\PSoC5/PGA_1.c ****             }
+ 113:Generated_Source\PSoC5/PGA_1.c ****         #endif /* (CYDEV_VARIABLE_VDDA == 1u) */
+ 114:Generated_Source\PSoC5/PGA_1.c ****     #endif /* (!CY_PSOC5A) */
+ 115:Generated_Source\PSoC5/PGA_1.c **** }
+ 116:Generated_Source\PSoC5/PGA_1.c **** 
+ 117:Generated_Source\PSoC5/PGA_1.c **** 
+ 118:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************
+ 119:Generated_Source\PSoC5/PGA_1.c **** * Function Name: PGA_1_Start
+ 120:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+ 121:Generated_Source\PSoC5/PGA_1.c **** *
+ 122:Generated_Source\PSoC5/PGA_1.c **** * Summary:
+ 123:Generated_Source\PSoC5/PGA_1.c **** *  The start function initializes the PGA with the default values and sets
+ 124:Generated_Source\PSoC5/PGA_1.c **** *  the power to the given level. A power level of 0, is same as executing
+ 125:Generated_Source\PSoC5/PGA_1.c **** *  the stop function.
+ 126:Generated_Source\PSoC5/PGA_1.c **** *
+ 127:Generated_Source\PSoC5/PGA_1.c **** * Parameters:
+ 128:Generated_Source\PSoC5/PGA_1.c **** *  void
+ 129:Generated_Source\PSoC5/PGA_1.c **** *
+ 130:Generated_Source\PSoC5/PGA_1.c **** * Return:
+ 131:Generated_Source\PSoC5/PGA_1.c **** *  void
+ 132:Generated_Source\PSoC5/PGA_1.c **** *
+ 133:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+ 134:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_Start(void) 
+ 135:Generated_Source\PSoC5/PGA_1.c **** {
+ 136:Generated_Source\PSoC5/PGA_1.c **** 
+ 137:Generated_Source\PSoC5/PGA_1.c ****     /* This is to restore the value of register CR1 and CR2 which is saved 
+ 138:Generated_Source\PSoC5/PGA_1.c ****       in prior to the modification in stop() API */
+ 139:Generated_Source\PSoC5/PGA_1.c **** 
+ 140:Generated_Source\PSoC5/PGA_1.c ****     if(PGA_1_initVar == 0u)
+ 141:Generated_Source\PSoC5/PGA_1.c ****     {
+ 142:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_Init();
+ 143:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_initVar = 1u;
+ 144:Generated_Source\PSoC5/PGA_1.c ****     }
+ 145:Generated_Source\PSoC5/PGA_1.c **** 
+ 146:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_Enable();
+ 147:Generated_Source\PSoC5/PGA_1.c **** }
+ 148:Generated_Source\PSoC5/PGA_1.c **** 
+ 149:Generated_Source\PSoC5/PGA_1.c **** 
+ 150:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************
+ 151:Generated_Source\PSoC5/PGA_1.c **** * Function Name: PGA_1_Stop
+ 152:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+ 153:Generated_Source\PSoC5/PGA_1.c **** *
+ 154:Generated_Source\PSoC5/PGA_1.c **** * Summary:
+ 155:Generated_Source\PSoC5/PGA_1.c **** *  Powers down amplifier to lowest power state.
+ 156:Generated_Source\PSoC5/PGA_1.c **** *
+ 157:Generated_Source\PSoC5/PGA_1.c **** * Parameters:
+ 158:Generated_Source\PSoC5/PGA_1.c **** *  void
+ 159:Generated_Source\PSoC5/PGA_1.c **** *
+ 160:Generated_Source\PSoC5/PGA_1.c **** * Return:
+ 161:Generated_Source\PSoC5/PGA_1.c **** *  void
+ 162:Generated_Source\PSoC5/PGA_1.c **** *
+ 163:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+ 164:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_Stop(void) 
+ 165:Generated_Source\PSoC5/PGA_1.c **** { 
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 5
+
+
+  64              		.loc 1 165 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+ 166:Generated_Source\PSoC5/PGA_1.c ****     /* Disble power to the Amp in Active mode template */
+ 167:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_PM_ACT_CFG_REG &= (uint8)(~PGA_1_ACT_PWR_EN);
+  69              		.loc 1 167 0
+  70 0000 054A     		ldr	r2, .L5
+  71 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  72 0004 03F0FE03 		and	r3, r3, #254
+  73 0008 1370     		strb	r3, [r2]
+ 168:Generated_Source\PSoC5/PGA_1.c **** 
+ 169:Generated_Source\PSoC5/PGA_1.c ****     /* Disble power to the Amp in Alternative Active mode template */
+ 170:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_PM_STBY_CFG_REG &= (uint8)(~PGA_1_STBY_PWR_EN);
+  74              		.loc 1 170 0
+  75 000a 1032     		adds	r2, r2, #16
+  76 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  77 000e 03F0FE03 		and	r3, r3, #254
+  78 0012 1370     		strb	r3, [r2]
+  79 0014 7047     		bx	lr
+  80              	.L6:
+  81 0016 00BF     		.align	2
+  82              	.L5:
+  83 0018 A9430040 		.word	1073759145
+  84              		.cfi_endproc
+  85              	.LFE3:
+  86              		.size	PGA_1_Stop, .-PGA_1_Stop
+  87              		.section	.text.PGA_1_SetPower,"ax",%progbits
+  88              		.align	2
+  89              		.global	PGA_1_SetPower
+  90              		.thumb
+  91              		.thumb_func
+  92              		.type	PGA_1_SetPower, %function
+  93              	PGA_1_SetPower:
+  94              	.LFB4:
+ 171:Generated_Source\PSoC5/PGA_1.c **** 
+ 172:Generated_Source\PSoC5/PGA_1.c ****     #if (!CY_PSOC5A)
+ 173:Generated_Source\PSoC5/PGA_1.c ****         #if (CYDEV_VARIABLE_VDDA == 1u)
+ 174:Generated_Source\PSoC5/PGA_1.c ****             PGA_1_BSTCLK_REG &= (uint8)(~PGA_1_BST_CLK_EN);
+ 175:Generated_Source\PSoC5/PGA_1.c ****             /* Disable pumps only if there aren't any SC block in use */
+ 176:Generated_Source\PSoC5/PGA_1.c ****             if ((PGA_1_PM_ACT_CFG_REG & PGA_1_PM_ACT_CFG_MASK) == 0u)
+ 177:Generated_Source\PSoC5/PGA_1.c ****             {
+ 178:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_SC_MISC_REG &= (uint8)(~PGA_1_PUMP_FORCE);
+ 179:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_PUMP_CR1_REG &= (uint8)(~PGA_1_PUMP_CR1_SC_CLKSEL);
+ 180:Generated_Source\PSoC5/PGA_1.c ****                 CyScBoostClk_Stop();
+ 181:Generated_Source\PSoC5/PGA_1.c ****             }
+ 182:Generated_Source\PSoC5/PGA_1.c ****         #endif /* CYDEV_VARIABLE_VDDA == 1u */
+ 183:Generated_Source\PSoC5/PGA_1.c ****     #endif /* (CY_PSOC3 || CY_PSOC5LP) */
+ 184:Generated_Source\PSoC5/PGA_1.c **** 
+ 185:Generated_Source\PSoC5/PGA_1.c ****     /* This sets PGA in zero current mode and output routes are valid */
+ 186:Generated_Source\PSoC5/PGA_1.c ****     #if (CY_PSOC5A)
+ 187:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_P5backup.scCR1Reg = PGA_1_CR1_REG;
+ 188:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_P5backup.scCR2Reg = PGA_1_CR2_REG;
+ 189:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR1_REG = 0x00u;
+ 190:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR2_REG = 0x00u;
+ 191:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_P5backup.enableState = 1u;
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 6
+
+
+ 192:Generated_Source\PSoC5/PGA_1.c ****     #endif /* CY_PSOC5A */
+ 193:Generated_Source\PSoC5/PGA_1.c **** }
+ 194:Generated_Source\PSoC5/PGA_1.c **** 
+ 195:Generated_Source\PSoC5/PGA_1.c **** 
+ 196:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************
+ 197:Generated_Source\PSoC5/PGA_1.c **** * Function Name: PGA_1_SetPower
+ 198:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+ 199:Generated_Source\PSoC5/PGA_1.c **** *
+ 200:Generated_Source\PSoC5/PGA_1.c **** * Summary:
+ 201:Generated_Source\PSoC5/PGA_1.c **** *  Set the power of the PGA.
+ 202:Generated_Source\PSoC5/PGA_1.c **** *
+ 203:Generated_Source\PSoC5/PGA_1.c **** * Parameters:
+ 204:Generated_Source\PSoC5/PGA_1.c **** *  power: Sets power level between (0) and (3) high power
+ 205:Generated_Source\PSoC5/PGA_1.c **** *
+ 206:Generated_Source\PSoC5/PGA_1.c **** * Return:
+ 207:Generated_Source\PSoC5/PGA_1.c **** *  void
+ 208:Generated_Source\PSoC5/PGA_1.c **** *
+ 209:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+ 210:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_SetPower(uint8 power) 
+ 211:Generated_Source\PSoC5/PGA_1.c **** {
+  95              		.loc 1 211 0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              		@ link register save eliminated.
+ 100              	.LVL0:
+ 212:Generated_Source\PSoC5/PGA_1.c ****     uint8 tmpCR;
+ 213:Generated_Source\PSoC5/PGA_1.c **** 
+ 214:Generated_Source\PSoC5/PGA_1.c ****     tmpCR = PGA_1_CR1_REG & (uint8)(~PGA_1_DRIVE_MASK);
+ 101              		.loc 1 214 0
+ 102 0000 044A     		ldr	r2, .L8
+ 103 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 104 0004 03F0FC03 		and	r3, r3, #252
+ 105              	.LVL1:
+ 215:Generated_Source\PSoC5/PGA_1.c ****     tmpCR |= (power & PGA_1_DRIVE_MASK);
+ 106              		.loc 1 215 0
+ 107 0008 00F00300 		and	r0, r0, #3
+ 108              	.LVL2:
+ 109 000c 1843     		orrs	r0, r0, r3
+ 110              	.LVL3:
+ 216:Generated_Source\PSoC5/PGA_1.c ****     PGA_1_CR1_REG = tmpCR;  
+ 111              		.loc 1 216 0
+ 112 000e 1070     		strb	r0, [r2]
+ 113 0010 7047     		bx	lr
+ 114              	.L9:
+ 115 0012 00BF     		.align	2
+ 116              	.L8:
+ 117 0014 01580040 		.word	1073764353
+ 118              		.cfi_endproc
+ 119              	.LFE4:
+ 120              		.size	PGA_1_SetPower, .-PGA_1_SetPower
+ 121              		.section	.text.PGA_1_SetGain,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	PGA_1_SetGain
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	PGA_1_SetGain, %function
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 7
+
+
+ 127              	PGA_1_SetGain:
+ 128              	.LFB5:
+ 217:Generated_Source\PSoC5/PGA_1.c **** }
+ 218:Generated_Source\PSoC5/PGA_1.c **** 
+ 219:Generated_Source\PSoC5/PGA_1.c **** 
+ 220:Generated_Source\PSoC5/PGA_1.c **** /*******************************************************************************
+ 221:Generated_Source\PSoC5/PGA_1.c **** * Function Name: PGA_1_SetGain
+ 222:Generated_Source\PSoC5/PGA_1.c **** ********************************************************************************
+ 223:Generated_Source\PSoC5/PGA_1.c **** *
+ 224:Generated_Source\PSoC5/PGA_1.c **** * Summary:
+ 225:Generated_Source\PSoC5/PGA_1.c **** *  This function sets values of the input and feedback resistors to set a 
+ 226:Generated_Source\PSoC5/PGA_1.c **** *  specific gain of the amplifier.
+ 227:Generated_Source\PSoC5/PGA_1.c **** *
+ 228:Generated_Source\PSoC5/PGA_1.c **** * Parameters:
+ 229:Generated_Source\PSoC5/PGA_1.c **** *  gain: Gain value of PGA (See header file for gain values.)
+ 230:Generated_Source\PSoC5/PGA_1.c **** *
+ 231:Generated_Source\PSoC5/PGA_1.c **** * Return:
+ 232:Generated_Source\PSoC5/PGA_1.c **** *  void 
+ 233:Generated_Source\PSoC5/PGA_1.c **** *
+ 234:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
+ 235:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_SetGain(uint8 gain) 
+ 236:Generated_Source\PSoC5/PGA_1.c **** {
+ 129              		.loc 1 236 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 24
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+ 134              	.LVL4:
+ 135 0000 10B4     		push	{r4}
+ 136              		.cfi_def_cfa_offset 4
+ 137              		.cfi_offset 4, -4
+ 138 0002 87B0     		sub	sp, sp, #28
+ 139              		.cfi_def_cfa_offset 32
+ 140 0004 0446     		mov	r4, r0
+ 237:Generated_Source\PSoC5/PGA_1.c ****     /* Constant array for gain settings */
+ 238:Generated_Source\PSoC5/PGA_1.c ****     const uint8 PGA_1_GainArray[9] = { 
+ 141              		.loc 1 238 0
+ 142 0006 194B     		ldr	r3, .L13
+ 143 0008 03AA     		add	r2, sp, #12
+ 144 000a 1868     		ldr	r0, [r3]	@ unaligned
+ 145              	.LVL5:
+ 146 000c 5968     		ldr	r1, [r3, #4]	@ unaligned
+ 147 000e 03C2     		stmia	r2!, {r0, r1}
+ 148 0010 197A     		ldrb	r1, [r3, #8]	@ zero_extendqisi2
+ 149 0012 1170     		strb	r1, [r2]
+ 239:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_0K   | PGA_1_R20_40B_40K | PGA_1_BIAS_LOW), /* G=1  */
+ 240:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_40K  | PGA_1_R20_40B_40K | PGA_1_BIAS_LOW), /* G=2  */
+ 241:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_120K | PGA_1_R20_40B_40K | PGA_1_BIAS_LOW), /* G=4  */
+ 242:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_280K | PGA_1_R20_40B_40K | PGA_1_BIAS_LOW), /* G=8  */
+ 243:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_600K | PGA_1_R20_40B_40K | PGA_1_BIAS_LOW), /* G=16 */
+ 244:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_460K | PGA_1_R20_40B_40K | PGA_1_BIAS_LOW), /* G=24, Sets Rin as 20k */
+ 245:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_620K | PGA_1_R20_40B_20K | PGA_1_BIAS_LOW), /* G=32 */
+ 246:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_470K | PGA_1_R20_40B_20K | PGA_1_BIAS_LOW), /* G=48, Sets Rin as 10k */
+ 247:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_490K | PGA_1_R20_40B_20K | PGA_1_BIAS_LOW)  /* G=50, Sets Rin as 10k */
+ 248:Generated_Source\PSoC5/PGA_1.c ****     };
+ 249:Generated_Source\PSoC5/PGA_1.c ****     
+ 250:Generated_Source\PSoC5/PGA_1.c ****     /* Constant array for gain compenstion settings */
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 8
+
+
+ 251:Generated_Source\PSoC5/PGA_1.c ****     const uint8 PGA_1_GainComp[9] = { 
+ 150              		.loc 1 251 0
+ 151 0014 6A46     		mov	r2, sp
+ 152 0016 53F80C0F 		ldr	r0, [r3, #12]!	@ unaligned
+ 153 001a 5968     		ldr	r1, [r3, #4]	@ unaligned
+ 154 001c 03C2     		stmia	r2!, {r0, r1}
+ 155 001e 1B7A     		ldrb	r3, [r3, #8]	@ zero_extendqisi2
+ 156 0020 1370     		strb	r3, [r2]
+ 252:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_4P35PF  | (uint8)( PGA_1_REDC_00 >> 2 )), /* G=1  */
+ 253:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_4P35PF  | (uint8)( PGA_1_REDC_01 >> 2 )), /* G=2  */
+ 254:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P0PF   | (uint8)( PGA_1_REDC_01 >> 2 )), /* G=4  */
+ 255:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P0PF   | (uint8)( PGA_1_REDC_01 >> 2 )), /* G=8  */
+ 256:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P6PF   | (uint8)( PGA_1_REDC_01 >> 2 )), /* G=16 */
+ 257:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P6PF   | (uint8)( PGA_1_REDC_11 >> 2 )), /* G=24 */
+ 258:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P6PF   | (uint8)( PGA_1_REDC_11 >> 2 )), /* G=32 */
+ 259:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P6PF   | (uint8)( PGA_1_REDC_00 >> 2 )), /* G=48 */
+ 260:Generated_Source\PSoC5/PGA_1.c ****         ( PGA_1_COMP_3P6PF   | (uint8)( PGA_1_REDC_00 >> 2 ))  /* G=50 */
+ 261:Generated_Source\PSoC5/PGA_1.c ****     };
+ 262:Generated_Source\PSoC5/PGA_1.c ****     
+ 263:Generated_Source\PSoC5/PGA_1.c ****     /* Only set new gain if it is a valid gain */
+ 264:Generated_Source\PSoC5/PGA_1.c ****     if( gain <= PGA_1_GAIN_MAX)
+ 157              		.loc 1 264 0
+ 158 0022 082C     		cmp	r4, #8
+ 159 0024 1ED8     		bhi	.L10
+ 265:Generated_Source\PSoC5/PGA_1.c ****     {
+ 266:Generated_Source\PSoC5/PGA_1.c ****         /* Clear resistors, redc, and bias */
+ 267:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR2_REG &= (uint8)(~(PGA_1_RVAL_MASK | PGA_1_R20_40B_MASK | 
+ 160              		.loc 1 267 0
+ 161 0026 1249     		ldr	r1, .L13+4
+ 162 0028 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 163 002a 03F08003 		and	r3, r3, #128
+ 164 002e DBB2     		uxtb	r3, r3
+ 165 0030 0B70     		strb	r3, [r1]
+ 268:Generated_Source\PSoC5/PGA_1.c ****                                 PGA_1_REDC_MASK | PGA_1_BIAS_MASK ));
+ 269:Generated_Source\PSoC5/PGA_1.c **** 
+ 270:Generated_Source\PSoC5/PGA_1.c ****         /* Set gain value resistors, redc comp, and bias */
+ 271:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR2_REG |= (PGA_1_GainArray[gain] |
+ 166              		.loc 1 271 0
+ 167 0032 0878     		ldrb	r0, [r1]	@ zero_extendqisi2
+ 168 0034 06AB     		add	r3, sp, #24
+ 169 0036 1C44     		add	r4, r4, r3
+ 170 0038 14F80C3C 		ldrb	r3, [r4, #-12]	@ zero_extendqisi2
+ 272:Generated_Source\PSoC5/PGA_1.c ****                                 ((uint8)(PGA_1_GainComp[gain] << 2 ) & PGA_1_REDC_MASK));
+ 171              		.loc 1 272 0
+ 172 003c 14F8182C 		ldrb	r2, [r4, #-24]	@ zero_extendqisi2
+ 173 0040 9200     		lsls	r2, r2, #2
+ 271:Generated_Source\PSoC5/PGA_1.c ****                                 ((uint8)(PGA_1_GainComp[gain] << 2 ) & PGA_1_REDC_MASK));
+ 174              		.loc 1 271 0
+ 175 0042 02F00C02 		and	r2, r2, #12
+ 176 0046 1343     		orrs	r3, r3, r2
+ 177 0048 0343     		orrs	r3, r3, r0
+ 178 004a 0B70     		strb	r3, [r1]
+ 273:Generated_Source\PSoC5/PGA_1.c **** 
+ 274:Generated_Source\PSoC5/PGA_1.c ****         /* Clear sc_comp  */
+ 275:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR1_REG &= (uint8)(~PGA_1_COMP_MASK);
+ 179              		.loc 1 275 0
+ 180 004c 094A     		ldr	r2, .L13+8
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 9
+
+
+ 181 004e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 182 0050 03F0F303 		and	r3, r3, #243
+ 183 0054 1370     		strb	r3, [r2]
+ 276:Generated_Source\PSoC5/PGA_1.c ****         /* Set sc_comp  */
+ 277:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR1_REG |= ( PGA_1_GainComp[gain] | PGA_1_COMP_MASK );
+ 184              		.loc 1 277 0
+ 185 0056 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
+ 186 0058 14F8183C 		ldrb	r3, [r4, #-24]	@ zero_extendqisi2
+ 187 005c 0B43     		orrs	r3, r3, r1
+ 188 005e 43F00C03 		orr	r3, r3, #12
+ 189 0062 1370     		strb	r3, [r2]
+ 190              	.L10:
+ 278:Generated_Source\PSoC5/PGA_1.c ****     }
+ 279:Generated_Source\PSoC5/PGA_1.c **** }
+ 191              		.loc 1 279 0
+ 192 0064 07B0     		add	sp, sp, #28
+ 193              		.cfi_def_cfa_offset 4
+ 194              		@ sp needed
+ 195 0066 5DF8044B 		ldr	r4, [sp], #4
+ 196              		.cfi_restore 4
+ 197              		.cfi_def_cfa_offset 0
+ 198 006a 7047     		bx	lr
+ 199              	.L14:
+ 200              		.align	2
+ 201              	.L13:
+ 202 006c 00000000 		.word	.LANCHOR0
+ 203 0070 02580040 		.word	1073764354
+ 204 0074 01580040 		.word	1073764353
+ 205              		.cfi_endproc
+ 206              	.LFE5:
+ 207              		.size	PGA_1_SetGain, .-PGA_1_SetGain
+ 208              		.section	.text.PGA_1_Init,"ax",%progbits
+ 209              		.align	2
+ 210              		.global	PGA_1_Init
+ 211              		.thumb
+ 212              		.thumb_func
+ 213              		.type	PGA_1_Init, %function
+ 214              	PGA_1_Init:
+ 215              	.LFB0:
+  50:Generated_Source\PSoC5/PGA_1.c ****     /* Set PGA mode */
+ 216              		.loc 1 50 0
+ 217              		.cfi_startproc
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220 0000 08B5     		push	{r3, lr}
+ 221              		.cfi_def_cfa_offset 8
+ 222              		.cfi_offset 3, -8
+ 223              		.cfi_offset 14, -4
+  52:Generated_Source\PSoC5/PGA_1.c ****     /* Set non-inverting PGA mode and reference mode */
+ 224              		.loc 1 52 0
+ 225 0002 0C22     		movs	r2, #12
+ 226 0004 084B     		ldr	r3, .L17
+ 227 0006 1A70     		strb	r2, [r3]
+  54:Generated_Source\PSoC5/PGA_1.c ****     /* Set default gain and ref mode */
+ 228              		.loc 1 54 0
+ 229 0008 084A     		ldr	r2, .L17+4
+ 230 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 10
+
+
+ 231 000c 43F02003 		orr	r3, r3, #32
+ 232 0010 1370     		strb	r3, [r2]
+  56:Generated_Source\PSoC5/PGA_1.c ****     /* Set gain and compensation */
+ 233              		.loc 1 56 0
+ 234 0012 8022     		movs	r2, #128
+ 235 0014 064B     		ldr	r3, .L17+8
+ 236 0016 1A70     		strb	r2, [r3]
+  58:Generated_Source\PSoC5/PGA_1.c ****     /* Set power */
+ 237              		.loc 1 58 0
+ 238 0018 0120     		movs	r0, #1
+ 239 001a FFF7FEFF 		bl	PGA_1_SetGain
+ 240              	.LVL6:
+  60:Generated_Source\PSoC5/PGA_1.c **** }
+ 241              		.loc 1 60 0
+ 242 001e 0320     		movs	r0, #3
+ 243 0020 FFF7FEFF 		bl	PGA_1_SetPower
+ 244              	.LVL7:
+ 245 0024 08BD     		pop	{r3, pc}
+ 246              	.L18:
+ 247 0026 00BF     		.align	2
+ 248              	.L17:
+ 249 0028 00580040 		.word	1073764352
+ 250 002c 01580040 		.word	1073764353
+ 251 0030 02580040 		.word	1073764354
+ 252              		.cfi_endproc
+ 253              	.LFE0:
+ 254              		.size	PGA_1_Init, .-PGA_1_Init
+ 255              		.section	.text.PGA_1_Start,"ax",%progbits
+ 256              		.align	2
+ 257              		.global	PGA_1_Start
+ 258              		.thumb
+ 259              		.thumb_func
+ 260              		.type	PGA_1_Start, %function
+ 261              	PGA_1_Start:
+ 262              	.LFB2:
+ 135:Generated_Source\PSoC5/PGA_1.c **** 
+ 263              		.loc 1 135 0
+ 264              		.cfi_startproc
+ 265              		@ args = 0, pretend = 0, frame = 0
+ 266              		@ frame_needed = 0, uses_anonymous_args = 0
+ 267 0000 08B5     		push	{r3, lr}
+ 268              		.cfi_def_cfa_offset 8
+ 269              		.cfi_offset 3, -8
+ 270              		.cfi_offset 14, -4
+ 140:Generated_Source\PSoC5/PGA_1.c ****     {
+ 271              		.loc 1 140 0
+ 272 0002 054B     		ldr	r3, .L22
+ 273 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 274 0006 23B9     		cbnz	r3, .L20
+ 142:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_initVar = 1u;
+ 275              		.loc 1 142 0
+ 276 0008 FFF7FEFF 		bl	PGA_1_Init
+ 277              	.LVL8:
+ 143:Generated_Source\PSoC5/PGA_1.c ****     }
+ 278              		.loc 1 143 0
+ 279 000c 0122     		movs	r2, #1
+ 280 000e 024B     		ldr	r3, .L22
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 11
+
+
+ 281 0010 1A70     		strb	r2, [r3]
+ 282              	.L20:
+ 146:Generated_Source\PSoC5/PGA_1.c **** }
+ 283              		.loc 1 146 0
+ 284 0012 FFF7FEFF 		bl	PGA_1_Enable
+ 285              	.LVL9:
+ 286 0016 08BD     		pop	{r3, pc}
+ 287              	.L23:
+ 288              		.align	2
+ 289              	.L22:
+ 290 0018 00000000 		.word	.LANCHOR1
+ 291              		.cfi_endproc
+ 292              	.LFE2:
+ 293              		.size	PGA_1_Start, .-PGA_1_Start
+ 294              		.global	PGA_1_initVar
+ 295              		.section	.rodata
+ 296              		.align	2
+ 297              		.set	.LANCHOR0,. + 0
+ 298              	.LC0:
+ 299 0000 01       		.byte	1
+ 300 0001 11       		.byte	17
+ 301 0002 21       		.byte	33
+ 302 0003 31       		.byte	49
+ 303 0004 41       		.byte	65
+ 304 0005 61       		.byte	97
+ 305 0006 53       		.byte	83
+ 306 0007 63       		.byte	99
+ 307 0008 73       		.byte	115
+ 308 0009 000000   		.space	3
+ 309              	.LC1:
+ 310 000c 08       		.byte	8
+ 311 000d 09       		.byte	9
+ 312 000e 01       		.byte	1
+ 313 000f 01       		.byte	1
+ 314 0010 05       		.byte	5
+ 315 0011 07       		.byte	7
+ 316 0012 07       		.byte	7
+ 317 0013 04       		.byte	4
+ 318 0014 04       		.byte	4
+ 319 0015 000000   		.bss
+ 320              		.set	.LANCHOR1,. + 0
+ 321              		.type	PGA_1_initVar, %object
+ 322              		.size	PGA_1_initVar, 1
+ 323              	PGA_1_initVar:
+ 324 0000 00       		.space	1
+ 325              		.text
+ 326              	.Letext0:
+ 327              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 328              		.section	.debug_info,"",%progbits
+ 329              	.Ldebug_info0:
+ 330 0000 C2010000 		.4byte	0x1c2
+ 331 0004 0400     		.2byte	0x4
+ 332 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 333 000a 04       		.byte	0x4
+ 334 000b 01       		.uleb128 0x1
+ 335 000c B2000000 		.4byte	.LASF26
+ 336 0010 01       		.byte	0x1
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 12
+
+
+ 337 0011 9E010000 		.4byte	.LASF27
+ 338 0015 3E000000 		.4byte	.LASF28
+ 339 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 340 001d 00000000 		.4byte	0
+ 341 0021 00000000 		.4byte	.Ldebug_line0
+ 342 0025 02       		.uleb128 0x2
+ 343 0026 01       		.byte	0x1
+ 344 0027 06       		.byte	0x6
+ 345 0028 0C020000 		.4byte	.LASF0
+ 346 002c 02       		.uleb128 0x2
+ 347 002d 01       		.byte	0x1
+ 348 002e 08       		.byte	0x8
+ 349 002f 75000000 		.4byte	.LASF1
+ 350 0033 02       		.uleb128 0x2
+ 351 0034 02       		.byte	0x2
+ 352 0035 05       		.byte	0x5
+ 353 0036 EA010000 		.4byte	.LASF2
+ 354 003a 02       		.uleb128 0x2
+ 355 003b 02       		.byte	0x2
+ 356 003c 07       		.byte	0x7
+ 357 003d 12000000 		.4byte	.LASF3
+ 358 0041 02       		.uleb128 0x2
+ 359 0042 04       		.byte	0x4
+ 360 0043 05       		.byte	0x5
+ 361 0044 F4010000 		.4byte	.LASF4
+ 362 0048 02       		.uleb128 0x2
+ 363 0049 04       		.byte	0x4
+ 364 004a 07       		.byte	0x7
+ 365 004b 88000000 		.4byte	.LASF5
+ 366 004f 02       		.uleb128 0x2
+ 367 0050 08       		.byte	0x8
+ 368 0051 05       		.byte	0x5
+ 369 0052 D7010000 		.4byte	.LASF6
+ 370 0056 02       		.uleb128 0x2
+ 371 0057 08       		.byte	0x8
+ 372 0058 07       		.byte	0x7
+ 373 0059 69010000 		.4byte	.LASF7
+ 374 005d 03       		.uleb128 0x3
+ 375 005e 04       		.byte	0x4
+ 376 005f 05       		.byte	0x5
+ 377 0060 696E7400 		.ascii	"int\000"
+ 378 0064 02       		.uleb128 0x2
+ 379 0065 04       		.byte	0x4
+ 380 0066 07       		.byte	0x7
+ 381 0067 4F010000 		.4byte	.LASF8
+ 382 006b 04       		.uleb128 0x4
+ 383 006c 9A000000 		.4byte	.LASF12
+ 384 0070 02       		.byte	0x2
+ 385 0071 C2       		.byte	0xc2
+ 386 0072 2C000000 		.4byte	0x2c
+ 387 0076 02       		.uleb128 0x2
+ 388 0077 04       		.byte	0x4
+ 389 0078 04       		.byte	0x4
+ 390 0079 38000000 		.4byte	.LASF9
+ 391 007d 02       		.uleb128 0x2
+ 392 007e 08       		.byte	0x8
+ 393 007f 04       		.byte	0x4
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 13
+
+
+ 394 0080 A0000000 		.4byte	.LASF10
+ 395 0084 02       		.uleb128 0x2
+ 396 0085 01       		.byte	0x1
+ 397 0086 08       		.byte	0x8
+ 398 0087 E5010000 		.4byte	.LASF11
+ 399 008b 05       		.uleb128 0x5
+ 400 008c 83000000 		.4byte	.LASF13
+ 401 0090 02       		.byte	0x2
+ 402 0091 6C01     		.2byte	0x16c
+ 403 0093 97000000 		.4byte	0x97
+ 404 0097 06       		.uleb128 0x6
+ 405 0098 6B000000 		.4byte	0x6b
+ 406 009c 02       		.uleb128 0x2
+ 407 009d 04       		.byte	0x4
+ 408 009e 07       		.byte	0x7
+ 409 009f C8010000 		.4byte	.LASF14
+ 410 00a3 07       		.uleb128 0x7
+ 411 00a4 5C010000 		.4byte	.LASF15
+ 412 00a8 01       		.byte	0x1
+ 413 00a9 4E       		.byte	0x4e
+ 414 00aa 00000000 		.4byte	.LFB1
+ 415 00ae 28000000 		.4byte	.LFE1-.LFB1
+ 416 00b2 01       		.uleb128 0x1
+ 417 00b3 9C       		.byte	0x9c
+ 418 00b4 07       		.uleb128 0x7
+ 419 00b5 A7000000 		.4byte	.LASF16
+ 420 00b9 01       		.byte	0x1
+ 421 00ba A4       		.byte	0xa4
+ 422 00bb 00000000 		.4byte	.LFB3
+ 423 00bf 1C000000 		.4byte	.LFE3-.LFB3
+ 424 00c3 01       		.uleb128 0x1
+ 425 00c4 9C       		.byte	0x9c
+ 426 00c5 08       		.uleb128 0x8
+ 427 00c6 FD010000 		.4byte	.LASF17
+ 428 00ca 01       		.byte	0x1
+ 429 00cb D2       		.byte	0xd2
+ 430 00cc 00000000 		.4byte	.LFB4
+ 431 00d0 18000000 		.4byte	.LFE4-.LFB4
+ 432 00d4 01       		.uleb128 0x1
+ 433 00d5 9C       		.byte	0x9c
+ 434 00d6 F9000000 		.4byte	0xf9
+ 435 00da 09       		.uleb128 0x9
+ 436 00db D1010000 		.4byte	.LASF19
+ 437 00df 01       		.byte	0x1
+ 438 00e0 D2       		.byte	0xd2
+ 439 00e1 6B000000 		.4byte	0x6b
+ 440 00e5 00000000 		.4byte	.LLST0
+ 441 00e9 0A       		.uleb128 0xa
+ 442 00ea 0C000000 		.4byte	.LASF21
+ 443 00ee 01       		.byte	0x1
+ 444 00ef D4       		.byte	0xd4
+ 445 00f0 6B000000 		.4byte	0x6b
+ 446 00f4 21000000 		.4byte	.LLST1
+ 447 00f8 00       		.byte	0
+ 448 00f9 08       		.uleb128 0x8
+ 449 00fa 90010000 		.4byte	.LASF18
+ 450 00fe 01       		.byte	0x1
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 14
+
+
+ 451 00ff EB       		.byte	0xeb
+ 452 0100 00000000 		.4byte	.LFB5
+ 453 0104 78000000 		.4byte	.LFE5-.LFB5
+ 454 0108 01       		.uleb128 0x1
+ 455 0109 9C       		.byte	0x9c
+ 456 010a 3A010000 		.4byte	0x13a
+ 457 010e 09       		.uleb128 0x9
+ 458 010f 25000000 		.4byte	.LASF20
+ 459 0113 01       		.byte	0x1
+ 460 0114 EB       		.byte	0xeb
+ 461 0115 6B000000 		.4byte	0x6b
+ 462 0119 3F000000 		.4byte	.LLST2
+ 463 011d 0B       		.uleb128 0xb
+ 464 011e 80010000 		.4byte	.LASF22
+ 465 0122 01       		.byte	0x1
+ 466 0123 EE       		.byte	0xee
+ 467 0124 4A010000 		.4byte	0x14a
+ 468 0128 02       		.uleb128 0x2
+ 469 0129 91       		.byte	0x91
+ 470 012a 6C       		.sleb128 -20
+ 471 012b 0B       		.uleb128 0xb
+ 472 012c 40010000 		.4byte	.LASF23
+ 473 0130 01       		.byte	0x1
+ 474 0131 FB       		.byte	0xfb
+ 475 0132 4F010000 		.4byte	0x14f
+ 476 0136 02       		.uleb128 0x2
+ 477 0137 91       		.byte	0x91
+ 478 0138 60       		.sleb128 -32
+ 479 0139 00       		.byte	0
+ 480 013a 0C       		.uleb128 0xc
+ 481 013b 6B000000 		.4byte	0x6b
+ 482 013f 4A010000 		.4byte	0x14a
+ 483 0143 0D       		.uleb128 0xd
+ 484 0144 9C000000 		.4byte	0x9c
+ 485 0148 08       		.byte	0x8
+ 486 0149 00       		.byte	0
+ 487 014a 0E       		.uleb128 0xe
+ 488 014b 3A010000 		.4byte	0x13a
+ 489 014f 0E       		.uleb128 0xe
+ 490 0150 3A010000 		.4byte	0x13a
+ 491 0154 08       		.uleb128 0x8
+ 492 0155 BD010000 		.4byte	.LASF24
+ 493 0159 01       		.byte	0x1
+ 494 015a 31       		.byte	0x31
+ 495 015b 00000000 		.4byte	.LFB0
+ 496 015f 34000000 		.4byte	.LFE0-.LFB0
+ 497 0163 01       		.uleb128 0x1
+ 498 0164 9C       		.byte	0x9c
+ 499 0165 8C010000 		.4byte	0x18c
+ 500 0169 0F       		.uleb128 0xf
+ 501 016a 1E000000 		.4byte	.LVL6
+ 502 016e F9000000 		.4byte	0xf9
+ 503 0172 7C010000 		.4byte	0x17c
+ 504 0176 10       		.uleb128 0x10
+ 505 0177 01       		.uleb128 0x1
+ 506 0178 50       		.byte	0x50
+ 507 0179 01       		.uleb128 0x1
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 15
+
+
+ 508 017a 31       		.byte	0x31
+ 509 017b 00       		.byte	0
+ 510 017c 11       		.uleb128 0x11
+ 511 017d 24000000 		.4byte	.LVL7
+ 512 0181 C5000000 		.4byte	0xc5
+ 513 0185 10       		.uleb128 0x10
+ 514 0186 01       		.uleb128 0x1
+ 515 0187 50       		.byte	0x50
+ 516 0188 01       		.uleb128 0x1
+ 517 0189 33       		.byte	0x33
+ 518 018a 00       		.byte	0
+ 519 018b 00       		.byte	0
+ 520 018c 08       		.uleb128 0x8
+ 521 018d 00000000 		.4byte	.LASF25
+ 522 0191 01       		.byte	0x1
+ 523 0192 86       		.byte	0x86
+ 524 0193 00000000 		.4byte	.LFB2
+ 525 0197 1C000000 		.4byte	.LFE2-.LFB2
+ 526 019b 01       		.uleb128 0x1
+ 527 019c 9C       		.byte	0x9c
+ 528 019d B4010000 		.4byte	0x1b4
+ 529 01a1 12       		.uleb128 0x12
+ 530 01a2 0C000000 		.4byte	.LVL8
+ 531 01a6 54010000 		.4byte	0x154
+ 532 01aa 12       		.uleb128 0x12
+ 533 01ab 16000000 		.4byte	.LVL9
+ 534 01af A3000000 		.4byte	0xa3
+ 535 01b3 00       		.byte	0
+ 536 01b4 13       		.uleb128 0x13
+ 537 01b5 2A000000 		.4byte	.LASF29
+ 538 01b9 01       		.byte	0x1
+ 539 01ba 1E       		.byte	0x1e
+ 540 01bb 6B000000 		.4byte	0x6b
+ 541 01bf 05       		.uleb128 0x5
+ 542 01c0 03       		.byte	0x3
+ 543 01c1 00000000 		.4byte	PGA_1_initVar
+ 544 01c5 00       		.byte	0
+ 545              		.section	.debug_abbrev,"",%progbits
+ 546              	.Ldebug_abbrev0:
+ 547 0000 01       		.uleb128 0x1
+ 548 0001 11       		.uleb128 0x11
+ 549 0002 01       		.byte	0x1
+ 550 0003 25       		.uleb128 0x25
+ 551 0004 0E       		.uleb128 0xe
+ 552 0005 13       		.uleb128 0x13
+ 553 0006 0B       		.uleb128 0xb
+ 554 0007 03       		.uleb128 0x3
+ 555 0008 0E       		.uleb128 0xe
+ 556 0009 1B       		.uleb128 0x1b
+ 557 000a 0E       		.uleb128 0xe
+ 558 000b 55       		.uleb128 0x55
+ 559 000c 17       		.uleb128 0x17
+ 560 000d 11       		.uleb128 0x11
+ 561 000e 01       		.uleb128 0x1
+ 562 000f 10       		.uleb128 0x10
+ 563 0010 17       		.uleb128 0x17
+ 564 0011 00       		.byte	0
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 16
+
+
+ 565 0012 00       		.byte	0
+ 566 0013 02       		.uleb128 0x2
+ 567 0014 24       		.uleb128 0x24
+ 568 0015 00       		.byte	0
+ 569 0016 0B       		.uleb128 0xb
+ 570 0017 0B       		.uleb128 0xb
+ 571 0018 3E       		.uleb128 0x3e
+ 572 0019 0B       		.uleb128 0xb
+ 573 001a 03       		.uleb128 0x3
+ 574 001b 0E       		.uleb128 0xe
+ 575 001c 00       		.byte	0
+ 576 001d 00       		.byte	0
+ 577 001e 03       		.uleb128 0x3
+ 578 001f 24       		.uleb128 0x24
+ 579 0020 00       		.byte	0
+ 580 0021 0B       		.uleb128 0xb
+ 581 0022 0B       		.uleb128 0xb
+ 582 0023 3E       		.uleb128 0x3e
+ 583 0024 0B       		.uleb128 0xb
+ 584 0025 03       		.uleb128 0x3
+ 585 0026 08       		.uleb128 0x8
+ 586 0027 00       		.byte	0
+ 587 0028 00       		.byte	0
+ 588 0029 04       		.uleb128 0x4
+ 589 002a 16       		.uleb128 0x16
+ 590 002b 00       		.byte	0
+ 591 002c 03       		.uleb128 0x3
+ 592 002d 0E       		.uleb128 0xe
+ 593 002e 3A       		.uleb128 0x3a
+ 594 002f 0B       		.uleb128 0xb
+ 595 0030 3B       		.uleb128 0x3b
+ 596 0031 0B       		.uleb128 0xb
+ 597 0032 49       		.uleb128 0x49
+ 598 0033 13       		.uleb128 0x13
+ 599 0034 00       		.byte	0
+ 600 0035 00       		.byte	0
+ 601 0036 05       		.uleb128 0x5
+ 602 0037 16       		.uleb128 0x16
+ 603 0038 00       		.byte	0
+ 604 0039 03       		.uleb128 0x3
+ 605 003a 0E       		.uleb128 0xe
+ 606 003b 3A       		.uleb128 0x3a
+ 607 003c 0B       		.uleb128 0xb
+ 608 003d 3B       		.uleb128 0x3b
+ 609 003e 05       		.uleb128 0x5
+ 610 003f 49       		.uleb128 0x49
+ 611 0040 13       		.uleb128 0x13
+ 612 0041 00       		.byte	0
+ 613 0042 00       		.byte	0
+ 614 0043 06       		.uleb128 0x6
+ 615 0044 35       		.uleb128 0x35
+ 616 0045 00       		.byte	0
+ 617 0046 49       		.uleb128 0x49
+ 618 0047 13       		.uleb128 0x13
+ 619 0048 00       		.byte	0
+ 620 0049 00       		.byte	0
+ 621 004a 07       		.uleb128 0x7
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 17
+
+
+ 622 004b 2E       		.uleb128 0x2e
+ 623 004c 00       		.byte	0
+ 624 004d 3F       		.uleb128 0x3f
+ 625 004e 19       		.uleb128 0x19
+ 626 004f 03       		.uleb128 0x3
+ 627 0050 0E       		.uleb128 0xe
+ 628 0051 3A       		.uleb128 0x3a
+ 629 0052 0B       		.uleb128 0xb
+ 630 0053 3B       		.uleb128 0x3b
+ 631 0054 0B       		.uleb128 0xb
+ 632 0055 27       		.uleb128 0x27
+ 633 0056 19       		.uleb128 0x19
+ 634 0057 11       		.uleb128 0x11
+ 635 0058 01       		.uleb128 0x1
+ 636 0059 12       		.uleb128 0x12
+ 637 005a 06       		.uleb128 0x6
+ 638 005b 40       		.uleb128 0x40
+ 639 005c 18       		.uleb128 0x18
+ 640 005d 9742     		.uleb128 0x2117
+ 641 005f 19       		.uleb128 0x19
+ 642 0060 00       		.byte	0
+ 643 0061 00       		.byte	0
+ 644 0062 08       		.uleb128 0x8
+ 645 0063 2E       		.uleb128 0x2e
+ 646 0064 01       		.byte	0x1
+ 647 0065 3F       		.uleb128 0x3f
+ 648 0066 19       		.uleb128 0x19
+ 649 0067 03       		.uleb128 0x3
+ 650 0068 0E       		.uleb128 0xe
+ 651 0069 3A       		.uleb128 0x3a
+ 652 006a 0B       		.uleb128 0xb
+ 653 006b 3B       		.uleb128 0x3b
+ 654 006c 0B       		.uleb128 0xb
+ 655 006d 27       		.uleb128 0x27
+ 656 006e 19       		.uleb128 0x19
+ 657 006f 11       		.uleb128 0x11
+ 658 0070 01       		.uleb128 0x1
+ 659 0071 12       		.uleb128 0x12
+ 660 0072 06       		.uleb128 0x6
+ 661 0073 40       		.uleb128 0x40
+ 662 0074 18       		.uleb128 0x18
+ 663 0075 9742     		.uleb128 0x2117
+ 664 0077 19       		.uleb128 0x19
+ 665 0078 01       		.uleb128 0x1
+ 666 0079 13       		.uleb128 0x13
+ 667 007a 00       		.byte	0
+ 668 007b 00       		.byte	0
+ 669 007c 09       		.uleb128 0x9
+ 670 007d 05       		.uleb128 0x5
+ 671 007e 00       		.byte	0
+ 672 007f 03       		.uleb128 0x3
+ 673 0080 0E       		.uleb128 0xe
+ 674 0081 3A       		.uleb128 0x3a
+ 675 0082 0B       		.uleb128 0xb
+ 676 0083 3B       		.uleb128 0x3b
+ 677 0084 0B       		.uleb128 0xb
+ 678 0085 49       		.uleb128 0x49
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 18
+
+
+ 679 0086 13       		.uleb128 0x13
+ 680 0087 02       		.uleb128 0x2
+ 681 0088 17       		.uleb128 0x17
+ 682 0089 00       		.byte	0
+ 683 008a 00       		.byte	0
+ 684 008b 0A       		.uleb128 0xa
+ 685 008c 34       		.uleb128 0x34
+ 686 008d 00       		.byte	0
+ 687 008e 03       		.uleb128 0x3
+ 688 008f 0E       		.uleb128 0xe
+ 689 0090 3A       		.uleb128 0x3a
+ 690 0091 0B       		.uleb128 0xb
+ 691 0092 3B       		.uleb128 0x3b
+ 692 0093 0B       		.uleb128 0xb
+ 693 0094 49       		.uleb128 0x49
+ 694 0095 13       		.uleb128 0x13
+ 695 0096 02       		.uleb128 0x2
+ 696 0097 17       		.uleb128 0x17
+ 697 0098 00       		.byte	0
+ 698 0099 00       		.byte	0
+ 699 009a 0B       		.uleb128 0xb
+ 700 009b 34       		.uleb128 0x34
+ 701 009c 00       		.byte	0
+ 702 009d 03       		.uleb128 0x3
+ 703 009e 0E       		.uleb128 0xe
+ 704 009f 3A       		.uleb128 0x3a
+ 705 00a0 0B       		.uleb128 0xb
+ 706 00a1 3B       		.uleb128 0x3b
+ 707 00a2 0B       		.uleb128 0xb
+ 708 00a3 49       		.uleb128 0x49
+ 709 00a4 13       		.uleb128 0x13
+ 710 00a5 02       		.uleb128 0x2
+ 711 00a6 18       		.uleb128 0x18
+ 712 00a7 00       		.byte	0
+ 713 00a8 00       		.byte	0
+ 714 00a9 0C       		.uleb128 0xc
+ 715 00aa 01       		.uleb128 0x1
+ 716 00ab 01       		.byte	0x1
+ 717 00ac 49       		.uleb128 0x49
+ 718 00ad 13       		.uleb128 0x13
+ 719 00ae 01       		.uleb128 0x1
+ 720 00af 13       		.uleb128 0x13
+ 721 00b0 00       		.byte	0
+ 722 00b1 00       		.byte	0
+ 723 00b2 0D       		.uleb128 0xd
+ 724 00b3 21       		.uleb128 0x21
+ 725 00b4 00       		.byte	0
+ 726 00b5 49       		.uleb128 0x49
+ 727 00b6 13       		.uleb128 0x13
+ 728 00b7 2F       		.uleb128 0x2f
+ 729 00b8 0B       		.uleb128 0xb
+ 730 00b9 00       		.byte	0
+ 731 00ba 00       		.byte	0
+ 732 00bb 0E       		.uleb128 0xe
+ 733 00bc 26       		.uleb128 0x26
+ 734 00bd 00       		.byte	0
+ 735 00be 49       		.uleb128 0x49
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 19
+
+
+ 736 00bf 13       		.uleb128 0x13
+ 737 00c0 00       		.byte	0
+ 738 00c1 00       		.byte	0
+ 739 00c2 0F       		.uleb128 0xf
+ 740 00c3 898201   		.uleb128 0x4109
+ 741 00c6 01       		.byte	0x1
+ 742 00c7 11       		.uleb128 0x11
+ 743 00c8 01       		.uleb128 0x1
+ 744 00c9 31       		.uleb128 0x31
+ 745 00ca 13       		.uleb128 0x13
+ 746 00cb 01       		.uleb128 0x1
+ 747 00cc 13       		.uleb128 0x13
+ 748 00cd 00       		.byte	0
+ 749 00ce 00       		.byte	0
+ 750 00cf 10       		.uleb128 0x10
+ 751 00d0 8A8201   		.uleb128 0x410a
+ 752 00d3 00       		.byte	0
+ 753 00d4 02       		.uleb128 0x2
+ 754 00d5 18       		.uleb128 0x18
+ 755 00d6 9142     		.uleb128 0x2111
+ 756 00d8 18       		.uleb128 0x18
+ 757 00d9 00       		.byte	0
+ 758 00da 00       		.byte	0
+ 759 00db 11       		.uleb128 0x11
+ 760 00dc 898201   		.uleb128 0x4109
+ 761 00df 01       		.byte	0x1
+ 762 00e0 11       		.uleb128 0x11
+ 763 00e1 01       		.uleb128 0x1
+ 764 00e2 31       		.uleb128 0x31
+ 765 00e3 13       		.uleb128 0x13
+ 766 00e4 00       		.byte	0
+ 767 00e5 00       		.byte	0
+ 768 00e6 12       		.uleb128 0x12
+ 769 00e7 898201   		.uleb128 0x4109
+ 770 00ea 00       		.byte	0
+ 771 00eb 11       		.uleb128 0x11
+ 772 00ec 01       		.uleb128 0x1
+ 773 00ed 31       		.uleb128 0x31
+ 774 00ee 13       		.uleb128 0x13
+ 775 00ef 00       		.byte	0
+ 776 00f0 00       		.byte	0
+ 777 00f1 13       		.uleb128 0x13
+ 778 00f2 34       		.uleb128 0x34
+ 779 00f3 00       		.byte	0
+ 780 00f4 03       		.uleb128 0x3
+ 781 00f5 0E       		.uleb128 0xe
+ 782 00f6 3A       		.uleb128 0x3a
+ 783 00f7 0B       		.uleb128 0xb
+ 784 00f8 3B       		.uleb128 0x3b
+ 785 00f9 0B       		.uleb128 0xb
+ 786 00fa 49       		.uleb128 0x49
+ 787 00fb 13       		.uleb128 0x13
+ 788 00fc 3F       		.uleb128 0x3f
+ 789 00fd 19       		.uleb128 0x19
+ 790 00fe 02       		.uleb128 0x2
+ 791 00ff 18       		.uleb128 0x18
+ 792 0100 00       		.byte	0
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 20
+
+
+ 793 0101 00       		.byte	0
+ 794 0102 00       		.byte	0
+ 795              		.section	.debug_loc,"",%progbits
+ 796              	.Ldebug_loc0:
+ 797              	.LLST0:
+ 798 0000 00000000 		.4byte	.LVL0
+ 799 0004 0C000000 		.4byte	.LVL2
+ 800 0008 0100     		.2byte	0x1
+ 801 000a 50       		.byte	0x50
+ 802 000b 0C000000 		.4byte	.LVL2
+ 803 000f 18000000 		.4byte	.LFE4
+ 804 0013 0400     		.2byte	0x4
+ 805 0015 F3       		.byte	0xf3
+ 806 0016 01       		.uleb128 0x1
+ 807 0017 50       		.byte	0x50
+ 808 0018 9F       		.byte	0x9f
+ 809 0019 00000000 		.4byte	0
+ 810 001d 00000000 		.4byte	0
+ 811              	.LLST1:
+ 812 0021 08000000 		.4byte	.LVL1
+ 813 0025 0E000000 		.4byte	.LVL3
+ 814 0029 0100     		.2byte	0x1
+ 815 002b 53       		.byte	0x53
+ 816 002c 0E000000 		.4byte	.LVL3
+ 817 0030 18000000 		.4byte	.LFE4
+ 818 0034 0100     		.2byte	0x1
+ 819 0036 50       		.byte	0x50
+ 820 0037 00000000 		.4byte	0
+ 821 003b 00000000 		.4byte	0
+ 822              	.LLST2:
+ 823 003f 00000000 		.4byte	.LVL4
+ 824 0043 0C000000 		.4byte	.LVL5
+ 825 0047 0100     		.2byte	0x1
+ 826 0049 50       		.byte	0x50
+ 827 004a 0C000000 		.4byte	.LVL5
+ 828 004e 78000000 		.4byte	.LFE5
+ 829 0052 0400     		.2byte	0x4
+ 830 0054 F3       		.byte	0xf3
+ 831 0055 01       		.uleb128 0x1
+ 832 0056 50       		.byte	0x50
+ 833 0057 9F       		.byte	0x9f
+ 834 0058 00000000 		.4byte	0
+ 835 005c 00000000 		.4byte	0
+ 836              		.section	.debug_aranges,"",%progbits
+ 837 0000 44000000 		.4byte	0x44
+ 838 0004 0200     		.2byte	0x2
+ 839 0006 00000000 		.4byte	.Ldebug_info0
+ 840 000a 04       		.byte	0x4
+ 841 000b 00       		.byte	0
+ 842 000c 0000     		.2byte	0
+ 843 000e 0000     		.2byte	0
+ 844 0010 00000000 		.4byte	.LFB1
+ 845 0014 28000000 		.4byte	.LFE1-.LFB1
+ 846 0018 00000000 		.4byte	.LFB3
+ 847 001c 1C000000 		.4byte	.LFE3-.LFB3
+ 848 0020 00000000 		.4byte	.LFB4
+ 849 0024 18000000 		.4byte	.LFE4-.LFB4
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 21
+
+
+ 850 0028 00000000 		.4byte	.LFB5
+ 851 002c 78000000 		.4byte	.LFE5-.LFB5
+ 852 0030 00000000 		.4byte	.LFB0
+ 853 0034 34000000 		.4byte	.LFE0-.LFB0
+ 854 0038 00000000 		.4byte	.LFB2
+ 855 003c 1C000000 		.4byte	.LFE2-.LFB2
+ 856 0040 00000000 		.4byte	0
+ 857 0044 00000000 		.4byte	0
+ 858              		.section	.debug_ranges,"",%progbits
+ 859              	.Ldebug_ranges0:
+ 860 0000 00000000 		.4byte	.LFB1
+ 861 0004 28000000 		.4byte	.LFE1
+ 862 0008 00000000 		.4byte	.LFB3
+ 863 000c 1C000000 		.4byte	.LFE3
+ 864 0010 00000000 		.4byte	.LFB4
+ 865 0014 18000000 		.4byte	.LFE4
+ 866 0018 00000000 		.4byte	.LFB5
+ 867 001c 78000000 		.4byte	.LFE5
+ 868 0020 00000000 		.4byte	.LFB0
+ 869 0024 34000000 		.4byte	.LFE0
+ 870 0028 00000000 		.4byte	.LFB2
+ 871 002c 1C000000 		.4byte	.LFE2
+ 872 0030 00000000 		.4byte	0
+ 873 0034 00000000 		.4byte	0
+ 874              		.section	.debug_line,"",%progbits
+ 875              	.Ldebug_line0:
+ 876 0000 C8000000 		.section	.debug_str,"MS",%progbits,1
+ 876      02004200 
+ 876      00000201 
+ 876      FB0E0D00 
+ 876      01010101 
+ 877              	.LASF25:
+ 878 0000 5047415F 		.ascii	"PGA_1_Start\000"
+ 878      315F5374 
+ 878      61727400 
+ 879              	.LASF21:
+ 880 000c 746D7043 		.ascii	"tmpCR\000"
+ 880      5200
+ 881              	.LASF3:
+ 882 0012 73686F72 		.ascii	"short unsigned int\000"
+ 882      7420756E 
+ 882      7369676E 
+ 882      65642069 
+ 882      6E7400
+ 883              	.LASF20:
+ 884 0025 6761696E 		.ascii	"gain\000"
+ 884      00
+ 885              	.LASF29:
+ 886 002a 5047415F 		.ascii	"PGA_1_initVar\000"
+ 886      315F696E 
+ 886      69745661 
+ 886      7200
+ 887              	.LASF9:
+ 888 0038 666C6F61 		.ascii	"float\000"
+ 888      7400
+ 889              	.LASF28:
+ 890 003e 433A5C55 		.ascii	"C:\\Users\\Srujith\\Desktop\\SAR Example\\SAR Examp"
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 22
+
+
+ 890      73657273 
+ 890      5C537275 
+ 890      6A697468 
+ 890      5C446573 
+ 891 006c 6C652E63 		.ascii	"le.cydsn\000"
+ 891      7964736E 
+ 891      00
+ 892              	.LASF1:
+ 893 0075 756E7369 		.ascii	"unsigned char\000"
+ 893      676E6564 
+ 893      20636861 
+ 893      7200
+ 894              	.LASF13:
+ 895 0083 72656738 		.ascii	"reg8\000"
+ 895      00
+ 896              	.LASF5:
+ 897 0088 6C6F6E67 		.ascii	"long unsigned int\000"
+ 897      20756E73 
+ 897      69676E65 
+ 897      6420696E 
+ 897      7400
+ 898              	.LASF12:
+ 899 009a 75696E74 		.ascii	"uint8\000"
+ 899      3800
+ 900              	.LASF10:
+ 901 00a0 646F7562 		.ascii	"double\000"
+ 901      6C6500
+ 902              	.LASF16:
+ 903 00a7 5047415F 		.ascii	"PGA_1_Stop\000"
+ 903      315F5374 
+ 903      6F7000
+ 904              	.LASF26:
+ 905 00b2 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 905      4320342E 
+ 905      392E3320 
+ 905      32303135 
+ 905      30333033 
+ 906 00e5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 906      20726576 
+ 906      6973696F 
+ 906      6E203232 
+ 906      31323230 
+ 907 0118 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 907      66756E63 
+ 907      74696F6E 
+ 907      2D736563 
+ 907      74696F6E 
+ 908              	.LASF23:
+ 909 0140 5047415F 		.ascii	"PGA_1_GainComp\000"
+ 909      315F4761 
+ 909      696E436F 
+ 909      6D7000
+ 910              	.LASF8:
+ 911 014f 756E7369 		.ascii	"unsigned int\000"
+ 911      676E6564 
+ 911      20696E74 
+ 911      00
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 23
+
+
+ 912              	.LASF15:
+ 913 015c 5047415F 		.ascii	"PGA_1_Enable\000"
+ 913      315F456E 
+ 913      61626C65 
+ 913      00
+ 914              	.LASF7:
+ 915 0169 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 915      206C6F6E 
+ 915      6720756E 
+ 915      7369676E 
+ 915      65642069 
+ 916              	.LASF22:
+ 917 0180 5047415F 		.ascii	"PGA_1_GainArray\000"
+ 917      315F4761 
+ 917      696E4172 
+ 917      72617900 
+ 918              	.LASF18:
+ 919 0190 5047415F 		.ascii	"PGA_1_SetGain\000"
+ 919      315F5365 
+ 919      74476169 
+ 919      6E00
+ 920              	.LASF27:
+ 921 019e 47656E65 		.ascii	"Generated_Source\\PSoC5\\PGA_1.c\000"
+ 921      72617465 
+ 921      645F536F 
+ 921      75726365 
+ 921      5C50536F 
+ 922              	.LASF24:
+ 923 01bd 5047415F 		.ascii	"PGA_1_Init\000"
+ 923      315F496E 
+ 923      697400
+ 924              	.LASF14:
+ 925 01c8 73697A65 		.ascii	"sizetype\000"
+ 925      74797065 
+ 925      00
+ 926              	.LASF19:
+ 927 01d1 706F7765 		.ascii	"power\000"
+ 927      7200
+ 928              	.LASF6:
+ 929 01d7 6C6F6E67 		.ascii	"long long int\000"
+ 929      206C6F6E 
+ 929      6720696E 
+ 929      7400
+ 930              	.LASF11:
+ 931 01e5 63686172 		.ascii	"char\000"
+ 931      00
+ 932              	.LASF2:
+ 933 01ea 73686F72 		.ascii	"short int\000"
+ 933      7420696E 
+ 933      7400
+ 934              	.LASF4:
+ 935 01f4 6C6F6E67 		.ascii	"long int\000"
+ 935      20696E74 
+ 935      00
+ 936              	.LASF17:
+ 937 01fd 5047415F 		.ascii	"PGA_1_SetPower\000"
+ 937      315F5365 
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccd5Lrqf.s 			page 24
+
+
+ 937      74506F77 
+ 937      657200
+ 938              	.LASF0:
+ 939 020c 7369676E 		.ascii	"signed char\000"
+ 939      65642063 
+ 939      68617200 
+ 940              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,657 @@
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_i2f
+  19              		.global	__aeabi_fcmplt
+  20              		.global	__aeabi_f2d
+  21              		.section	.rodata
+  22              		.align	2
+  23              	.LC0:
+  24 0000 25392E36 		.ascii	"%9.6f\000"
+  24      6600
+  25 0006 0000     		.align	2
+  26              	.LC1:
+  27 0008 0D0A00   		.ascii	"\015\012\000"
+  28 000b 00       		.section	.text.main,"ax",%progbits
+  29              		.align	2
+  30              		.global	main
+  31              		.thumb
+  32              		.thumb_func
+  33              		.type	main, %function
+  34              	main:
+  35              	.LFB63:
+  36              		.file 1 "main.c"
+   1:main.c        **** /*******************************************************************************
+   2:main.c        **** * File Name: main.c
+   3:main.c        **** *
+   4:main.c        **** * Version: 2.20
+   5:main.c        **** *
+   6:main.c        **** * Description:
+   7:main.c        **** *   This is a source code for example project of ADC single ended mode.
+   8:main.c        **** *
+   9:main.c        **** *   Variable resistor(pot) is connected to +ve input of ADC using the I/O pin.
+  10:main.c        **** *   P0.0. When voltage to positive terminal of ADC is 0, the output displayed
+  11:main.c        **** *   on the LCD pannel is 0x0000. As voltage on positive terminal goes on
+  12:main.c        **** *   increasing, the  converted value goes on increasing from 0x0000 and reaches
+  13:main.c        **** *   0xFFFF when voltage becomes 1.024V. Futher increase in voltage value,
+  14:main.c        **** *   doesn't cause any changes to values displayed in the LCD.
+  15:main.c        **** *
+  16:main.c        **** * Hardware Connections:
+  17:main.c        **** *  Connect analog input from Variable resistor to port P0[0] of DVK1 board.
+  18:main.c        **** *
+  19:main.c        **** ********************************************************************************
+  20:main.c        **** * Copyright 2012-2015, Cypress Semiconductor Corporation. All rights reserved.
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 2
+
+
+  21:main.c        **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  22:main.c        **** * by and subject to worldwide patent and copyright laws and treaties.
+  23:main.c        **** * Therefore, you may use this software only as provided in the license agreement
+  24:main.c        **** * accompanying the software package from which you obtained this software.
+  25:main.c        **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  26:main.c        **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  27:main.c        **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  28:main.c        **** *******************************************************************************/
+  29:main.c        **** 
+  30:main.c        **** #include <project.h>
+  31:main.c        **** #include <stdio.h>
+  32:main.c        **** #include <math.h> 
+  33:main.c        **** 
+  34:main.c        **** /*******************************************************************************
+  35:main.c        **** * Function Name: main
+  36:main.c        **** ********************************************************************************
+  37:main.c        **** *
+  38:main.c        **** * Summary:
+  39:main.c        **** *  main() performs following functions:
+  40:main.c        **** *  1: Initializes the LCD
+  41:main.c        **** *  2: Starts ADC
+  42:main.c        **** *  3: Starts ADC converstion.
+  43:main.c        **** *  4: Gets the converted result and displays it in LCD.
+  44:main.c        **** *
+  45:main.c        **** * Parameters:
+  46:main.c        **** *  None.
+  47:main.c        **** *
+  48:main.c        **** * Return:
+  49:main.c        **** *  None.
+  50:main.c        **** *
+  51:main.c        **** *******************************************************************************/
+  52:main.c        **** int main()
+  53:main.c        **** {
+  37              		.loc 1 53 0
+  38              		.cfi_startproc
+  39              		@ args = 0, pretend = 0, frame = 64
+  40              		@ frame_needed = 1, uses_anonymous_args = 0
+  41 0000 B0B5     		push	{r4, r5, r7, lr}
+  42              		.cfi_def_cfa_offset 16
+  43              		.cfi_offset 4, -16
+  44              		.cfi_offset 5, -12
+  45              		.cfi_offset 7, -8
+  46              		.cfi_offset 14, -4
+  47 0002 90B0     		sub	sp, sp, #64
+  48              		.cfi_def_cfa_offset 80
+  49 0004 00AF     		add	r7, sp, #0
+  50              		.cfi_def_cfa_register 7
+  54:main.c        ****     float output;
+  55:main.c        **** 
+  56:main.c        ****     /* Start the components */
+  57:main.c        **** 
+  58:main.c        ****     UART_1_Start();
+  51              		.loc 1 58 0
+  52 0006 FFF7FEFF 		bl	UART_1_Start
+  59:main.c        ****     ADC_DelSig_1_Start();
+  53              		.loc 1 59 0
+  54 000a FFF7FEFF 		bl	ADC_DelSig_1_Start
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 3
+
+
+  60:main.c        **** 
+  61:main.c        ****     /* Start the ADC conversion */
+  62:main.c        ****     ADC_DelSig_1_StartConvert();
+  55              		.loc 1 62 0
+  56 000e FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
+  63:main.c        ****     
+  64:main.c        ****     float voltage = 0;
+  57              		.loc 1 64 0
+  58 0012 4FF00003 		mov	r3, #0
+  59 0016 BB63     		str	r3, [r7, #56]	@ float
+  60              	.L5:
+  65:main.c        ****     char outputstring[50];
+  66:main.c        ****     
+  67:main.c        **** 
+  68:main.c        ****     for(;;)
+  69:main.c        ****     {
+  70:main.c        ****         if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS))
+  61              		.loc 1 70 0
+  62 0018 0120     		movs	r0, #1
+  63 001a FFF7FEFF 		bl	ADC_DelSig_1_IsEndConversion
+  64 001e 0346     		mov	r3, r0
+  65 0020 002B     		cmp	r3, #0
+  66 0022 29D0     		beq	.L2
+  71:main.c        ****         {
+  72:main.c        ****             output = ADC_DelSig_1_GetResult32();
+  67              		.loc 1 72 0
+  68 0024 FFF7FEFF 		bl	ADC_DelSig_1_GetResult32
+  69 0028 0346     		mov	r3, r0
+  70 002a 1846     		mov	r0, r3
+  71 002c FFF7FEFF 		bl	__aeabi_i2f
+  72 0030 0346     		mov	r3, r0
+  73 0032 FB63     		str	r3, [r7, #60]	@ float
+  73:main.c        ****             
+  74:main.c        ****             /* Saturate ADC result to positive numbers. */
+  75:main.c        ****             if(output < 0)
+  74              		.loc 1 75 0
+  75 0034 F86B     		ldr	r0, [r7, #60]	@ float
+  76 0036 4FF00001 		mov	r1, #0
+  77 003a FFF7FEFF 		bl	__aeabi_fcmplt
+  78 003e 0346     		mov	r3, r0
+  79 0040 002B     		cmp	r3, #0
+  80 0042 02D0     		beq	.L3
+  76:main.c        ****             {
+  77:main.c        ****                 output = 0;
+  81              		.loc 1 77 0
+  82 0044 4FF00003 		mov	r3, #0
+  83 0048 FB63     		str	r3, [r7, #60]	@ float
+  84              	.L3:
+  78:main.c        ****             }
+  79:main.c        ****              sprintf(outputstring, "%9.6f", output);  // convert voltage to string 
+  85              		.loc 1 79 0
+  86 004a F86B     		ldr	r0, [r7, #60]	@ float
+  87 004c FFF7FEFF 		bl	__aeabi_f2d
+  88 0050 0446     		mov	r4, r0
+  89 0052 0D46     		mov	r5, r1
+  90 0054 3B1D     		adds	r3, r7, #4
+  91 0056 1846     		mov	r0, r3
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 4
+
+
+  92 0058 0849     		ldr	r1, .L7
+  93 005a 2246     		mov	r2, r4
+  94 005c 2B46     		mov	r3, r5
+  95 005e FFF7FEFF 		bl	sprintf
+  80:main.c        ****         
+  81:main.c        ****             UART_1_PutString(outputstring);  // print value to UART 
+  96              		.loc 1 81 0
+  97 0062 3B1D     		adds	r3, r7, #4
+  98 0064 1846     		mov	r0, r3
+  99 0066 FFF7FEFF 		bl	UART_1_PutString
+  82:main.c        ****             UART_1_PutString("\r\n"); 
+ 100              		.loc 1 82 0
+ 101 006a 0548     		ldr	r0, .L7+4
+ 102 006c FFF7FEFF 		bl	UART_1_PutString
+  83:main.c        ****             CyDelay(300);        
+ 103              		.loc 1 83 0
+ 104 0070 4FF49670 		mov	r0, #300
+ 105 0074 FFF7FEFF 		bl	CyDelay
+ 106              	.L2:
+  84:main.c        ****         }
+  85:main.c        ****     }
+ 107              		.loc 1 85 0
+ 108 0078 CEE7     		b	.L5
+ 109              	.L8:
+ 110 007a 00BF     		.align	2
+ 111              	.L7:
+ 112 007c 00000000 		.word	.LC0
+ 113 0080 08000000 		.word	.LC1
+ 114              		.cfi_endproc
+ 115              	.LFE63:
+ 116              		.size	main, .-main
+ 117              		.text
+ 118              	.Letext0:
+ 119              		.file 2 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+ 120              		.file 3 "c:\\program files\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.3\\arm
+ 121              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 122              		.section	.debug_info,"",%progbits
+ 123              	.Ldebug_info0:
+ 124 0000 07010000 		.4byte	0x107
+ 125 0004 0400     		.2byte	0x4
+ 126 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 127 000a 04       		.byte	0x4
+ 128 000b 01       		.uleb128 0x1
+ 129 000c D7000000 		.4byte	.LASF19
+ 130 0010 01       		.byte	0x1
+ 131 0011 3B000000 		.4byte	.LASF20
+ 132 0015 42000000 		.4byte	.LASF21
+ 133 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 134 001d 00000000 		.4byte	0
+ 135 0021 00000000 		.4byte	.Ldebug_line0
+ 136 0025 02       		.uleb128 0x2
+ 137 0026 01       		.byte	0x1
+ 138 0027 06       		.byte	0x6
+ 139 0028 79010000 		.4byte	.LASF0
+ 140 002c 02       		.uleb128 0x2
+ 141 002d 01       		.byte	0x1
+ 142 002e 08       		.byte	0x8
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 5
+
+
+ 143 002f BB000000 		.4byte	.LASF1
+ 144 0033 02       		.uleb128 0x2
+ 145 0034 02       		.byte	0x2
+ 146 0035 05       		.byte	0x5
+ 147 0036 A6010000 		.4byte	.LASF2
+ 148 003a 02       		.uleb128 0x2
+ 149 003b 02       		.byte	0x2
+ 150 003c 07       		.byte	0x7
+ 151 003d 0E000000 		.4byte	.LASF3
+ 152 0041 03       		.uleb128 0x3
+ 153 0042 91010000 		.4byte	.LASF9
+ 154 0046 02       		.byte	0x2
+ 155 0047 3F       		.byte	0x3f
+ 156 0048 4C000000 		.4byte	0x4c
+ 157 004c 02       		.uleb128 0x2
+ 158 004d 04       		.byte	0x4
+ 159 004e 05       		.byte	0x5
+ 160 004f CE000000 		.4byte	.LASF4
+ 161 0053 02       		.uleb128 0x2
+ 162 0054 04       		.byte	0x4
+ 163 0055 07       		.byte	0x7
+ 164 0056 8B000000 		.4byte	.LASF5
+ 165 005a 02       		.uleb128 0x2
+ 166 005b 08       		.byte	0x8
+ 167 005c 05       		.byte	0x5
+ 168 005d 00000000 		.4byte	.LASF6
+ 169 0061 02       		.uleb128 0x2
+ 170 0062 08       		.byte	0x8
+ 171 0063 07       		.byte	0x7
+ 172 0064 9D000000 		.4byte	.LASF7
+ 173 0068 04       		.uleb128 0x4
+ 174 0069 04       		.byte	0x4
+ 175 006a 05       		.byte	0x5
+ 176 006b 696E7400 		.ascii	"int\000"
+ 177 006f 02       		.uleb128 0x2
+ 178 0070 04       		.byte	0x4
+ 179 0071 07       		.byte	0x7
+ 180 0072 21000000 		.4byte	.LASF8
+ 181 0076 03       		.uleb128 0x3
+ 182 0077 83000000 		.4byte	.LASF10
+ 183 007b 03       		.byte	0x3
+ 184 007c 2C       		.byte	0x2c
+ 185 007d 41000000 		.4byte	0x41
+ 186 0081 02       		.uleb128 0x2
+ 187 0082 04       		.byte	0x4
+ 188 0083 04       		.byte	0x4
+ 189 0084 A0010000 		.4byte	.LASF11
+ 190 0088 02       		.uleb128 0x2
+ 191 0089 08       		.byte	0x8
+ 192 008a 04       		.byte	0x4
+ 193 008b 65010000 		.4byte	.LASF12
+ 194 008f 02       		.uleb128 0x2
+ 195 0090 01       		.byte	0x1
+ 196 0091 08       		.byte	0x8
+ 197 0092 C9000000 		.4byte	.LASF13
+ 198 0096 02       		.uleb128 0x2
+ 199 0097 04       		.byte	0x4
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 6
+
+
+ 200 0098 07       		.byte	0x7
+ 201 0099 B8010000 		.4byte	.LASF14
+ 202 009d 02       		.uleb128 0x2
+ 203 009e 08       		.byte	0x8
+ 204 009f 04       		.byte	0x4
+ 205 00a0 85010000 		.4byte	.LASF15
+ 206 00a4 05       		.uleb128 0x5
+ 207 00a5 9B010000 		.4byte	.LASF22
+ 208 00a9 01       		.byte	0x1
+ 209 00aa 34       		.byte	0x34
+ 210 00ab 68000000 		.4byte	0x68
+ 211 00af 00000000 		.4byte	.LFB63
+ 212 00b3 84000000 		.4byte	.LFE63-.LFB63
+ 213 00b7 01       		.uleb128 0x1
+ 214 00b8 9C       		.byte	0x9c
+ 215 00b9 E9000000 		.4byte	0xe9
+ 216 00bd 06       		.uleb128 0x6
+ 217 00be B4000000 		.4byte	.LASF16
+ 218 00c2 01       		.byte	0x1
+ 219 00c3 36       		.byte	0x36
+ 220 00c4 81000000 		.4byte	0x81
+ 221 00c8 02       		.uleb128 0x2
+ 222 00c9 91       		.byte	0x91
+ 223 00ca 6C       		.sleb128 -20
+ 224 00cb 06       		.uleb128 0x6
+ 225 00cc B0010000 		.4byte	.LASF17
+ 226 00d0 01       		.byte	0x1
+ 227 00d1 40       		.byte	0x40
+ 228 00d2 81000000 		.4byte	0x81
+ 229 00d6 02       		.uleb128 0x2
+ 230 00d7 91       		.byte	0x91
+ 231 00d8 68       		.sleb128 -24
+ 232 00d9 06       		.uleb128 0x6
+ 233 00da 2E000000 		.4byte	.LASF18
+ 234 00de 01       		.byte	0x1
+ 235 00df 41       		.byte	0x41
+ 236 00e0 E9000000 		.4byte	0xe9
+ 237 00e4 03       		.uleb128 0x3
+ 238 00e5 91       		.byte	0x91
+ 239 00e6 B47F     		.sleb128 -76
+ 240 00e8 00       		.byte	0
+ 241 00e9 07       		.uleb128 0x7
+ 242 00ea 8F000000 		.4byte	0x8f
+ 243 00ee F9000000 		.4byte	0xf9
+ 244 00f2 08       		.uleb128 0x8
+ 245 00f3 96000000 		.4byte	0x96
+ 246 00f7 31       		.byte	0x31
+ 247 00f8 00       		.byte	0
+ 248 00f9 09       		.uleb128 0x9
+ 249 00fa 6C010000 		.4byte	.LASF23
+ 250 00fe 04       		.byte	0x4
+ 251 00ff 9606     		.2byte	0x696
+ 252 0101 05010000 		.4byte	0x105
+ 253 0105 0A       		.uleb128 0xa
+ 254 0106 76000000 		.4byte	0x76
+ 255 010a 00       		.byte	0
+ 256              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 7
+
+
+ 257              	.Ldebug_abbrev0:
+ 258 0000 01       		.uleb128 0x1
+ 259 0001 11       		.uleb128 0x11
+ 260 0002 01       		.byte	0x1
+ 261 0003 25       		.uleb128 0x25
+ 262 0004 0E       		.uleb128 0xe
+ 263 0005 13       		.uleb128 0x13
+ 264 0006 0B       		.uleb128 0xb
+ 265 0007 03       		.uleb128 0x3
+ 266 0008 0E       		.uleb128 0xe
+ 267 0009 1B       		.uleb128 0x1b
+ 268 000a 0E       		.uleb128 0xe
+ 269 000b 55       		.uleb128 0x55
+ 270 000c 17       		.uleb128 0x17
+ 271 000d 11       		.uleb128 0x11
+ 272 000e 01       		.uleb128 0x1
+ 273 000f 10       		.uleb128 0x10
+ 274 0010 17       		.uleb128 0x17
+ 275 0011 00       		.byte	0
+ 276 0012 00       		.byte	0
+ 277 0013 02       		.uleb128 0x2
+ 278 0014 24       		.uleb128 0x24
+ 279 0015 00       		.byte	0
+ 280 0016 0B       		.uleb128 0xb
+ 281 0017 0B       		.uleb128 0xb
+ 282 0018 3E       		.uleb128 0x3e
+ 283 0019 0B       		.uleb128 0xb
+ 284 001a 03       		.uleb128 0x3
+ 285 001b 0E       		.uleb128 0xe
+ 286 001c 00       		.byte	0
+ 287 001d 00       		.byte	0
+ 288 001e 03       		.uleb128 0x3
+ 289 001f 16       		.uleb128 0x16
+ 290 0020 00       		.byte	0
+ 291 0021 03       		.uleb128 0x3
+ 292 0022 0E       		.uleb128 0xe
+ 293 0023 3A       		.uleb128 0x3a
+ 294 0024 0B       		.uleb128 0xb
+ 295 0025 3B       		.uleb128 0x3b
+ 296 0026 0B       		.uleb128 0xb
+ 297 0027 49       		.uleb128 0x49
+ 298 0028 13       		.uleb128 0x13
+ 299 0029 00       		.byte	0
+ 300 002a 00       		.byte	0
+ 301 002b 04       		.uleb128 0x4
+ 302 002c 24       		.uleb128 0x24
+ 303 002d 00       		.byte	0
+ 304 002e 0B       		.uleb128 0xb
+ 305 002f 0B       		.uleb128 0xb
+ 306 0030 3E       		.uleb128 0x3e
+ 307 0031 0B       		.uleb128 0xb
+ 308 0032 03       		.uleb128 0x3
+ 309 0033 08       		.uleb128 0x8
+ 310 0034 00       		.byte	0
+ 311 0035 00       		.byte	0
+ 312 0036 05       		.uleb128 0x5
+ 313 0037 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 8
+
+
+ 314 0038 01       		.byte	0x1
+ 315 0039 3F       		.uleb128 0x3f
+ 316 003a 19       		.uleb128 0x19
+ 317 003b 03       		.uleb128 0x3
+ 318 003c 0E       		.uleb128 0xe
+ 319 003d 3A       		.uleb128 0x3a
+ 320 003e 0B       		.uleb128 0xb
+ 321 003f 3B       		.uleb128 0x3b
+ 322 0040 0B       		.uleb128 0xb
+ 323 0041 49       		.uleb128 0x49
+ 324 0042 13       		.uleb128 0x13
+ 325 0043 11       		.uleb128 0x11
+ 326 0044 01       		.uleb128 0x1
+ 327 0045 12       		.uleb128 0x12
+ 328 0046 06       		.uleb128 0x6
+ 329 0047 40       		.uleb128 0x40
+ 330 0048 18       		.uleb128 0x18
+ 331 0049 9642     		.uleb128 0x2116
+ 332 004b 19       		.uleb128 0x19
+ 333 004c 01       		.uleb128 0x1
+ 334 004d 13       		.uleb128 0x13
+ 335 004e 00       		.byte	0
+ 336 004f 00       		.byte	0
+ 337 0050 06       		.uleb128 0x6
+ 338 0051 34       		.uleb128 0x34
+ 339 0052 00       		.byte	0
+ 340 0053 03       		.uleb128 0x3
+ 341 0054 0E       		.uleb128 0xe
+ 342 0055 3A       		.uleb128 0x3a
+ 343 0056 0B       		.uleb128 0xb
+ 344 0057 3B       		.uleb128 0x3b
+ 345 0058 0B       		.uleb128 0xb
+ 346 0059 49       		.uleb128 0x49
+ 347 005a 13       		.uleb128 0x13
+ 348 005b 02       		.uleb128 0x2
+ 349 005c 18       		.uleb128 0x18
+ 350 005d 00       		.byte	0
+ 351 005e 00       		.byte	0
+ 352 005f 07       		.uleb128 0x7
+ 353 0060 01       		.uleb128 0x1
+ 354 0061 01       		.byte	0x1
+ 355 0062 49       		.uleb128 0x49
+ 356 0063 13       		.uleb128 0x13
+ 357 0064 01       		.uleb128 0x1
+ 358 0065 13       		.uleb128 0x13
+ 359 0066 00       		.byte	0
+ 360 0067 00       		.byte	0
+ 361 0068 08       		.uleb128 0x8
+ 362 0069 21       		.uleb128 0x21
+ 363 006a 00       		.byte	0
+ 364 006b 49       		.uleb128 0x49
+ 365 006c 13       		.uleb128 0x13
+ 366 006d 2F       		.uleb128 0x2f
+ 367 006e 0B       		.uleb128 0xb
+ 368 006f 00       		.byte	0
+ 369 0070 00       		.byte	0
+ 370 0071 09       		.uleb128 0x9
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 9
+
+
+ 371 0072 34       		.uleb128 0x34
+ 372 0073 00       		.byte	0
+ 373 0074 03       		.uleb128 0x3
+ 374 0075 0E       		.uleb128 0xe
+ 375 0076 3A       		.uleb128 0x3a
+ 376 0077 0B       		.uleb128 0xb
+ 377 0078 3B       		.uleb128 0x3b
+ 378 0079 05       		.uleb128 0x5
+ 379 007a 49       		.uleb128 0x49
+ 380 007b 13       		.uleb128 0x13
+ 381 007c 3F       		.uleb128 0x3f
+ 382 007d 19       		.uleb128 0x19
+ 383 007e 3C       		.uleb128 0x3c
+ 384 007f 19       		.uleb128 0x19
+ 385 0080 00       		.byte	0
+ 386 0081 00       		.byte	0
+ 387 0082 0A       		.uleb128 0xa
+ 388 0083 35       		.uleb128 0x35
+ 389 0084 00       		.byte	0
+ 390 0085 49       		.uleb128 0x49
+ 391 0086 13       		.uleb128 0x13
+ 392 0087 00       		.byte	0
+ 393 0088 00       		.byte	0
+ 394 0089 00       		.byte	0
+ 395              		.section	.debug_aranges,"",%progbits
+ 396 0000 1C000000 		.4byte	0x1c
+ 397 0004 0200     		.2byte	0x2
+ 398 0006 00000000 		.4byte	.Ldebug_info0
+ 399 000a 04       		.byte	0x4
+ 400 000b 00       		.byte	0
+ 401 000c 0000     		.2byte	0
+ 402 000e 0000     		.2byte	0
+ 403 0010 00000000 		.4byte	.LFB63
+ 404 0014 84000000 		.4byte	.LFE63-.LFB63
+ 405 0018 00000000 		.4byte	0
+ 406 001c 00000000 		.4byte	0
+ 407              		.section	.debug_ranges,"",%progbits
+ 408              	.Ldebug_ranges0:
+ 409 0000 00000000 		.4byte	.LFB63
+ 410 0004 84000000 		.4byte	.LFE63
+ 411 0008 00000000 		.4byte	0
+ 412 000c 00000000 		.4byte	0
+ 413              		.section	.debug_line,"",%progbits
+ 414              	.Ldebug_line0:
+ 415 0000 50010000 		.section	.debug_str,"MS",%progbits,1
+ 415      02002E01 
+ 415      00000201 
+ 415      FB0E0D00 
+ 415      01010101 
+ 416              	.LASF6:
+ 417 0000 6C6F6E67 		.ascii	"long long int\000"
+ 417      206C6F6E 
+ 417      6720696E 
+ 417      7400
+ 418              	.LASF3:
+ 419 000e 73686F72 		.ascii	"short unsigned int\000"
+ 419      7420756E 
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 10
+
+
+ 419      7369676E 
+ 419      65642069 
+ 419      6E7400
+ 420              	.LASF8:
+ 421 0021 756E7369 		.ascii	"unsigned int\000"
+ 421      676E6564 
+ 421      20696E74 
+ 421      00
+ 422              	.LASF18:
+ 423 002e 6F757470 		.ascii	"outputstring\000"
+ 423      75747374 
+ 423      72696E67 
+ 423      00
+ 424              	.LASF20:
+ 425 003b 6D61696E 		.ascii	"main.c\000"
+ 425      2E6300
+ 426              	.LASF21:
+ 427 0042 433A5C55 		.ascii	"C:\\Users\\Srujith\\Desktop\\SAR Example\\ADC_Singl"
+ 427      73657273 
+ 427      5C537275 
+ 427      6A697468 
+ 427      5C446573 
+ 428 0070 65456E64 		.ascii	"eEndedMode01.cydsn\000"
+ 428      65644D6F 
+ 428      64653031 
+ 428      2E637964 
+ 428      736E00
+ 429              	.LASF10:
+ 430 0083 696E7433 		.ascii	"int32_t\000"
+ 430      325F7400 
+ 431              	.LASF5:
+ 432 008b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 432      20756E73 
+ 432      69676E65 
+ 432      6420696E 
+ 432      7400
+ 433              	.LASF7:
+ 434 009d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 434      206C6F6E 
+ 434      6720756E 
+ 434      7369676E 
+ 434      65642069 
+ 435              	.LASF16:
+ 436 00b4 6F757470 		.ascii	"output\000"
+ 436      757400
+ 437              	.LASF1:
+ 438 00bb 756E7369 		.ascii	"unsigned char\000"
+ 438      676E6564 
+ 438      20636861 
+ 438      7200
+ 439              	.LASF13:
+ 440 00c9 63686172 		.ascii	"char\000"
+ 440      00
+ 441              	.LASF4:
+ 442 00ce 6C6F6E67 		.ascii	"long int\000"
+ 442      20696E74 
+ 442      00
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccPibnwj.s 			page 11
+
+
+ 443              	.LASF19:
+ 444 00d7 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 444      4320342E 
+ 444      392E3320 
+ 444      32303135 
+ 444      30333033 
+ 445 010a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 445      20726576 
+ 445      6973696F 
+ 445      6E203232 
+ 445      31323230 
+ 446 013d 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 446      66756E63 
+ 446      74696F6E 
+ 446      2D736563 
+ 446      74696F6E 
+ 447              	.LASF12:
+ 448 0165 646F7562 		.ascii	"double\000"
+ 448      6C6500
+ 449              	.LASF23:
+ 450 016c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 450      52784275 
+ 450      66666572 
+ 450      00
+ 451              	.LASF0:
+ 452 0179 7369676E 		.ascii	"signed char\000"
+ 452      65642063 
+ 452      68617200 
+ 453              	.LASF15:
+ 454 0185 6C6F6E67 		.ascii	"long double\000"
+ 454      20646F75 
+ 454      626C6500 
+ 455              	.LASF9:
+ 456 0191 5F5F696E 		.ascii	"__int32_t\000"
+ 456      7433325F 
+ 456      7400
+ 457              	.LASF22:
+ 458 019b 6D61696E 		.ascii	"main\000"
+ 458      00
+ 459              	.LASF11:
+ 460 01a0 666C6F61 		.ascii	"float\000"
+ 460      7400
+ 461              	.LASF2:
+ 462 01a6 73686F72 		.ascii	"short int\000"
+ 462      7420696E 
+ 462      7400
+ 463              	.LASF17:
+ 464 01b0 766F6C74 		.ascii	"voltage\000"
+ 464      61676500 
+ 465              	.LASF14:
+ 466 01b8 73697A65 		.ascii	"sizetype\000"
+ 466      74797065 
+ 466      00
+ 467              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,1145 @@
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_f2d
+  19              		.global	__aeabi_dcmpge
+  20              		.section	.text.main,"ax",%progbits
+  21              		.align	2
+  22              		.global	main
+  23              		.thumb
+  24              		.thumb_func
+  25              		.type	main, %function
+  26              	main:
+  27              	.LFB63:
+  28              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** #include <stdio.h>
+  14:.\main.c      **** #include <math.h> 
+  15:.\main.c      **** 
+  16:.\main.c      **** 
+  17:.\main.c      ****  float voltage = 0; 
+  18:.\main.c      ****  uint16 counts = 0; 
+  19:.\main.c      **** 
+  20:.\main.c      **** int main()
+  21:.\main.c      **** {
+  29              		.loc 1 21 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 56
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  34              		.cfi_def_cfa_offset 20
+  35              		.cfi_offset 4, -20
+  36              		.cfi_offset 5, -16
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 2
+
+
+  37              		.cfi_offset 6, -12
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 8FB0     		sub	sp, sp, #60
+  41              		.cfi_def_cfa_offset 80
+  22:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  42              		.loc 1 22 0
+  43              	@ 22 ".\main.c" 1
+  44 0004 62B6     		CPSIE   i
+  45              	@ 0 "" 2
+  23:.\main.c      ****     ADC_Start(); 
+  46              		.loc 1 23 0
+  47              		.thumb
+  48 0006 FFF7FEFF 		bl	ADC_Start
+  49              	.LVL0:
+  24:.\main.c      ****     UART_1_Start(); 
+  50              		.loc 1 24 0
+  51 000a FFF7FEFF 		bl	UART_1_Start
+  52              	.LVL1:
+  25:.\main.c      ****     int bytes = 0; 
+  26:.\main.c      ****     char outputstring[50]; 
+  27:.\main.c      ****  
+  28:.\main.c      **** 
+  29:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  30:.\main.c      **** 
+  31:.\main.c      ****     for(;;)
+  32:.\main.c      ****     {
+  33:.\main.c      ****         ADC_StartConvert(); 
+  34:.\main.c      ****         
+  35:.\main.c      ****         counts = ADC_GetResult16(); 
+  53              		.loc 1 35 0
+  54 000e 1A4E     		ldr	r6, .L8+8
+  36:.\main.c      ****         
+  37:.\main.c      ****         voltage = ADC_CountsTo_Volts(counts); 
+  38:.\main.c      ****         if (voltage >= 1.3) 
+  55              		.loc 1 38 0
+  56 0010 17A5     		adr	r5, .L8
+  57 0012 D5E90045 		ldrd	r4, [r5]
+  39:.\main.c      ****         { 
+  40:.\main.c      ****           Pin_2_Write(1); 
+  41:.\main.c      ****         }
+  42:.\main.c      ****         else 
+  43:.\main.c      ****         { 
+  44:.\main.c      ****           Pin_2_Write(0); 
+  45:.\main.c      ****         } 
+  46:.\main.c      ****         
+  47:.\main.c      ****         sprintf(outputstring, "%6.3f", voltage); 
+  58              		.loc 1 47 0
+  59 0016 194F     		ldr	r7, .L8+12
+  60              	.L5:
+  33:.\main.c      ****         ADC_StartConvert(); 
+  61              		.loc 1 33 0
+  62 0018 FFF7FEFF 		bl	ADC_StartConvert
+  63              	.LVL2:
+  35:.\main.c      ****         counts = ADC_GetResult16(); 
+  64              		.loc 1 35 0
+  65 001c FFF7FEFF 		bl	ADC_GetResult16
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 3
+
+
+  66              	.LVL3:
+  67 0020 3080     		strh	r0, [r6]	@ movhi
+  37:.\main.c      ****         voltage = ADC_CountsTo_Volts(counts); 
+  68              		.loc 1 37 0
+  69 0022 FFF7FEFF 		bl	ADC_CountsTo_Volts
+  70              	.LVL4:
+  71 0026 7060     		str	r0, [r6, #4]	@ float
+  38:.\main.c      ****         if (voltage >= 1.3) 
+  72              		.loc 1 38 0
+  73 0028 FFF7FEFF 		bl	__aeabi_f2d
+  74              	.LVL5:
+  75 002c 2246     		mov	r2, r4
+  76 002e 2B46     		mov	r3, r5
+  77 0030 FFF7FEFF 		bl	__aeabi_dcmpge
+  78              	.LVL6:
+  79 0034 18B1     		cbz	r0, .L7
+  40:.\main.c      ****           Pin_2_Write(1); 
+  80              		.loc 1 40 0
+  81 0036 0120     		movs	r0, #1
+  82 0038 FFF7FEFF 		bl	Pin_2_Write
+  83              	.LVL7:
+  84 003c 02E0     		b	.L4
+  85              	.L7:
+  44:.\main.c      ****           Pin_2_Write(0); 
+  86              		.loc 1 44 0
+  87 003e 0020     		movs	r0, #0
+  88 0040 FFF7FEFF 		bl	Pin_2_Write
+  89              	.LVL8:
+  90              	.L4:
+  91              		.loc 1 47 0
+  92 0044 7068     		ldr	r0, [r6, #4]	@ float
+  93 0046 FFF7FEFF 		bl	__aeabi_f2d
+  94              	.LVL9:
+  95 004a 0246     		mov	r2, r0
+  96 004c 0B46     		mov	r3, r1
+  97 004e 01A8     		add	r0, sp, #4
+  98 0050 3946     		mov	r1, r7
+  99 0052 FFF7FEFF 		bl	sprintf
+ 100              	.LVL10:
+  48:.\main.c      ****         
+  49:.\main.c      ****         UART_1_PutString(outputstring);  
+ 101              		.loc 1 49 0
+ 102 0056 01A8     		add	r0, sp, #4
+ 103 0058 FFF7FEFF 		bl	UART_1_PutString
+ 104              	.LVL11:
+  50:.\main.c      ****         UART_1_PutString("\r\n"); 
+ 105              		.loc 1 50 0
+ 106 005c 0848     		ldr	r0, .L8+16
+ 107 005e FFF7FEFF 		bl	UART_1_PutString
+ 108              	.LVL12:
+  51:.\main.c      ****         
+  52:.\main.c      ****        
+  53:.\main.c      ****         CyDelay(300);        
+ 109              		.loc 1 53 0
+ 110 0062 4FF49670 		mov	r0, #300
+ 111 0066 FFF7FEFF 		bl	CyDelay
+ 112              	.LVL13:
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 4
+
+
+  54:.\main.c      ****         
+  55:.\main.c      ****     }
+ 113              		.loc 1 55 0
+ 114 006a D5E7     		b	.L5
+ 115              	.L9:
+ 116 006c AFF30080 		.align	3
+ 117              	.L8:
+ 118 0070 CDCCCCCC 		.word	-858993459
+ 119 0074 CCCCF43F 		.word	1073007820
+ 120 0078 00000000 		.word	.LANCHOR0
+ 121 007c 00000000 		.word	.LC0
+ 122 0080 08000000 		.word	.LC1
+ 123              		.cfi_endproc
+ 124              	.LFE63:
+ 125              		.size	main, .-main
+ 126              		.global	counts
+ 127              		.global	voltage
+ 128 0084 AFF30080 		.section	.rodata.str1.4,"aMS",%progbits,1
+ 129              		.align	2
+ 130              	.LC0:
+ 131 0000 25362E33 		.ascii	"%6.3f\000"
+ 131      6600
+ 132 0006 0000     		.space	2
+ 133              	.LC1:
+ 134 0008 0D0A00   		.ascii	"\015\012\000"
+ 135 000b 00       		.bss
+ 136              		.align	2
+ 137              		.set	.LANCHOR0,. + 0
+ 138              		.type	counts, %object
+ 139              		.size	counts, 2
+ 140              	counts:
+ 141 0000 0000     		.space	2
+ 142 0002 0000     		.space	2
+ 143              		.type	voltage, %object
+ 144              		.size	voltage, 4
+ 145              	voltage:
+ 146 0004 00000000 		.space	4
+ 147              		.text
+ 148              	.Letext0:
+ 149              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 150              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 151              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 152              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 153              		.file 6 "Generated_Source\\PSoC5/ADC.h"
+ 154              		.file 7 "Generated_Source\\PSoC5/UART_1.h"
+ 155              		.file 8 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 156              		.file 9 "Generated_Source\\PSoC5/Pin_2.h"
+ 157              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
+ 158              		.section	.debug_info,"",%progbits
+ 159              	.Ldebug_info0:
+ 160 0000 A1020000 		.4byte	0x2a1
+ 161 0004 0400     		.2byte	0x4
+ 162 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 163 000a 04       		.byte	0x4
+ 164 000b 01       		.uleb128 0x1
+ 165 000c 48010000 		.4byte	.LASF34
+ 166 0010 01       		.byte	0x1
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 5
+
+
+ 167 0011 44000000 		.4byte	.LASF35
+ 168 0015 90000000 		.4byte	.LASF36
+ 169 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 170 001d 00000000 		.4byte	0
+ 171 0021 00000000 		.4byte	.Ldebug_line0
+ 172 0025 02       		.uleb128 0x2
+ 173 0026 01       		.byte	0x1
+ 174 0027 06       		.byte	0x6
+ 175 0028 2A020000 		.4byte	.LASF0
+ 176 002c 02       		.uleb128 0x2
+ 177 002d 01       		.byte	0x1
+ 178 002e 08       		.byte	0x8
+ 179 002f 53000000 		.4byte	.LASF1
+ 180 0033 02       		.uleb128 0x2
+ 181 0034 02       		.byte	0x2
+ 182 0035 05       		.byte	0x5
+ 183 0036 F3010000 		.4byte	.LASF2
+ 184 003a 02       		.uleb128 0x2
+ 185 003b 02       		.byte	0x2
+ 186 003c 07       		.byte	0x7
+ 187 003d D1000000 		.4byte	.LASF3
+ 188 0041 03       		.uleb128 0x3
+ 189 0042 19000000 		.4byte	.LASF9
+ 190 0046 02       		.byte	0x2
+ 191 0047 37       		.byte	0x37
+ 192 0048 4C000000 		.4byte	0x4c
+ 193 004c 02       		.uleb128 0x2
+ 194 004d 04       		.byte	0x4
+ 195 004e 05       		.byte	0x5
+ 196 004f 23000000 		.4byte	.LASF4
+ 197 0053 02       		.uleb128 0x2
+ 198 0054 04       		.byte	0x4
+ 199 0055 07       		.byte	0x7
+ 200 0056 7E000000 		.4byte	.LASF5
+ 201 005a 02       		.uleb128 0x2
+ 202 005b 08       		.byte	0x8
+ 203 005c 05       		.byte	0x5
+ 204 005d E0010000 		.4byte	.LASF6
+ 205 0061 02       		.uleb128 0x2
+ 206 0062 08       		.byte	0x8
+ 207 0063 07       		.byte	0x7
+ 208 0064 27010000 		.4byte	.LASF7
+ 209 0068 04       		.uleb128 0x4
+ 210 0069 04       		.byte	0x4
+ 211 006a 05       		.byte	0x5
+ 212 006b 696E7400 		.ascii	"int\000"
+ 213 006f 02       		.uleb128 0x2
+ 214 0070 04       		.byte	0x4
+ 215 0071 07       		.byte	0x7
+ 216 0072 13010000 		.4byte	.LASF8
+ 217 0076 03       		.uleb128 0x3
+ 218 0077 3C000000 		.4byte	.LASF10
+ 219 007b 03       		.byte	0x3
+ 220 007c 41       		.byte	0x41
+ 221 007d 41000000 		.4byte	0x41
+ 222 0081 03       		.uleb128 0x3
+ 223 0082 0A020000 		.4byte	.LASF11
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 6
+
+
+ 224 0086 04       		.byte	0x4
+ 225 0087 B4       		.byte	0xb4
+ 226 0088 2C000000 		.4byte	0x2c
+ 227 008c 03       		.uleb128 0x3
+ 228 008d 05010000 		.4byte	.LASF12
+ 229 0091 04       		.byte	0x4
+ 230 0092 B5       		.byte	0xb5
+ 231 0093 3A000000 		.4byte	0x3a
+ 232 0097 03       		.uleb128 0x3
+ 233 0098 0C010000 		.4byte	.LASF13
+ 234 009c 04       		.byte	0x4
+ 235 009d B6       		.byte	0xb6
+ 236 009e 53000000 		.4byte	0x53
+ 237 00a2 03       		.uleb128 0x3
+ 238 00a3 78000000 		.4byte	.LASF14
+ 239 00a7 04       		.byte	0x4
+ 240 00a8 B8       		.byte	0xb8
+ 241 00a9 33000000 		.4byte	0x33
+ 242 00ad 03       		.uleb128 0x3
+ 243 00ae 10020000 		.4byte	.LASF15
+ 244 00b2 04       		.byte	0x4
+ 245 00b3 BA       		.byte	0xba
+ 246 00b4 B8000000 		.4byte	0xb8
+ 247 00b8 02       		.uleb128 0x2
+ 248 00b9 04       		.byte	0x4
+ 249 00ba 04       		.byte	0x4
+ 250 00bb 4D000000 		.4byte	.LASF16
+ 251 00bf 02       		.uleb128 0x2
+ 252 00c0 08       		.byte	0x8
+ 253 00c1 04       		.byte	0x4
+ 254 00c2 F9000000 		.4byte	.LASF17
+ 255 00c6 03       		.uleb128 0x3
+ 256 00c7 72000000 		.4byte	.LASF18
+ 257 00cb 04       		.byte	0x4
+ 258 00cc C5       		.byte	0xc5
+ 259 00cd D1000000 		.4byte	0xd1
+ 260 00d1 02       		.uleb128 0x2
+ 261 00d2 01       		.byte	0x1
+ 262 00d3 08       		.byte	0x8
+ 263 00d4 EE010000 		.4byte	.LASF19
+ 264 00d8 02       		.uleb128 0x2
+ 265 00d9 04       		.byte	0x4
+ 266 00da 07       		.byte	0x7
+ 267 00db C4010000 		.4byte	.LASF20
+ 268 00df 05       		.uleb128 0x5
+ 269 00e0 04       		.byte	0x4
+ 270 00e1 D1000000 		.4byte	0xd1
+ 271 00e5 05       		.uleb128 0x5
+ 272 00e6 04       		.byte	0x4
+ 273 00e7 EB000000 		.4byte	0xeb
+ 274 00eb 06       		.uleb128 0x6
+ 275 00ec D1000000 		.4byte	0xd1
+ 276 00f0 02       		.uleb128 0x2
+ 277 00f1 08       		.byte	0x8
+ 278 00f2 04       		.byte	0x4
+ 279 00f3 1E020000 		.4byte	.LASF21
+ 280 00f7 07       		.uleb128 0x7
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 7
+
+
+ 281 00f8 00010000 		.4byte	.LASF37
+ 282 00fc 01       		.byte	0x1
+ 283 00fd 14       		.byte	0x14
+ 284 00fe 68000000 		.4byte	0x68
+ 285 0102 00000000 		.4byte	.LFB63
+ 286 0106 84000000 		.4byte	.LFE63-.LFB63
+ 287 010a 01       		.uleb128 0x1
+ 288 010b 9C       		.byte	0x9c
+ 289 010c D7010000 		.4byte	0x1d7
+ 290 0110 08       		.uleb128 0x8
+ 291 0111 18020000 		.4byte	.LASF22
+ 292 0115 01       		.byte	0x1
+ 293 0116 19       		.byte	0x19
+ 294 0117 68000000 		.4byte	0x68
+ 295 011b 00       		.byte	0
+ 296 011c 09       		.uleb128 0x9
+ 297 011d FD010000 		.4byte	.LASF23
+ 298 0121 01       		.byte	0x1
+ 299 0122 1A       		.byte	0x1a
+ 300 0123 D7010000 		.4byte	0x1d7
+ 301 0127 03       		.uleb128 0x3
+ 302 0128 91       		.byte	0x91
+ 303 0129 B47F     		.sleb128 -76
+ 304 012b 0A       		.uleb128 0xa
+ 305 012c 0A000000 		.4byte	.LVL0
+ 306 0130 1A020000 		.4byte	0x21a
+ 307 0134 0A       		.uleb128 0xa
+ 308 0135 0E000000 		.4byte	.LVL1
+ 309 0139 21020000 		.4byte	0x221
+ 310 013d 0A       		.uleb128 0xa
+ 311 013e 1C000000 		.4byte	.LVL2
+ 312 0142 28020000 		.4byte	0x228
+ 313 0146 0A       		.uleb128 0xa
+ 314 0147 20000000 		.4byte	.LVL3
+ 315 014b 2F020000 		.4byte	0x22f
+ 316 014f 0A       		.uleb128 0xa
+ 317 0150 26000000 		.4byte	.LVL4
+ 318 0154 3A020000 		.4byte	0x23a
+ 319 0158 0B       		.uleb128 0xb
+ 320 0159 3C000000 		.4byte	.LVL7
+ 321 015d 4F020000 		.4byte	0x24f
+ 322 0161 6B010000 		.4byte	0x16b
+ 323 0165 0C       		.uleb128 0xc
+ 324 0166 01       		.uleb128 0x1
+ 325 0167 50       		.byte	0x50
+ 326 0168 01       		.uleb128 0x1
+ 327 0169 31       		.byte	0x31
+ 328 016a 00       		.byte	0
+ 329 016b 0B       		.uleb128 0xb
+ 330 016c 44000000 		.4byte	.LVL8
+ 331 0170 4F020000 		.4byte	0x24f
+ 332 0174 7E010000 		.4byte	0x17e
+ 333 0178 0C       		.uleb128 0xc
+ 334 0179 01       		.uleb128 0x1
+ 335 017a 50       		.byte	0x50
+ 336 017b 01       		.uleb128 0x1
+ 337 017c 30       		.byte	0x30
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 8
+
+
+ 338 017d 00       		.byte	0
+ 339 017e 0B       		.uleb128 0xb
+ 340 017f 56000000 		.4byte	.LVL10
+ 341 0183 60020000 		.4byte	0x260
+ 342 0187 99010000 		.4byte	0x199
+ 343 018b 0C       		.uleb128 0xc
+ 344 018c 01       		.uleb128 0x1
+ 345 018d 51       		.byte	0x51
+ 346 018e 02       		.uleb128 0x2
+ 347 018f 77       		.byte	0x77
+ 348 0190 00       		.sleb128 0
+ 349 0191 0C       		.uleb128 0xc
+ 350 0192 01       		.uleb128 0x1
+ 351 0193 50       		.byte	0x50
+ 352 0194 03       		.uleb128 0x3
+ 353 0195 91       		.byte	0x91
+ 354 0196 B47F     		.sleb128 -76
+ 355 0198 00       		.byte	0
+ 356 0199 0B       		.uleb128 0xb
+ 357 019a 5C000000 		.4byte	.LVL11
+ 358 019e 7B020000 		.4byte	0x27b
+ 359 01a2 AE010000 		.4byte	0x1ae
+ 360 01a6 0C       		.uleb128 0xc
+ 361 01a7 01       		.uleb128 0x1
+ 362 01a8 50       		.byte	0x50
+ 363 01a9 03       		.uleb128 0x3
+ 364 01aa 91       		.byte	0x91
+ 365 01ab B47F     		.sleb128 -76
+ 366 01ad 00       		.byte	0
+ 367 01ae 0B       		.uleb128 0xb
+ 368 01af 62000000 		.4byte	.LVL12
+ 369 01b3 7B020000 		.4byte	0x27b
+ 370 01b7 C5010000 		.4byte	0x1c5
+ 371 01bb 0C       		.uleb128 0xc
+ 372 01bc 01       		.uleb128 0x1
+ 373 01bd 50       		.byte	0x50
+ 374 01be 05       		.uleb128 0x5
+ 375 01bf 03       		.byte	0x3
+ 376 01c0 08000000 		.4byte	.LC1
+ 377 01c4 00       		.byte	0
+ 378 01c5 0D       		.uleb128 0xd
+ 379 01c6 6A000000 		.4byte	.LVL13
+ 380 01ca 97020000 		.4byte	0x297
+ 381 01ce 0C       		.uleb128 0xc
+ 382 01cf 01       		.uleb128 0x1
+ 383 01d0 50       		.byte	0x50
+ 384 01d1 03       		.uleb128 0x3
+ 385 01d2 0A       		.byte	0xa
+ 386 01d3 2C01     		.2byte	0x12c
+ 387 01d5 00       		.byte	0
+ 388 01d6 00       		.byte	0
+ 389 01d7 0E       		.uleb128 0xe
+ 390 01d8 D1000000 		.4byte	0xd1
+ 391 01dc E7010000 		.4byte	0x1e7
+ 392 01e0 0F       		.uleb128 0xf
+ 393 01e1 D8000000 		.4byte	0xd8
+ 394 01e5 31       		.byte	0x31
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 9
+
+
+ 395 01e6 00       		.byte	0
+ 396 01e7 10       		.uleb128 0x10
+ 397 01e8 EC000000 		.4byte	.LASF24
+ 398 01ec 05       		.byte	0x5
+ 399 01ed 2A06     		.2byte	0x62a
+ 400 01ef F3010000 		.4byte	0x1f3
+ 401 01f3 11       		.uleb128 0x11
+ 402 01f4 76000000 		.4byte	0x76
+ 403 01f8 12       		.uleb128 0x12
+ 404 01f9 E4000000 		.4byte	.LASF25
+ 405 01fd 01       		.byte	0x1
+ 406 01fe 11       		.byte	0x11
+ 407 01ff B8000000 		.4byte	0xb8
+ 408 0203 05       		.uleb128 0x5
+ 409 0204 03       		.byte	0x3
+ 410 0205 00000000 		.4byte	voltage
+ 411 0209 12       		.uleb128 0x12
+ 412 020a 20010000 		.4byte	.LASF26
+ 413 020e 01       		.byte	0x1
+ 414 020f 12       		.byte	0x12
+ 415 0210 8C000000 		.4byte	0x8c
+ 416 0214 05       		.uleb128 0x5
+ 417 0215 03       		.byte	0x3
+ 418 0216 00000000 		.4byte	counts
+ 419 021a 13       		.uleb128 0x13
+ 420 021b 3E010000 		.4byte	.LASF27
+ 421 021f 06       		.byte	0x6
+ 422 0220 34       		.byte	0x34
+ 423 0221 13       		.uleb128 0x13
+ 424 0222 0C000000 		.4byte	.LASF28
+ 425 0226 07       		.byte	0x7
+ 426 0227 54       		.byte	0x54
+ 427 0228 13       		.uleb128 0x13
+ 428 0229 61000000 		.4byte	.LASF29
+ 429 022d 06       		.byte	0x6
+ 430 022e D1       		.byte	0xd1
+ 431 022f 14       		.uleb128 0x14
+ 432 0230 2C000000 		.4byte	.LASF38
+ 433 0234 06       		.byte	0x6
+ 434 0235 3B       		.byte	0x3b
+ 435 0236 A2000000 		.4byte	0xa2
+ 436 023a 15       		.uleb128 0x15
+ 437 023b CD010000 		.4byte	.LASF30
+ 438 023f 06       		.byte	0x6
+ 439 0240 41       		.byte	0x41
+ 440 0241 AD000000 		.4byte	0xad
+ 441 0245 4F020000 		.4byte	0x24f
+ 442 0249 16       		.uleb128 0x16
+ 443 024a A2000000 		.4byte	0xa2
+ 444 024e 00       		.byte	0
+ 445 024f 17       		.uleb128 0x17
+ 446 0250 00000000 		.4byte	.LASF32
+ 447 0254 09       		.byte	0x9
+ 448 0255 28       		.byte	0x28
+ 449 0256 60020000 		.4byte	0x260
+ 450 025a 16       		.uleb128 0x16
+ 451 025b 81000000 		.4byte	0x81
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 10
+
+
+ 452 025f 00       		.byte	0
+ 453 0260 15       		.uleb128 0x15
+ 454 0261 47020000 		.4byte	.LASF31
+ 455 0265 08       		.byte	0x8
+ 456 0266 D9       		.byte	0xd9
+ 457 0267 68000000 		.4byte	0x68
+ 458 026b 7B020000 		.4byte	0x27b
+ 459 026f 16       		.uleb128 0x16
+ 460 0270 DF000000 		.4byte	0xdf
+ 461 0274 16       		.uleb128 0x16
+ 462 0275 E5000000 		.4byte	0xe5
+ 463 0279 18       		.uleb128 0x18
+ 464 027a 00       		.byte	0
+ 465 027b 17       		.uleb128 0x17
+ 466 027c 36020000 		.4byte	.LASF33
+ 467 0280 07       		.byte	0x7
+ 468 0281 8B       		.byte	0x8b
+ 469 0282 8C020000 		.4byte	0x28c
+ 470 0286 16       		.uleb128 0x16
+ 471 0287 8C020000 		.4byte	0x28c
+ 472 028b 00       		.byte	0
+ 473 028c 05       		.uleb128 0x5
+ 474 028d 04       		.byte	0x4
+ 475 028e 92020000 		.4byte	0x292
+ 476 0292 06       		.uleb128 0x6
+ 477 0293 C6000000 		.4byte	0xc6
+ 478 0297 19       		.uleb128 0x19
+ 479 0298 4F020000 		.4byte	.LASF39
+ 480 029c 0A       		.byte	0xa
+ 481 029d 77       		.byte	0x77
+ 482 029e 16       		.uleb128 0x16
+ 483 029f 97000000 		.4byte	0x97
+ 484 02a3 00       		.byte	0
+ 485 02a4 00       		.byte	0
+ 486              		.section	.debug_abbrev,"",%progbits
+ 487              	.Ldebug_abbrev0:
+ 488 0000 01       		.uleb128 0x1
+ 489 0001 11       		.uleb128 0x11
+ 490 0002 01       		.byte	0x1
+ 491 0003 25       		.uleb128 0x25
+ 492 0004 0E       		.uleb128 0xe
+ 493 0005 13       		.uleb128 0x13
+ 494 0006 0B       		.uleb128 0xb
+ 495 0007 03       		.uleb128 0x3
+ 496 0008 0E       		.uleb128 0xe
+ 497 0009 1B       		.uleb128 0x1b
+ 498 000a 0E       		.uleb128 0xe
+ 499 000b 55       		.uleb128 0x55
+ 500 000c 17       		.uleb128 0x17
+ 501 000d 11       		.uleb128 0x11
+ 502 000e 01       		.uleb128 0x1
+ 503 000f 10       		.uleb128 0x10
+ 504 0010 17       		.uleb128 0x17
+ 505 0011 00       		.byte	0
+ 506 0012 00       		.byte	0
+ 507 0013 02       		.uleb128 0x2
+ 508 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 11
+
+
+ 509 0015 00       		.byte	0
+ 510 0016 0B       		.uleb128 0xb
+ 511 0017 0B       		.uleb128 0xb
+ 512 0018 3E       		.uleb128 0x3e
+ 513 0019 0B       		.uleb128 0xb
+ 514 001a 03       		.uleb128 0x3
+ 515 001b 0E       		.uleb128 0xe
+ 516 001c 00       		.byte	0
+ 517 001d 00       		.byte	0
+ 518 001e 03       		.uleb128 0x3
+ 519 001f 16       		.uleb128 0x16
+ 520 0020 00       		.byte	0
+ 521 0021 03       		.uleb128 0x3
+ 522 0022 0E       		.uleb128 0xe
+ 523 0023 3A       		.uleb128 0x3a
+ 524 0024 0B       		.uleb128 0xb
+ 525 0025 3B       		.uleb128 0x3b
+ 526 0026 0B       		.uleb128 0xb
+ 527 0027 49       		.uleb128 0x49
+ 528 0028 13       		.uleb128 0x13
+ 529 0029 00       		.byte	0
+ 530 002a 00       		.byte	0
+ 531 002b 04       		.uleb128 0x4
+ 532 002c 24       		.uleb128 0x24
+ 533 002d 00       		.byte	0
+ 534 002e 0B       		.uleb128 0xb
+ 535 002f 0B       		.uleb128 0xb
+ 536 0030 3E       		.uleb128 0x3e
+ 537 0031 0B       		.uleb128 0xb
+ 538 0032 03       		.uleb128 0x3
+ 539 0033 08       		.uleb128 0x8
+ 540 0034 00       		.byte	0
+ 541 0035 00       		.byte	0
+ 542 0036 05       		.uleb128 0x5
+ 543 0037 0F       		.uleb128 0xf
+ 544 0038 00       		.byte	0
+ 545 0039 0B       		.uleb128 0xb
+ 546 003a 0B       		.uleb128 0xb
+ 547 003b 49       		.uleb128 0x49
+ 548 003c 13       		.uleb128 0x13
+ 549 003d 00       		.byte	0
+ 550 003e 00       		.byte	0
+ 551 003f 06       		.uleb128 0x6
+ 552 0040 26       		.uleb128 0x26
+ 553 0041 00       		.byte	0
+ 554 0042 49       		.uleb128 0x49
+ 555 0043 13       		.uleb128 0x13
+ 556 0044 00       		.byte	0
+ 557 0045 00       		.byte	0
+ 558 0046 07       		.uleb128 0x7
+ 559 0047 2E       		.uleb128 0x2e
+ 560 0048 01       		.byte	0x1
+ 561 0049 3F       		.uleb128 0x3f
+ 562 004a 19       		.uleb128 0x19
+ 563 004b 03       		.uleb128 0x3
+ 564 004c 0E       		.uleb128 0xe
+ 565 004d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 12
+
+
+ 566 004e 0B       		.uleb128 0xb
+ 567 004f 3B       		.uleb128 0x3b
+ 568 0050 0B       		.uleb128 0xb
+ 569 0051 49       		.uleb128 0x49
+ 570 0052 13       		.uleb128 0x13
+ 571 0053 11       		.uleb128 0x11
+ 572 0054 01       		.uleb128 0x1
+ 573 0055 12       		.uleb128 0x12
+ 574 0056 06       		.uleb128 0x6
+ 575 0057 40       		.uleb128 0x40
+ 576 0058 18       		.uleb128 0x18
+ 577 0059 9642     		.uleb128 0x2116
+ 578 005b 19       		.uleb128 0x19
+ 579 005c 01       		.uleb128 0x1
+ 580 005d 13       		.uleb128 0x13
+ 581 005e 00       		.byte	0
+ 582 005f 00       		.byte	0
+ 583 0060 08       		.uleb128 0x8
+ 584 0061 34       		.uleb128 0x34
+ 585 0062 00       		.byte	0
+ 586 0063 03       		.uleb128 0x3
+ 587 0064 0E       		.uleb128 0xe
+ 588 0065 3A       		.uleb128 0x3a
+ 589 0066 0B       		.uleb128 0xb
+ 590 0067 3B       		.uleb128 0x3b
+ 591 0068 0B       		.uleb128 0xb
+ 592 0069 49       		.uleb128 0x49
+ 593 006a 13       		.uleb128 0x13
+ 594 006b 1C       		.uleb128 0x1c
+ 595 006c 0B       		.uleb128 0xb
+ 596 006d 00       		.byte	0
+ 597 006e 00       		.byte	0
+ 598 006f 09       		.uleb128 0x9
+ 599 0070 34       		.uleb128 0x34
+ 600 0071 00       		.byte	0
+ 601 0072 03       		.uleb128 0x3
+ 602 0073 0E       		.uleb128 0xe
+ 603 0074 3A       		.uleb128 0x3a
+ 604 0075 0B       		.uleb128 0xb
+ 605 0076 3B       		.uleb128 0x3b
+ 606 0077 0B       		.uleb128 0xb
+ 607 0078 49       		.uleb128 0x49
+ 608 0079 13       		.uleb128 0x13
+ 609 007a 02       		.uleb128 0x2
+ 610 007b 18       		.uleb128 0x18
+ 611 007c 00       		.byte	0
+ 612 007d 00       		.byte	0
+ 613 007e 0A       		.uleb128 0xa
+ 614 007f 898201   		.uleb128 0x4109
+ 615 0082 00       		.byte	0
+ 616 0083 11       		.uleb128 0x11
+ 617 0084 01       		.uleb128 0x1
+ 618 0085 31       		.uleb128 0x31
+ 619 0086 13       		.uleb128 0x13
+ 620 0087 00       		.byte	0
+ 621 0088 00       		.byte	0
+ 622 0089 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 13
+
+
+ 623 008a 898201   		.uleb128 0x4109
+ 624 008d 01       		.byte	0x1
+ 625 008e 11       		.uleb128 0x11
+ 626 008f 01       		.uleb128 0x1
+ 627 0090 31       		.uleb128 0x31
+ 628 0091 13       		.uleb128 0x13
+ 629 0092 01       		.uleb128 0x1
+ 630 0093 13       		.uleb128 0x13
+ 631 0094 00       		.byte	0
+ 632 0095 00       		.byte	0
+ 633 0096 0C       		.uleb128 0xc
+ 634 0097 8A8201   		.uleb128 0x410a
+ 635 009a 00       		.byte	0
+ 636 009b 02       		.uleb128 0x2
+ 637 009c 18       		.uleb128 0x18
+ 638 009d 9142     		.uleb128 0x2111
+ 639 009f 18       		.uleb128 0x18
+ 640 00a0 00       		.byte	0
+ 641 00a1 00       		.byte	0
+ 642 00a2 0D       		.uleb128 0xd
+ 643 00a3 898201   		.uleb128 0x4109
+ 644 00a6 01       		.byte	0x1
+ 645 00a7 11       		.uleb128 0x11
+ 646 00a8 01       		.uleb128 0x1
+ 647 00a9 31       		.uleb128 0x31
+ 648 00aa 13       		.uleb128 0x13
+ 649 00ab 00       		.byte	0
+ 650 00ac 00       		.byte	0
+ 651 00ad 0E       		.uleb128 0xe
+ 652 00ae 01       		.uleb128 0x1
+ 653 00af 01       		.byte	0x1
+ 654 00b0 49       		.uleb128 0x49
+ 655 00b1 13       		.uleb128 0x13
+ 656 00b2 01       		.uleb128 0x1
+ 657 00b3 13       		.uleb128 0x13
+ 658 00b4 00       		.byte	0
+ 659 00b5 00       		.byte	0
+ 660 00b6 0F       		.uleb128 0xf
+ 661 00b7 21       		.uleb128 0x21
+ 662 00b8 00       		.byte	0
+ 663 00b9 49       		.uleb128 0x49
+ 664 00ba 13       		.uleb128 0x13
+ 665 00bb 2F       		.uleb128 0x2f
+ 666 00bc 0B       		.uleb128 0xb
+ 667 00bd 00       		.byte	0
+ 668 00be 00       		.byte	0
+ 669 00bf 10       		.uleb128 0x10
+ 670 00c0 34       		.uleb128 0x34
+ 671 00c1 00       		.byte	0
+ 672 00c2 03       		.uleb128 0x3
+ 673 00c3 0E       		.uleb128 0xe
+ 674 00c4 3A       		.uleb128 0x3a
+ 675 00c5 0B       		.uleb128 0xb
+ 676 00c6 3B       		.uleb128 0x3b
+ 677 00c7 05       		.uleb128 0x5
+ 678 00c8 49       		.uleb128 0x49
+ 679 00c9 13       		.uleb128 0x13
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 14
+
+
+ 680 00ca 3F       		.uleb128 0x3f
+ 681 00cb 19       		.uleb128 0x19
+ 682 00cc 3C       		.uleb128 0x3c
+ 683 00cd 19       		.uleb128 0x19
+ 684 00ce 00       		.byte	0
+ 685 00cf 00       		.byte	0
+ 686 00d0 11       		.uleb128 0x11
+ 687 00d1 35       		.uleb128 0x35
+ 688 00d2 00       		.byte	0
+ 689 00d3 49       		.uleb128 0x49
+ 690 00d4 13       		.uleb128 0x13
+ 691 00d5 00       		.byte	0
+ 692 00d6 00       		.byte	0
+ 693 00d7 12       		.uleb128 0x12
+ 694 00d8 34       		.uleb128 0x34
+ 695 00d9 00       		.byte	0
+ 696 00da 03       		.uleb128 0x3
+ 697 00db 0E       		.uleb128 0xe
+ 698 00dc 3A       		.uleb128 0x3a
+ 699 00dd 0B       		.uleb128 0xb
+ 700 00de 3B       		.uleb128 0x3b
+ 701 00df 0B       		.uleb128 0xb
+ 702 00e0 49       		.uleb128 0x49
+ 703 00e1 13       		.uleb128 0x13
+ 704 00e2 3F       		.uleb128 0x3f
+ 705 00e3 19       		.uleb128 0x19
+ 706 00e4 02       		.uleb128 0x2
+ 707 00e5 18       		.uleb128 0x18
+ 708 00e6 00       		.byte	0
+ 709 00e7 00       		.byte	0
+ 710 00e8 13       		.uleb128 0x13
+ 711 00e9 2E       		.uleb128 0x2e
+ 712 00ea 00       		.byte	0
+ 713 00eb 3F       		.uleb128 0x3f
+ 714 00ec 19       		.uleb128 0x19
+ 715 00ed 03       		.uleb128 0x3
+ 716 00ee 0E       		.uleb128 0xe
+ 717 00ef 3A       		.uleb128 0x3a
+ 718 00f0 0B       		.uleb128 0xb
+ 719 00f1 3B       		.uleb128 0x3b
+ 720 00f2 0B       		.uleb128 0xb
+ 721 00f3 27       		.uleb128 0x27
+ 722 00f4 19       		.uleb128 0x19
+ 723 00f5 3C       		.uleb128 0x3c
+ 724 00f6 19       		.uleb128 0x19
+ 725 00f7 00       		.byte	0
+ 726 00f8 00       		.byte	0
+ 727 00f9 14       		.uleb128 0x14
+ 728 00fa 2E       		.uleb128 0x2e
+ 729 00fb 00       		.byte	0
+ 730 00fc 3F       		.uleb128 0x3f
+ 731 00fd 19       		.uleb128 0x19
+ 732 00fe 03       		.uleb128 0x3
+ 733 00ff 0E       		.uleb128 0xe
+ 734 0100 3A       		.uleb128 0x3a
+ 735 0101 0B       		.uleb128 0xb
+ 736 0102 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 15
+
+
+ 737 0103 0B       		.uleb128 0xb
+ 738 0104 27       		.uleb128 0x27
+ 739 0105 19       		.uleb128 0x19
+ 740 0106 49       		.uleb128 0x49
+ 741 0107 13       		.uleb128 0x13
+ 742 0108 3C       		.uleb128 0x3c
+ 743 0109 19       		.uleb128 0x19
+ 744 010a 00       		.byte	0
+ 745 010b 00       		.byte	0
+ 746 010c 15       		.uleb128 0x15
+ 747 010d 2E       		.uleb128 0x2e
+ 748 010e 01       		.byte	0x1
+ 749 010f 3F       		.uleb128 0x3f
+ 750 0110 19       		.uleb128 0x19
+ 751 0111 03       		.uleb128 0x3
+ 752 0112 0E       		.uleb128 0xe
+ 753 0113 3A       		.uleb128 0x3a
+ 754 0114 0B       		.uleb128 0xb
+ 755 0115 3B       		.uleb128 0x3b
+ 756 0116 0B       		.uleb128 0xb
+ 757 0117 27       		.uleb128 0x27
+ 758 0118 19       		.uleb128 0x19
+ 759 0119 49       		.uleb128 0x49
+ 760 011a 13       		.uleb128 0x13
+ 761 011b 3C       		.uleb128 0x3c
+ 762 011c 19       		.uleb128 0x19
+ 763 011d 01       		.uleb128 0x1
+ 764 011e 13       		.uleb128 0x13
+ 765 011f 00       		.byte	0
+ 766 0120 00       		.byte	0
+ 767 0121 16       		.uleb128 0x16
+ 768 0122 05       		.uleb128 0x5
+ 769 0123 00       		.byte	0
+ 770 0124 49       		.uleb128 0x49
+ 771 0125 13       		.uleb128 0x13
+ 772 0126 00       		.byte	0
+ 773 0127 00       		.byte	0
+ 774 0128 17       		.uleb128 0x17
+ 775 0129 2E       		.uleb128 0x2e
+ 776 012a 01       		.byte	0x1
+ 777 012b 3F       		.uleb128 0x3f
+ 778 012c 19       		.uleb128 0x19
+ 779 012d 03       		.uleb128 0x3
+ 780 012e 0E       		.uleb128 0xe
+ 781 012f 3A       		.uleb128 0x3a
+ 782 0130 0B       		.uleb128 0xb
+ 783 0131 3B       		.uleb128 0x3b
+ 784 0132 0B       		.uleb128 0xb
+ 785 0133 27       		.uleb128 0x27
+ 786 0134 19       		.uleb128 0x19
+ 787 0135 3C       		.uleb128 0x3c
+ 788 0136 19       		.uleb128 0x19
+ 789 0137 01       		.uleb128 0x1
+ 790 0138 13       		.uleb128 0x13
+ 791 0139 00       		.byte	0
+ 792 013a 00       		.byte	0
+ 793 013b 18       		.uleb128 0x18
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 16
+
+
+ 794 013c 18       		.uleb128 0x18
+ 795 013d 00       		.byte	0
+ 796 013e 00       		.byte	0
+ 797 013f 00       		.byte	0
+ 798 0140 19       		.uleb128 0x19
+ 799 0141 2E       		.uleb128 0x2e
+ 800 0142 01       		.byte	0x1
+ 801 0143 3F       		.uleb128 0x3f
+ 802 0144 19       		.uleb128 0x19
+ 803 0145 03       		.uleb128 0x3
+ 804 0146 0E       		.uleb128 0xe
+ 805 0147 3A       		.uleb128 0x3a
+ 806 0148 0B       		.uleb128 0xb
+ 807 0149 3B       		.uleb128 0x3b
+ 808 014a 0B       		.uleb128 0xb
+ 809 014b 27       		.uleb128 0x27
+ 810 014c 19       		.uleb128 0x19
+ 811 014d 3C       		.uleb128 0x3c
+ 812 014e 19       		.uleb128 0x19
+ 813 014f 00       		.byte	0
+ 814 0150 00       		.byte	0
+ 815 0151 00       		.byte	0
+ 816              		.section	.debug_aranges,"",%progbits
+ 817 0000 1C000000 		.4byte	0x1c
+ 818 0004 0200     		.2byte	0x2
+ 819 0006 00000000 		.4byte	.Ldebug_info0
+ 820 000a 04       		.byte	0x4
+ 821 000b 00       		.byte	0
+ 822 000c 0000     		.2byte	0
+ 823 000e 0000     		.2byte	0
+ 824 0010 00000000 		.4byte	.LFB63
+ 825 0014 84000000 		.4byte	.LFE63-.LFB63
+ 826 0018 00000000 		.4byte	0
+ 827 001c 00000000 		.4byte	0
+ 828              		.section	.debug_ranges,"",%progbits
+ 829              	.Ldebug_ranges0:
+ 830 0000 00000000 		.4byte	.LFB63
+ 831 0004 84000000 		.4byte	.LFE63
+ 832 0008 00000000 		.4byte	0
+ 833 000c 00000000 		.4byte	0
+ 834              		.section	.debug_line,"",%progbits
+ 835              	.Ldebug_line0:
+ 836 0000 AB010000 		.section	.debug_str,"MS",%progbits,1
+ 836      02007F01 
+ 836      00000201 
+ 836      FB0E0D00 
+ 836      01010101 
+ 837              	.LASF32:
+ 838 0000 50696E5F 		.ascii	"Pin_2_Write\000"
+ 838      325F5772 
+ 838      69746500 
+ 839              	.LASF28:
+ 840 000c 55415254 		.ascii	"UART_1_Start\000"
+ 840      5F315F53 
+ 840      74617274 
+ 840      00
+ 841              	.LASF9:
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 17
+
+
+ 842 0019 5F5F696E 		.ascii	"__int32_t\000"
+ 842      7433325F 
+ 842      7400
+ 843              	.LASF4:
+ 844 0023 6C6F6E67 		.ascii	"long int\000"
+ 844      20696E74 
+ 844      00
+ 845              	.LASF38:
+ 846 002c 4144435F 		.ascii	"ADC_GetResult16\000"
+ 846      47657452 
+ 846      6573756C 
+ 846      74313600 
+ 847              	.LASF10:
+ 848 003c 696E7433 		.ascii	"int32_t\000"
+ 848      325F7400 
+ 849              	.LASF35:
+ 850 0044 2E5C6D61 		.ascii	".\\main.c\000"
+ 850      696E2E63 
+ 850      00
+ 851              	.LASF16:
+ 852 004d 666C6F61 		.ascii	"float\000"
+ 852      7400
+ 853              	.LASF1:
+ 854 0053 756E7369 		.ascii	"unsigned char\000"
+ 854      676E6564 
+ 854      20636861 
+ 854      7200
+ 855              	.LASF29:
+ 856 0061 4144435F 		.ascii	"ADC_StartConvert\000"
+ 856      53746172 
+ 856      74436F6E 
+ 856      76657274 
+ 856      00
+ 857              	.LASF18:
+ 858 0072 63686172 		.ascii	"char8\000"
+ 858      3800
+ 859              	.LASF14:
+ 860 0078 696E7431 		.ascii	"int16\000"
+ 860      3600
+ 861              	.LASF5:
+ 862 007e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 862      20756E73 
+ 862      69676E65 
+ 862      6420696E 
+ 862      7400
+ 863              	.LASF36:
+ 864 0090 433A5C55 		.ascii	"C:\\Users\\Digi-Key\\Documents\\PSoC Creator\\Desig"
+ 864      73657273 
+ 864      5C446967 
+ 864      692D4B65 
+ 864      795C446F 
+ 865 00be 6E31325C 		.ascii	"n12\\Design12.cydsn\000"
+ 865      44657369 
+ 865      676E3132 
+ 865      2E637964 
+ 865      736E00
+ 866              	.LASF3:
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 18
+
+
+ 867 00d1 73686F72 		.ascii	"short unsigned int\000"
+ 867      7420756E 
+ 867      7369676E 
+ 867      65642069 
+ 867      6E7400
+ 868              	.LASF25:
+ 869 00e4 766F6C74 		.ascii	"voltage\000"
+ 869      61676500 
+ 870              	.LASF24:
+ 871 00ec 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 871      52784275 
+ 871      66666572 
+ 871      00
+ 872              	.LASF17:
+ 873 00f9 646F7562 		.ascii	"double\000"
+ 873      6C6500
+ 874              	.LASF37:
+ 875 0100 6D61696E 		.ascii	"main\000"
+ 875      00
+ 876              	.LASF12:
+ 877 0105 75696E74 		.ascii	"uint16\000"
+ 877      313600
+ 878              	.LASF13:
+ 879 010c 75696E74 		.ascii	"uint32\000"
+ 879      333200
+ 880              	.LASF8:
+ 881 0113 756E7369 		.ascii	"unsigned int\000"
+ 881      676E6564 
+ 881      20696E74 
+ 881      00
+ 882              	.LASF26:
+ 883 0120 636F756E 		.ascii	"counts\000"
+ 883      747300
+ 884              	.LASF7:
+ 885 0127 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 885      206C6F6E 
+ 885      6720756E 
+ 885      7369676E 
+ 885      65642069 
+ 886              	.LASF27:
+ 887 013e 4144435F 		.ascii	"ADC_Start\000"
+ 887      53746172 
+ 887      7400
+ 888              	.LASF34:
+ 889 0148 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 889      4320342E 
+ 889      382E3420 
+ 889      32303134 
+ 889      30353236 
+ 890 017b 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 890      20726576 
+ 890      6973696F 
+ 890      6E203231 
+ 890      31333538 
+ 891 01ae 67202D66 		.ascii	"g -ffunction-sections\000"
+ 891      66756E63 
+ 891      74696F6E 
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 19
+
+
+ 891      2D736563 
+ 891      74696F6E 
+ 892              	.LASF20:
+ 893 01c4 73697A65 		.ascii	"sizetype\000"
+ 893      74797065 
+ 893      00
+ 894              	.LASF30:
+ 895 01cd 4144435F 		.ascii	"ADC_CountsTo_Volts\000"
+ 895      436F756E 
+ 895      7473546F 
+ 895      5F566F6C 
+ 895      747300
+ 896              	.LASF6:
+ 897 01e0 6C6F6E67 		.ascii	"long long int\000"
+ 897      206C6F6E 
+ 897      6720696E 
+ 897      7400
+ 898              	.LASF19:
+ 899 01ee 63686172 		.ascii	"char\000"
+ 899      00
+ 900              	.LASF2:
+ 901 01f3 73686F72 		.ascii	"short int\000"
+ 901      7420696E 
+ 901      7400
+ 902              	.LASF23:
+ 903 01fd 6F757470 		.ascii	"outputstring\000"
+ 903      75747374 
+ 903      72696E67 
+ 903      00
+ 904              	.LASF11:
+ 905 020a 75696E74 		.ascii	"uint8\000"
+ 905      3800
+ 906              	.LASF15:
+ 907 0210 666C6F61 		.ascii	"float32\000"
+ 907      74333200 
+ 908              	.LASF22:
+ 909 0218 62797465 		.ascii	"bytes\000"
+ 909      7300
+ 910              	.LASF21:
+ 911 021e 6C6F6E67 		.ascii	"long double\000"
+ 911      20646F75 
+ 911      626C6500 
+ 912              	.LASF0:
+ 913 022a 7369676E 		.ascii	"signed char\000"
+ 913      65642063 
+ 913      68617200 
+ 914              	.LASF33:
+ 915 0236 55415254 		.ascii	"UART_1_PutString\000"
+ 915      5F315F50 
+ 915      75745374 
+ 915      72696E67 
+ 915      00
+ 916              	.LASF31:
+ 917 0247 73707269 		.ascii	"sprintf\000"
+ 917      6E746600 
+ 918              	.LASF39:
+ 919 024f 43794465 		.ascii	"CyDelay\000"
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\ccISFXVJ.s 			page 20
+
+
+ 919      6C617900 
+ 920              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,53 @@
+--------------- Build Started: 03/29/2017 19:24:58 Project: ADC_SingleEndedMode01, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Srujith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\Srujith\Desktop\SAR Example\ADC_SingleEndedMode01.cydsn\ADC_SingleEndedMode01.cyprj" -d CY8C5888LTI-LP097 -s "C:\Users\Srujith\Desktop\SAR Example\ADC_SingleEndedMode01.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+ADD: pft.M0040: information: The following 7 pin(s) will be assigned a location by the fitter: \LCD:LCDPort(0)\, \LCD:LCDPort(1)\, \LCD:LCDPort(2)\, \LCD:LCDPort(3)\, \LCD:LCDPort(4)\, \LCD:LCDPort(5)\, \LCD:LCDPort(6)\
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/main.lst -g -ffunction-sections -O0 -ffat-lto-objects -c main.c -o .\ARM_GCC_493\Debug\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/cyfitter_cfg.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\ARM_GCC_493\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/cymetadata.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cymetadata.c -o .\ARM_GCC_493\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1_PM.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1_PM.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1_INT.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1_INT.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/Pin_1.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Pin_1.c -o .\ARM_GCC_493\Debug\Pin_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/LCD.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LCD.c -o .\ARM_GCC_493\Debug\LCD.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/LCD_PM.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LCD_PM.c -o .\ARM_GCC_493\Debug\LCD_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/UART_1.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\UART_1.c -o .\ARM_GCC_493\Debug\UART_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/UART_1_PM.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\UART_1_PM.c -o .\ARM_GCC_493\Debug\UART_1_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/UART_1_INT.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\UART_1_INT.c -o .\ARM_GCC_493\Debug\UART_1_INT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/UART_1_BOOT.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\UART_1_BOOT.c -o .\ARM_GCC_493\Debug\UART_1_BOOT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1_AMux.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1_AMux.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1_AMux.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1_Ext_CP_Clk.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1_IRQ.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/ADC_DelSig_1_theACLK.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c -o .\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/LCD_LCDPort.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\LCD_LCDPort.c -o .\ARM_GCC_493\Debug\LCD_LCDPort.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/UART_1_IntClock.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\UART_1_IntClock.c -o .\ARM_GCC_493\Debug\UART_1_IntClock.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/Cm3Start.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\Cm3Start.c -o .\ARM_GCC_493\Debug\Cm3Start.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/CyDmac.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CyDmac.c -o .\ARM_GCC_493\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/CyFlash.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CyFlash.c -o .\ARM_GCC_493\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/CyLib.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CyLib.c -o .\ARM_GCC_493\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/cyPm.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cyPm.c -o .\ARM_GCC_493\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/CySpc.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\CySpc.c -o .\ARM_GCC_493\Debug\CySpc.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_493\Debug/cyutils.lst -g -ffunction-sections -O0 -ffat-lto-objects -c Generated_Source\PSoC5\cyutils.c -o .\ARM_GCC_493\Debug\cyutils.o
+arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\ARM_GCC_493\Debug/CyBootAsmGnu.lst -g -o .\ARM_GCC_493\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-ar.exe -rs .\ARM_GCC_493\Debug\ADC_SingleEndedMode01.a .\ARM_GCC_493\Debug\cyfitter_cfg.o .\ARM_GCC_493\Debug\ADC_DelSig_1.o .\ARM_GCC_493\Debug\ADC_DelSig_1_PM.o .\ARM_GCC_493\Debug\ADC_DelSig_1_INT.o .\ARM_GCC_493\Debug\Pin_1.o .\ARM_GCC_493\Debug\LCD.o .\ARM_GCC_493\Debug\LCD_PM.o .\ARM_GCC_493\Debug\UART_1.o .\ARM_GCC_493\Debug\UART_1_PM.o .\ARM_GCC_493\Debug\UART_1_INT.o .\ARM_GCC_493\Debug\UART_1_BOOT.o .\ARM_GCC_493\Debug\ADC_DelSig_1_AMux.o .\ARM_GCC_493\Debug\ADC_DelSig_1_Ext_CP_Clk.o .\ARM_GCC_493\Debug\ADC_DelSig_1_IRQ.o .\ARM_GCC_493\Debug\ADC_DelSig_1_theACLK.o .\ARM_GCC_493\Debug\LCD_LCDPort.o .\ARM_GCC_493\Debug\UART_1_IntClock.o .\ARM_GCC_493\Debug\CyDmac.o .\ARM_GCC_493\Debug\CyFlash.o .\ARM_GCC_493\Debug\CyLib.o .\ARM_GCC_493\Debug\cyPm.o .\ARM_GCC_493\Debug\CySpc.o .\ARM_GCC_493\Debug\cyutils.o .\ARM_GCC_493\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\ARM_GCC_493\Debug\ADC_SingleEndedMode01.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\ARM_GCC_493\Debug\ADC_SingleEndedMode01.elf .\ARM_GCC_493\Debug\main.o .\ARM_GCC_493\Debug\cymetadata.o .\ARM_GCC_493\Debug\Cm3Start.o .\ARM_GCC_493\Debug\ADC_SingleEndedMode01.a "C:\Program Files\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -ffat-lto-objects -L Generated_Source\PSoC5 -Wl,-Map,.\ARM_GCC_493\Debug/ADC_SingleEndedMode01.map -T "C:\Users\Srujith\Desktop\SAR Example\ADC_SingleEndedMode01.cydsn\Generated_Source\PSoC5\cm3gcc.ld" -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+cyelftool.exe -C "C:\Users\Srujith\Desktop\SAR Example\ADC_SingleEndedMode01.cydsn\ARM_GCC_493\Debug\ADC_SingleEndedMode01.elf" --flash_row_size 256 --flash_size 262144
+cyelftool.exe -S "C:\Users\Srujith\Desktop\SAR Example\ADC_SingleEndedMode01.cydsn\ARM_GCC_493\Debug\ADC_SingleEndedMode01.elf"
+Flash used: 9552 of 262144 bytes (3.6 %).
+SRAM used: 2629 of 65536 bytes (4.0 %). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 03/29/2017 19:25:17 ---------------

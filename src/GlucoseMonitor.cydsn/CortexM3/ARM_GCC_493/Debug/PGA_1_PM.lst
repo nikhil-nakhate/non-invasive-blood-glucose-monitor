@@ -1,0 +1,873 @@
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"PGA_1_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.PGA_1_SaveConfig,"ax",%progbits
+  19              		.align	2
+  20              		.global	PGA_1_SaveConfig
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	PGA_1_SaveConfig, %function
+  24              	PGA_1_SaveConfig:
+  25              	.LFB0:
+  26              		.file 1 "Generated_Source\\PSoC5\\PGA_1_PM.c"
+   1:Generated_Source\PSoC5/PGA_1_PM.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/PGA_1_PM.c **** * File Name: PGA_1_PM.c  
+   3:Generated_Source\PSoC5/PGA_1_PM.c **** * Version 2.0
+   4:Generated_Source\PSoC5/PGA_1_PM.c **** *
+   5:Generated_Source\PSoC5/PGA_1_PM.c **** * Description:
+   6:Generated_Source\PSoC5/PGA_1_PM.c **** *  This file provides the power manager source code to the API for PGA 
+   7:Generated_Source\PSoC5/PGA_1_PM.c **** *  Component.
+   8:Generated_Source\PSoC5/PGA_1_PM.c **** *
+   9:Generated_Source\PSoC5/PGA_1_PM.c **** * Note:
+  10:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  11:Generated_Source\PSoC5/PGA_1_PM.c **** ********************************************************************************
+  12:Generated_Source\PSoC5/PGA_1_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/PGA_1_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:Generated_Source\PSoC5/PGA_1_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:Generated_Source\PSoC5/PGA_1_PM.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/PGA_1_PM.c **** *******************************************************************************/
+  17:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  18:Generated_Source\PSoC5/PGA_1_PM.c **** #include "PGA_1.h"
+  19:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  20:Generated_Source\PSoC5/PGA_1_PM.c **** static PGA_1_BACKUP_STRUCT  PGA_1_backup;
+  21:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  22:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  23:Generated_Source\PSoC5/PGA_1_PM.c **** /*******************************************************************************
+  24:Generated_Source\PSoC5/PGA_1_PM.c **** * Function Name: PGA_1_SaveConfig
+  25:Generated_Source\PSoC5/PGA_1_PM.c **** ********************************************************************************
+  26:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  27:Generated_Source\PSoC5/PGA_1_PM.c **** * Summary:
+  28:Generated_Source\PSoC5/PGA_1_PM.c **** *  Save the current user register configuration.
+  29:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  30:Generated_Source\PSoC5/PGA_1_PM.c **** * Parameters:
+  31:Generated_Source\PSoC5/PGA_1_PM.c **** *  void
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 2
+
+
+  32:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  33:Generated_Source\PSoC5/PGA_1_PM.c **** * Return:
+  34:Generated_Source\PSoC5/PGA_1_PM.c **** *  void
+  35:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  36:Generated_Source\PSoC5/PGA_1_PM.c **** *******************************************************************************/
+  37:Generated_Source\PSoC5/PGA_1_PM.c **** void PGA_1_SaveConfig(void) 
+  38:Generated_Source\PSoC5/PGA_1_PM.c **** {
+  27              		.loc 1 38 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE0:
+  35              		.size	PGA_1_SaveConfig, .-PGA_1_SaveConfig
+  36 0002 00BF     		.section	.text.PGA_1_RestoreConfig,"ax",%progbits
+  37              		.align	2
+  38              		.global	PGA_1_RestoreConfig
+  39              		.thumb
+  40              		.thumb_func
+  41              		.type	PGA_1_RestoreConfig, %function
+  42              	PGA_1_RestoreConfig:
+  43              	.LFB1:
+  39:Generated_Source\PSoC5/PGA_1_PM.c ****     /* Nothing to save as registers are System reset on retention flops */
+  40:Generated_Source\PSoC5/PGA_1_PM.c **** }
+  41:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  42:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  43:Generated_Source\PSoC5/PGA_1_PM.c **** /*******************************************************************************  
+  44:Generated_Source\PSoC5/PGA_1_PM.c **** * Function Name: PGA_1_RestoreConfig
+  45:Generated_Source\PSoC5/PGA_1_PM.c **** ********************************************************************************
+  46:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  47:Generated_Source\PSoC5/PGA_1_PM.c **** * Summary:
+  48:Generated_Source\PSoC5/PGA_1_PM.c **** *  Restore the register configurations.
+  49:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  50:Generated_Source\PSoC5/PGA_1_PM.c **** * Parameters:
+  51:Generated_Source\PSoC5/PGA_1_PM.c **** *  void
+  52:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  53:Generated_Source\PSoC5/PGA_1_PM.c **** * Return:
+  54:Generated_Source\PSoC5/PGA_1_PM.c **** *  void
+  55:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  56:Generated_Source\PSoC5/PGA_1_PM.c **** *******************************************************************************/
+  57:Generated_Source\PSoC5/PGA_1_PM.c **** void PGA_1_RestoreConfig(void) 
+  58:Generated_Source\PSoC5/PGA_1_PM.c **** {
+  44              		.loc 1 58 0
+  45              		.cfi_startproc
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE1:
+  52              		.size	PGA_1_RestoreConfig, .-PGA_1_RestoreConfig
+  53 0002 00BF     		.section	.text.PGA_1_Sleep,"ax",%progbits
+  54              		.align	2
+  55              		.global	PGA_1_Sleep
+  56              		.thumb
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 3
+
+
+  57              		.thumb_func
+  58              		.type	PGA_1_Sleep, %function
+  59              	PGA_1_Sleep:
+  60              	.LFB2:
+  59:Generated_Source\PSoC5/PGA_1_PM.c ****     /* Nothing to restore */
+  60:Generated_Source\PSoC5/PGA_1_PM.c **** }
+  61:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  62:Generated_Source\PSoC5/PGA_1_PM.c **** 
+  63:Generated_Source\PSoC5/PGA_1_PM.c **** /*******************************************************************************   
+  64:Generated_Source\PSoC5/PGA_1_PM.c **** * Function Name: PGA_1_Sleep
+  65:Generated_Source\PSoC5/PGA_1_PM.c **** ********************************************************************************
+  66:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  67:Generated_Source\PSoC5/PGA_1_PM.c **** * Summary:
+  68:Generated_Source\PSoC5/PGA_1_PM.c **** *  Disables block's operation and saves its configuration. Should be called 
+  69:Generated_Source\PSoC5/PGA_1_PM.c **** *  just prior to entering sleep.
+  70:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  71:Generated_Source\PSoC5/PGA_1_PM.c **** * Parameters:
+  72:Generated_Source\PSoC5/PGA_1_PM.c **** *  None
+  73:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  74:Generated_Source\PSoC5/PGA_1_PM.c **** * Return:
+  75:Generated_Source\PSoC5/PGA_1_PM.c **** *  None
+  76:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  77:Generated_Source\PSoC5/PGA_1_PM.c **** * Global variables:
+  78:Generated_Source\PSoC5/PGA_1_PM.c **** *  PGA_1_backup: The structure field 'enableState' is modified 
+  79:Generated_Source\PSoC5/PGA_1_PM.c **** *  depending on the enable state of the block before entering to sleep mode.
+  80:Generated_Source\PSoC5/PGA_1_PM.c **** *
+  81:Generated_Source\PSoC5/PGA_1_PM.c **** *******************************************************************************/
+  82:Generated_Source\PSoC5/PGA_1_PM.c **** void PGA_1_Sleep(void) 
+  83:Generated_Source\PSoC5/PGA_1_PM.c **** {
+  61              		.loc 1 83 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		.loc 1 83 0
+  66 0000 08B5     		push	{r3, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 3, -8
+  69              		.cfi_offset 14, -4
+  84:Generated_Source\PSoC5/PGA_1_PM.c ****     /* Save PGA enable state */
+  85:Generated_Source\PSoC5/PGA_1_PM.c ****     if((PGA_1_PM_ACT_CFG_REG & PGA_1_ACT_PWR_EN) != 0u)
+  70              		.loc 1 85 0
+  71 0002 074B     		ldr	r3, .L7
+  72 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  73 0006 13F0010F 		tst	r3, #1
+  74 000a 05D0     		beq	.L4
+  86:Generated_Source\PSoC5/PGA_1_PM.c ****     {
+  87:Generated_Source\PSoC5/PGA_1_PM.c ****         /* Component is enabled */
+  88:Generated_Source\PSoC5/PGA_1_PM.c ****         PGA_1_backup.enableState = 1u;
+  75              		.loc 1 88 0
+  76 000c 0122     		movs	r2, #1
+  77 000e 054B     		ldr	r3, .L7+4
+  78 0010 1A70     		strb	r2, [r3]
+  89:Generated_Source\PSoC5/PGA_1_PM.c ****         /* Stop the configuration */
+  90:Generated_Source\PSoC5/PGA_1_PM.c ****         PGA_1_Stop();
+  79              		.loc 1 90 0
+  80 0012 FFF7FEFF 		bl	PGA_1_Stop
+  81              	.LVL0:
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 4
+
+
+  82 0016 08BD     		pop	{r3, pc}
+  83              	.L4:
+  91:Generated_Source\PSoC5/PGA_1_PM.c ****     }
+  92:Generated_Source\PSoC5/PGA_1_PM.c ****     else
+  93:Generated_Source\PSoC5/PGA_1_PM.c ****     {
+  94:Generated_Source\PSoC5/PGA_1_PM.c ****         /* Component is disabled */
+  95:Generated_Source\PSoC5/PGA_1_PM.c ****         PGA_1_backup.enableState = 0u;
+  84              		.loc 1 95 0
+  85 0018 0022     		movs	r2, #0
+  86 001a 024B     		ldr	r3, .L7+4
+  87 001c 1A70     		strb	r2, [r3]
+  88 001e 08BD     		pop	{r3, pc}
+  89              	.L8:
+  90              		.align	2
+  91              	.L7:
+  92 0020 A9430040 		.word	1073759145
+  93 0024 00000000 		.word	.LANCHOR0
+  94              		.cfi_endproc
+  95              	.LFE2:
+  96              		.size	PGA_1_Sleep, .-PGA_1_Sleep
+  97              		.section	.text.PGA_1_Wakeup,"ax",%progbits
+  98              		.align	2
+  99              		.global	PGA_1_Wakeup
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	PGA_1_Wakeup, %function
+ 103              	PGA_1_Wakeup:
+ 104              	.LFB3:
+  96:Generated_Source\PSoC5/PGA_1_PM.c ****     }
+  97:Generated_Source\PSoC5/PGA_1_PM.c ****     /* Save the configuration */
+  98:Generated_Source\PSoC5/PGA_1_PM.c ****     PGA_1_SaveConfig();
+  99:Generated_Source\PSoC5/PGA_1_PM.c **** }
+ 100:Generated_Source\PSoC5/PGA_1_PM.c **** 
+ 101:Generated_Source\PSoC5/PGA_1_PM.c **** 
+ 102:Generated_Source\PSoC5/PGA_1_PM.c **** /*******************************************************************************
+ 103:Generated_Source\PSoC5/PGA_1_PM.c **** * Function Name: PGA_1_Wakeup
+ 104:Generated_Source\PSoC5/PGA_1_PM.c **** ********************************************************************************
+ 105:Generated_Source\PSoC5/PGA_1_PM.c **** *
+ 106:Generated_Source\PSoC5/PGA_1_PM.c **** * Summary:
+ 107:Generated_Source\PSoC5/PGA_1_PM.c **** *  Enables block's operation and restores its configuration. Should be called
+ 108:Generated_Source\PSoC5/PGA_1_PM.c **** *  just after awaking from sleep.
+ 109:Generated_Source\PSoC5/PGA_1_PM.c **** *
+ 110:Generated_Source\PSoC5/PGA_1_PM.c **** * Parameters:
+ 111:Generated_Source\PSoC5/PGA_1_PM.c **** *  None
+ 112:Generated_Source\PSoC5/PGA_1_PM.c **** *
+ 113:Generated_Source\PSoC5/PGA_1_PM.c **** * Return:
+ 114:Generated_Source\PSoC5/PGA_1_PM.c **** *  void
+ 115:Generated_Source\PSoC5/PGA_1_PM.c **** *
+ 116:Generated_Source\PSoC5/PGA_1_PM.c **** * Global variables:
+ 117:Generated_Source\PSoC5/PGA_1_PM.c **** *  PGA_1_backup: The structure field 'enableState' is used to 
+ 118:Generated_Source\PSoC5/PGA_1_PM.c **** *  restore the enable state of block after wakeup from sleep mode.
+ 119:Generated_Source\PSoC5/PGA_1_PM.c **** * 
+ 120:Generated_Source\PSoC5/PGA_1_PM.c **** *******************************************************************************/
+ 121:Generated_Source\PSoC5/PGA_1_PM.c **** void PGA_1_Wakeup(void) 
+ 122:Generated_Source\PSoC5/PGA_1_PM.c **** {
+ 105              		.loc 1 122 0
+ 106              		.cfi_startproc
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 5
+
+
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109 0000 08B5     		push	{r3, lr}
+ 110              		.cfi_def_cfa_offset 8
+ 111              		.cfi_offset 3, -8
+ 112              		.cfi_offset 14, -4
+ 123:Generated_Source\PSoC5/PGA_1_PM.c ****     /* Restore the configurations */
+ 124:Generated_Source\PSoC5/PGA_1_PM.c ****     PGA_1_RestoreConfig();
+ 125:Generated_Source\PSoC5/PGA_1_PM.c ****      /* Enables the component operation */
+ 126:Generated_Source\PSoC5/PGA_1_PM.c ****     if(PGA_1_backup.enableState == 1u)
+ 113              		.loc 1 126 0
+ 114 0002 034B     		ldr	r3, .L12
+ 115 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 116 0006 012B     		cmp	r3, #1
+ 117 0008 01D1     		bne	.L9
+ 127:Generated_Source\PSoC5/PGA_1_PM.c ****     {
+ 128:Generated_Source\PSoC5/PGA_1_PM.c ****         PGA_1_Enable();
+ 118              		.loc 1 128 0
+ 119 000a FFF7FEFF 		bl	PGA_1_Enable
+ 120              	.LVL1:
+ 121              	.L9:
+ 122 000e 08BD     		pop	{r3, pc}
+ 123              	.L13:
+ 124              		.align	2
+ 125              	.L12:
+ 126 0010 00000000 		.word	.LANCHOR0
+ 127              		.cfi_endproc
+ 128              	.LFE3:
+ 129              		.size	PGA_1_Wakeup, .-PGA_1_Wakeup
+ 130              		.bss
+ 131              		.align	2
+ 132              		.set	.LANCHOR0,. + 0
+ 133              		.type	PGA_1_backup, %object
+ 134              		.size	PGA_1_backup, 4
+ 135              	PGA_1_backup:
+ 136 0000 00000000 		.space	4
+ 137              		.text
+ 138              	.Letext0:
+ 139              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 140              		.file 3 "Generated_Source\\PSoC5\\PGA_1.h"
+ 141              		.section	.debug_info,"",%progbits
+ 142              	.Ldebug_info0:
+ 143 0000 63010000 		.4byte	0x163
+ 144 0004 0400     		.2byte	0x4
+ 145 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 146 000a 04       		.byte	0x4
+ 147 000b 01       		.uleb128 0x1
+ 148 000c BD000000 		.4byte	.LASF26
+ 149 0010 01       		.byte	0x1
+ 150 0011 0D020000 		.4byte	.LASF27
+ 151 0015 48000000 		.4byte	.LASF28
+ 152 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 153 001d 00000000 		.4byte	0
+ 154 0021 00000000 		.4byte	.Ldebug_line0
+ 155 0025 02       		.uleb128 0x2
+ 156 0026 01       		.byte	0x1
+ 157 0027 06       		.byte	0x6
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 6
+
+
+ 158 0028 E5010000 		.4byte	.LASF0
+ 159 002c 02       		.uleb128 0x2
+ 160 002d 01       		.byte	0x1
+ 161 002e 08       		.byte	0x8
+ 162 002f 7F000000 		.4byte	.LASF1
+ 163 0033 02       		.uleb128 0x2
+ 164 0034 02       		.byte	0x2
+ 165 0035 05       		.byte	0x5
+ 166 0036 B2010000 		.4byte	.LASF2
+ 167 003a 02       		.uleb128 0x2
+ 168 003b 02       		.byte	0x2
+ 169 003c 07       		.byte	0x7
+ 170 003d F1010000 		.4byte	.LASF3
+ 171 0041 02       		.uleb128 0x2
+ 172 0042 04       		.byte	0x4
+ 173 0043 05       		.byte	0x5
+ 174 0044 BC010000 		.4byte	.LASF4
+ 175 0048 02       		.uleb128 0x2
+ 176 0049 04       		.byte	0x4
+ 177 004a 07       		.byte	0x7
+ 178 004b 92000000 		.4byte	.LASF5
+ 179 004f 02       		.uleb128 0x2
+ 180 0050 08       		.byte	0x8
+ 181 0051 05       		.byte	0x5
+ 182 0052 96010000 		.4byte	.LASF6
+ 183 0056 02       		.uleb128 0x2
+ 184 0057 08       		.byte	0x8
+ 185 0058 07       		.byte	0x7
+ 186 0059 65010000 		.4byte	.LASF7
+ 187 005d 03       		.uleb128 0x3
+ 188 005e 04       		.byte	0x4
+ 189 005f 05       		.byte	0x5
+ 190 0060 696E7400 		.ascii	"int\000"
+ 191 0064 02       		.uleb128 0x2
+ 192 0065 04       		.byte	0x4
+ 193 0066 07       		.byte	0x7
+ 194 0067 4B010000 		.4byte	.LASF8
+ 195 006b 04       		.uleb128 0x4
+ 196 006c A4000000 		.4byte	.LASF12
+ 197 0070 02       		.byte	0x2
+ 198 0071 C2       		.byte	0xc2
+ 199 0072 2C000000 		.4byte	0x2c
+ 200 0076 02       		.uleb128 0x2
+ 201 0077 04       		.byte	0x4
+ 202 0078 04       		.byte	0x4
+ 203 0079 42000000 		.4byte	.LASF9
+ 204 007d 02       		.uleb128 0x2
+ 205 007e 08       		.byte	0x8
+ 206 007f 04       		.byte	0x4
+ 207 0080 AA000000 		.4byte	.LASF10
+ 208 0084 02       		.uleb128 0x2
+ 209 0085 01       		.byte	0x1
+ 210 0086 08       		.byte	0x8
+ 211 0087 AD010000 		.4byte	.LASF11
+ 212 008b 05       		.uleb128 0x5
+ 213 008c 8D000000 		.4byte	.LASF13
+ 214 0090 02       		.byte	0x2
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 7
+
+
+ 215 0091 6C01     		.2byte	0x16c
+ 216 0093 97000000 		.4byte	0x97
+ 217 0097 06       		.uleb128 0x6
+ 218 0098 6B000000 		.4byte	0x6b
+ 219 009c 02       		.uleb128 0x2
+ 220 009d 04       		.byte	0x4
+ 221 009e 07       		.byte	0x7
+ 222 009f 8D010000 		.4byte	.LASF14
+ 223 00a3 07       		.uleb128 0x7
+ 224 00a4 04       		.byte	0x4
+ 225 00a5 03       		.byte	0x3
+ 226 00a6 2D       		.byte	0x2d
+ 227 00a7 DC000000 		.4byte	0xdc
+ 228 00ab 08       		.uleb128 0x8
+ 229 00ac C5010000 		.4byte	.LASF15
+ 230 00b0 03       		.byte	0x3
+ 231 00b1 2F       		.byte	0x2f
+ 232 00b2 6B000000 		.4byte	0x6b
+ 233 00b6 00       		.byte	0
+ 234 00b7 08       		.uleb128 0x8
+ 235 00b8 A4010000 		.4byte	.LASF16
+ 236 00bc 03       		.byte	0x3
+ 237 00bd 30       		.byte	0x30
+ 238 00be 6B000000 		.4byte	0x6b
+ 239 00c2 01       		.byte	0x1
+ 240 00c3 08       		.uleb128 0x8
+ 241 00c4 04020000 		.4byte	.LASF17
+ 242 00c8 03       		.byte	0x3
+ 243 00c9 31       		.byte	0x31
+ 244 00ca 6B000000 		.4byte	0x6b
+ 245 00ce 02       		.byte	0x2
+ 246 00cf 08       		.uleb128 0x8
+ 247 00d0 1F000000 		.4byte	.LASF18
+ 248 00d4 03       		.byte	0x3
+ 249 00d5 32       		.byte	0x32
+ 250 00d6 6B000000 		.4byte	0x6b
+ 251 00da 03       		.byte	0x3
+ 252 00db 00       		.byte	0
+ 253 00dc 04       		.uleb128 0x4
+ 254 00dd D1010000 		.4byte	.LASF19
+ 255 00e1 03       		.byte	0x3
+ 256 00e2 33       		.byte	0x33
+ 257 00e3 A3000000 		.4byte	0xa3
+ 258 00e7 09       		.uleb128 0x9
+ 259 00e8 7C010000 		.4byte	.LASF20
+ 260 00ec 01       		.byte	0x1
+ 261 00ed 25       		.byte	0x25
+ 262 00ee 00000000 		.4byte	.LFB0
+ 263 00f2 02000000 		.4byte	.LFE0-.LFB0
+ 264 00f6 01       		.uleb128 0x1
+ 265 00f7 9C       		.byte	0x9c
+ 266 00f8 09       		.uleb128 0x9
+ 267 00f9 0B000000 		.4byte	.LASF21
+ 268 00fd 01       		.byte	0x1
+ 269 00fe 39       		.byte	0x39
+ 270 00ff 00000000 		.4byte	.LFB1
+ 271 0103 02000000 		.4byte	.LFE1-.LFB1
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 8
+
+
+ 272 0107 01       		.uleb128 0x1
+ 273 0108 9C       		.byte	0x9c
+ 274 0109 0A       		.uleb128 0xa
+ 275 010a B1000000 		.4byte	.LASF22
+ 276 010e 01       		.byte	0x1
+ 277 010f 52       		.byte	0x52
+ 278 0110 00000000 		.4byte	.LFB2
+ 279 0114 28000000 		.4byte	.LFE2-.LFB2
+ 280 0118 01       		.uleb128 0x1
+ 281 0119 9C       		.byte	0x9c
+ 282 011a 28010000 		.4byte	0x128
+ 283 011e 0B       		.uleb128 0xb
+ 284 011f 16000000 		.4byte	.LVL0
+ 285 0123 58010000 		.4byte	0x158
+ 286 0127 00       		.byte	0
+ 287 0128 0A       		.uleb128 0xa
+ 288 0129 28000000 		.4byte	.LASF23
+ 289 012d 01       		.byte	0x1
+ 290 012e 79       		.byte	0x79
+ 291 012f 00000000 		.4byte	.LFB3
+ 292 0133 14000000 		.4byte	.LFE3-.LFB3
+ 293 0137 01       		.uleb128 0x1
+ 294 0138 9C       		.byte	0x9c
+ 295 0139 47010000 		.4byte	0x147
+ 296 013d 0B       		.uleb128 0xb
+ 297 013e 0E000000 		.4byte	.LVL1
+ 298 0142 5F010000 		.4byte	0x15f
+ 299 0146 00       		.byte	0
+ 300 0147 0C       		.uleb128 0xc
+ 301 0148 35000000 		.4byte	.LASF29
+ 302 014c 01       		.byte	0x1
+ 303 014d 14       		.byte	0x14
+ 304 014e DC000000 		.4byte	0xdc
+ 305 0152 05       		.uleb128 0x5
+ 306 0153 03       		.byte	0x3
+ 307 0154 00000000 		.4byte	PGA_1_backup
+ 308 0158 0D       		.uleb128 0xd
+ 309 0159 00000000 		.4byte	.LASF24
+ 310 015d 03       		.byte	0x3
+ 311 015e 3F       		.byte	0x3f
+ 312 015f 0D       		.uleb128 0xd
+ 313 0160 58010000 		.4byte	.LASF25
+ 314 0164 03       		.byte	0x3
+ 315 0165 47       		.byte	0x47
+ 316 0166 00       		.byte	0
+ 317              		.section	.debug_abbrev,"",%progbits
+ 318              	.Ldebug_abbrev0:
+ 319 0000 01       		.uleb128 0x1
+ 320 0001 11       		.uleb128 0x11
+ 321 0002 01       		.byte	0x1
+ 322 0003 25       		.uleb128 0x25
+ 323 0004 0E       		.uleb128 0xe
+ 324 0005 13       		.uleb128 0x13
+ 325 0006 0B       		.uleb128 0xb
+ 326 0007 03       		.uleb128 0x3
+ 327 0008 0E       		.uleb128 0xe
+ 328 0009 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 9
+
+
+ 329 000a 0E       		.uleb128 0xe
+ 330 000b 55       		.uleb128 0x55
+ 331 000c 17       		.uleb128 0x17
+ 332 000d 11       		.uleb128 0x11
+ 333 000e 01       		.uleb128 0x1
+ 334 000f 10       		.uleb128 0x10
+ 335 0010 17       		.uleb128 0x17
+ 336 0011 00       		.byte	0
+ 337 0012 00       		.byte	0
+ 338 0013 02       		.uleb128 0x2
+ 339 0014 24       		.uleb128 0x24
+ 340 0015 00       		.byte	0
+ 341 0016 0B       		.uleb128 0xb
+ 342 0017 0B       		.uleb128 0xb
+ 343 0018 3E       		.uleb128 0x3e
+ 344 0019 0B       		.uleb128 0xb
+ 345 001a 03       		.uleb128 0x3
+ 346 001b 0E       		.uleb128 0xe
+ 347 001c 00       		.byte	0
+ 348 001d 00       		.byte	0
+ 349 001e 03       		.uleb128 0x3
+ 350 001f 24       		.uleb128 0x24
+ 351 0020 00       		.byte	0
+ 352 0021 0B       		.uleb128 0xb
+ 353 0022 0B       		.uleb128 0xb
+ 354 0023 3E       		.uleb128 0x3e
+ 355 0024 0B       		.uleb128 0xb
+ 356 0025 03       		.uleb128 0x3
+ 357 0026 08       		.uleb128 0x8
+ 358 0027 00       		.byte	0
+ 359 0028 00       		.byte	0
+ 360 0029 04       		.uleb128 0x4
+ 361 002a 16       		.uleb128 0x16
+ 362 002b 00       		.byte	0
+ 363 002c 03       		.uleb128 0x3
+ 364 002d 0E       		.uleb128 0xe
+ 365 002e 3A       		.uleb128 0x3a
+ 366 002f 0B       		.uleb128 0xb
+ 367 0030 3B       		.uleb128 0x3b
+ 368 0031 0B       		.uleb128 0xb
+ 369 0032 49       		.uleb128 0x49
+ 370 0033 13       		.uleb128 0x13
+ 371 0034 00       		.byte	0
+ 372 0035 00       		.byte	0
+ 373 0036 05       		.uleb128 0x5
+ 374 0037 16       		.uleb128 0x16
+ 375 0038 00       		.byte	0
+ 376 0039 03       		.uleb128 0x3
+ 377 003a 0E       		.uleb128 0xe
+ 378 003b 3A       		.uleb128 0x3a
+ 379 003c 0B       		.uleb128 0xb
+ 380 003d 3B       		.uleb128 0x3b
+ 381 003e 05       		.uleb128 0x5
+ 382 003f 49       		.uleb128 0x49
+ 383 0040 13       		.uleb128 0x13
+ 384 0041 00       		.byte	0
+ 385 0042 00       		.byte	0
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 10
+
+
+ 386 0043 06       		.uleb128 0x6
+ 387 0044 35       		.uleb128 0x35
+ 388 0045 00       		.byte	0
+ 389 0046 49       		.uleb128 0x49
+ 390 0047 13       		.uleb128 0x13
+ 391 0048 00       		.byte	0
+ 392 0049 00       		.byte	0
+ 393 004a 07       		.uleb128 0x7
+ 394 004b 13       		.uleb128 0x13
+ 395 004c 01       		.byte	0x1
+ 396 004d 0B       		.uleb128 0xb
+ 397 004e 0B       		.uleb128 0xb
+ 398 004f 3A       		.uleb128 0x3a
+ 399 0050 0B       		.uleb128 0xb
+ 400 0051 3B       		.uleb128 0x3b
+ 401 0052 0B       		.uleb128 0xb
+ 402 0053 01       		.uleb128 0x1
+ 403 0054 13       		.uleb128 0x13
+ 404 0055 00       		.byte	0
+ 405 0056 00       		.byte	0
+ 406 0057 08       		.uleb128 0x8
+ 407 0058 0D       		.uleb128 0xd
+ 408 0059 00       		.byte	0
+ 409 005a 03       		.uleb128 0x3
+ 410 005b 0E       		.uleb128 0xe
+ 411 005c 3A       		.uleb128 0x3a
+ 412 005d 0B       		.uleb128 0xb
+ 413 005e 3B       		.uleb128 0x3b
+ 414 005f 0B       		.uleb128 0xb
+ 415 0060 49       		.uleb128 0x49
+ 416 0061 13       		.uleb128 0x13
+ 417 0062 38       		.uleb128 0x38
+ 418 0063 0B       		.uleb128 0xb
+ 419 0064 00       		.byte	0
+ 420 0065 00       		.byte	0
+ 421 0066 09       		.uleb128 0x9
+ 422 0067 2E       		.uleb128 0x2e
+ 423 0068 00       		.byte	0
+ 424 0069 3F       		.uleb128 0x3f
+ 425 006a 19       		.uleb128 0x19
+ 426 006b 03       		.uleb128 0x3
+ 427 006c 0E       		.uleb128 0xe
+ 428 006d 3A       		.uleb128 0x3a
+ 429 006e 0B       		.uleb128 0xb
+ 430 006f 3B       		.uleb128 0x3b
+ 431 0070 0B       		.uleb128 0xb
+ 432 0071 27       		.uleb128 0x27
+ 433 0072 19       		.uleb128 0x19
+ 434 0073 11       		.uleb128 0x11
+ 435 0074 01       		.uleb128 0x1
+ 436 0075 12       		.uleb128 0x12
+ 437 0076 06       		.uleb128 0x6
+ 438 0077 40       		.uleb128 0x40
+ 439 0078 18       		.uleb128 0x18
+ 440 0079 9742     		.uleb128 0x2117
+ 441 007b 19       		.uleb128 0x19
+ 442 007c 00       		.byte	0
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 11
+
+
+ 443 007d 00       		.byte	0
+ 444 007e 0A       		.uleb128 0xa
+ 445 007f 2E       		.uleb128 0x2e
+ 446 0080 01       		.byte	0x1
+ 447 0081 3F       		.uleb128 0x3f
+ 448 0082 19       		.uleb128 0x19
+ 449 0083 03       		.uleb128 0x3
+ 450 0084 0E       		.uleb128 0xe
+ 451 0085 3A       		.uleb128 0x3a
+ 452 0086 0B       		.uleb128 0xb
+ 453 0087 3B       		.uleb128 0x3b
+ 454 0088 0B       		.uleb128 0xb
+ 455 0089 27       		.uleb128 0x27
+ 456 008a 19       		.uleb128 0x19
+ 457 008b 11       		.uleb128 0x11
+ 458 008c 01       		.uleb128 0x1
+ 459 008d 12       		.uleb128 0x12
+ 460 008e 06       		.uleb128 0x6
+ 461 008f 40       		.uleb128 0x40
+ 462 0090 18       		.uleb128 0x18
+ 463 0091 9742     		.uleb128 0x2117
+ 464 0093 19       		.uleb128 0x19
+ 465 0094 01       		.uleb128 0x1
+ 466 0095 13       		.uleb128 0x13
+ 467 0096 00       		.byte	0
+ 468 0097 00       		.byte	0
+ 469 0098 0B       		.uleb128 0xb
+ 470 0099 898201   		.uleb128 0x4109
+ 471 009c 00       		.byte	0
+ 472 009d 11       		.uleb128 0x11
+ 473 009e 01       		.uleb128 0x1
+ 474 009f 31       		.uleb128 0x31
+ 475 00a0 13       		.uleb128 0x13
+ 476 00a1 00       		.byte	0
+ 477 00a2 00       		.byte	0
+ 478 00a3 0C       		.uleb128 0xc
+ 479 00a4 34       		.uleb128 0x34
+ 480 00a5 00       		.byte	0
+ 481 00a6 03       		.uleb128 0x3
+ 482 00a7 0E       		.uleb128 0xe
+ 483 00a8 3A       		.uleb128 0x3a
+ 484 00a9 0B       		.uleb128 0xb
+ 485 00aa 3B       		.uleb128 0x3b
+ 486 00ab 0B       		.uleb128 0xb
+ 487 00ac 49       		.uleb128 0x49
+ 488 00ad 13       		.uleb128 0x13
+ 489 00ae 02       		.uleb128 0x2
+ 490 00af 18       		.uleb128 0x18
+ 491 00b0 00       		.byte	0
+ 492 00b1 00       		.byte	0
+ 493 00b2 0D       		.uleb128 0xd
+ 494 00b3 2E       		.uleb128 0x2e
+ 495 00b4 00       		.byte	0
+ 496 00b5 3F       		.uleb128 0x3f
+ 497 00b6 19       		.uleb128 0x19
+ 498 00b7 03       		.uleb128 0x3
+ 499 00b8 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 12
+
+
+ 500 00b9 3A       		.uleb128 0x3a
+ 501 00ba 0B       		.uleb128 0xb
+ 502 00bb 3B       		.uleb128 0x3b
+ 503 00bc 0B       		.uleb128 0xb
+ 504 00bd 27       		.uleb128 0x27
+ 505 00be 19       		.uleb128 0x19
+ 506 00bf 3C       		.uleb128 0x3c
+ 507 00c0 19       		.uleb128 0x19
+ 508 00c1 00       		.byte	0
+ 509 00c2 00       		.byte	0
+ 510 00c3 00       		.byte	0
+ 511              		.section	.debug_aranges,"",%progbits
+ 512 0000 34000000 		.4byte	0x34
+ 513 0004 0200     		.2byte	0x2
+ 514 0006 00000000 		.4byte	.Ldebug_info0
+ 515 000a 04       		.byte	0x4
+ 516 000b 00       		.byte	0
+ 517 000c 0000     		.2byte	0
+ 518 000e 0000     		.2byte	0
+ 519 0010 00000000 		.4byte	.LFB0
+ 520 0014 02000000 		.4byte	.LFE0-.LFB0
+ 521 0018 00000000 		.4byte	.LFB1
+ 522 001c 02000000 		.4byte	.LFE1-.LFB1
+ 523 0020 00000000 		.4byte	.LFB2
+ 524 0024 28000000 		.4byte	.LFE2-.LFB2
+ 525 0028 00000000 		.4byte	.LFB3
+ 526 002c 14000000 		.4byte	.LFE3-.LFB3
+ 527 0030 00000000 		.4byte	0
+ 528 0034 00000000 		.4byte	0
+ 529              		.section	.debug_ranges,"",%progbits
+ 530              	.Ldebug_ranges0:
+ 531 0000 00000000 		.4byte	.LFB0
+ 532 0004 02000000 		.4byte	.LFE0
+ 533 0008 00000000 		.4byte	.LFB1
+ 534 000c 02000000 		.4byte	.LFE1
+ 535 0010 00000000 		.4byte	.LFB2
+ 536 0014 28000000 		.4byte	.LFE2
+ 537 0018 00000000 		.4byte	.LFB3
+ 538 001c 14000000 		.4byte	.LFE3
+ 539 0020 00000000 		.4byte	0
+ 540 0024 00000000 		.4byte	0
+ 541              		.section	.debug_line,"",%progbits
+ 542              	.Ldebug_line0:
+ 543 0000 9B000000 		.section	.debug_str,"MS",%progbits,1
+ 543      02005000 
+ 543      00000201 
+ 543      FB0E0D00 
+ 543      01010101 
+ 544              	.LASF24:
+ 545 0000 5047415F 		.ascii	"PGA_1_Stop\000"
+ 545      315F5374 
+ 545      6F7000
+ 546              	.LASF21:
+ 547 000b 5047415F 		.ascii	"PGA_1_RestoreConfig\000"
+ 547      315F5265 
+ 547      73746F72 
+ 547      65436F6E 
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 13
+
+
+ 547      66696700 
+ 548              	.LASF18:
+ 549 001f 73634352 		.ascii	"scCR3Reg\000"
+ 549      33526567 
+ 549      00
+ 550              	.LASF23:
+ 551 0028 5047415F 		.ascii	"PGA_1_Wakeup\000"
+ 551      315F5761 
+ 551      6B657570 
+ 551      00
+ 552              	.LASF29:
+ 553 0035 5047415F 		.ascii	"PGA_1_backup\000"
+ 553      315F6261 
+ 553      636B7570 
+ 553      00
+ 554              	.LASF9:
+ 555 0042 666C6F61 		.ascii	"float\000"
+ 555      7400
+ 556              	.LASF28:
+ 557 0048 433A5C55 		.ascii	"C:\\Users\\Srujith\\Desktop\\SAR Example\\SAR Examp"
+ 557      73657273 
+ 557      5C537275 
+ 557      6A697468 
+ 557      5C446573 
+ 558 0076 6C652E63 		.ascii	"le.cydsn\000"
+ 558      7964736E 
+ 558      00
+ 559              	.LASF1:
+ 560 007f 756E7369 		.ascii	"unsigned char\000"
+ 560      676E6564 
+ 560      20636861 
+ 560      7200
+ 561              	.LASF13:
+ 562 008d 72656738 		.ascii	"reg8\000"
+ 562      00
+ 563              	.LASF5:
+ 564 0092 6C6F6E67 		.ascii	"long unsigned int\000"
+ 564      20756E73 
+ 564      69676E65 
+ 564      6420696E 
+ 564      7400
+ 565              	.LASF12:
+ 566 00a4 75696E74 		.ascii	"uint8\000"
+ 566      3800
+ 567              	.LASF10:
+ 568 00aa 646F7562 		.ascii	"double\000"
+ 568      6C6500
+ 569              	.LASF22:
+ 570 00b1 5047415F 		.ascii	"PGA_1_Sleep\000"
+ 570      315F536C 
+ 570      65657000 
+ 571              	.LASF26:
+ 572 00bd 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 572      4320342E 
+ 572      392E3320 
+ 572      32303135 
+ 572      30333033 
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 14
+
+
+ 573 00f0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 573      20726576 
+ 573      6973696F 
+ 573      6E203232 
+ 573      31323230 
+ 574 0123 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 574      66756E63 
+ 574      74696F6E 
+ 574      2D736563 
+ 574      74696F6E 
+ 575              	.LASF8:
+ 576 014b 756E7369 		.ascii	"unsigned int\000"
+ 576      676E6564 
+ 576      20696E74 
+ 576      00
+ 577              	.LASF25:
+ 578 0158 5047415F 		.ascii	"PGA_1_Enable\000"
+ 578      315F456E 
+ 578      61626C65 
+ 578      00
+ 579              	.LASF7:
+ 580 0165 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 580      206C6F6E 
+ 580      6720756E 
+ 580      7369676E 
+ 580      65642069 
+ 581              	.LASF20:
+ 582 017c 5047415F 		.ascii	"PGA_1_SaveConfig\000"
+ 582      315F5361 
+ 582      7665436F 
+ 582      6E666967 
+ 582      00
+ 583              	.LASF14:
+ 584 018d 73697A65 		.ascii	"sizetype\000"
+ 584      74797065 
+ 584      00
+ 585              	.LASF6:
+ 586 0196 6C6F6E67 		.ascii	"long long int\000"
+ 586      206C6F6E 
+ 586      6720696E 
+ 586      7400
+ 587              	.LASF16:
+ 588 01a4 73634352 		.ascii	"scCR1Reg\000"
+ 588      31526567 
+ 588      00
+ 589              	.LASF11:
+ 590 01ad 63686172 		.ascii	"char\000"
+ 590      00
+ 591              	.LASF2:
+ 592 01b2 73686F72 		.ascii	"short int\000"
+ 592      7420696E 
+ 592      7400
+ 593              	.LASF4:
+ 594 01bc 6C6F6E67 		.ascii	"long int\000"
+ 594      20696E74 
+ 594      00
+ 595              	.LASF15:
+ARM GAS  C:\Users\Srujith\AppData\Local\Temp\ccoOgZic.s 			page 15
+
+
+ 596 01c5 656E6162 		.ascii	"enableState\000"
+ 596      6C655374 
+ 596      61746500 
+ 597              	.LASF19:
+ 598 01d1 5047415F 		.ascii	"PGA_1_BACKUP_STRUCT\000"
+ 598      315F4241 
+ 598      434B5550 
+ 598      5F535452 
+ 598      55435400 
+ 599              	.LASF0:
+ 600 01e5 7369676E 		.ascii	"signed char\000"
+ 600      65642063 
+ 600      68617200 
+ 601              	.LASF3:
+ 602 01f1 73686F72 		.ascii	"short unsigned int\000"
+ 602      7420756E 
+ 602      7369676E 
+ 602      65642069 
+ 602      6E7400
+ 603              	.LASF17:
+ 604 0204 73634352 		.ascii	"scCR2Reg\000"
+ 604      32526567 
+ 604      00
+ 605              	.LASF27:
+ 606 020d 47656E65 		.ascii	"Generated_Source\\PSoC5\\PGA_1_PM.c\000"
+ 606      72617465 
+ 606      645F536F 
+ 606      75726365 
+ 606      5C50536F 
+ 607              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

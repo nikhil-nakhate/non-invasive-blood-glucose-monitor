@@ -1,0 +1,1595 @@
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.global	cy_meta_wonvl
+  21              		.global	cy_meta_custnvl
+  22              		.global	cy_meta_configecc
+  23              		.section	.cyconfigecc,"a",%progbits
+  24              		.align	2
+  25              		.type	cy_meta_configecc, %object
+  26              		.size	cy_meta_configecc, 1044
+  27              	cy_meta_configecc:
+  28 0000 01       		.byte	1
+  29 0001 5B       		.byte	91
+  30 0002 00       		.byte	0
+  31 0003 40       		.byte	64
+  32 0004 01       		.byte	1
+  33 0005 64       		.byte	100
+  34 0006 00       		.byte	0
+  35 0007 40       		.byte	64
+  36 0008 02       		.byte	2
+  37 0009 65       		.byte	101
+  38 000a 00       		.byte	0
+  39 000b 40       		.byte	64
+  40 000c 46       		.byte	70
+  41 000d 08       		.byte	8
+  42 000e 01       		.byte	1
+  43 000f 40       		.byte	64
+  44 0010 2C       		.byte	44
+  45 0011 09       		.byte	9
+  46 0012 01       		.byte	1
+  47 0013 40       		.byte	64
+  48 0014 02       		.byte	2
+  49 0015 15       		.byte	21
+  50 0016 01       		.byte	1
+  51 0017 40       		.byte	64
+  52 0018 5A       		.byte	90
+  53 0019 18       		.byte	24
+  54 001a 01       		.byte	1
+  55 001b 40       		.byte	64
+  56 001c 46       		.byte	70
+  57 001d 19       		.byte	25
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 2
+
+
+  58 001e 01       		.byte	1
+  59 001f 40       		.byte	64
+  60 0020 56       		.byte	86
+  61 0021 1A       		.byte	26
+  62 0022 01       		.byte	1
+  63 0023 40       		.byte	64
+  64 0024 43       		.byte	67
+  65 0025 1B       		.byte	27
+  66 0026 01       		.byte	1
+  67 0027 40       		.byte	64
+  68 0028 02       		.byte	2
+  69 0029 40       		.byte	64
+  70 002a 01       		.byte	1
+  71 002b 40       		.byte	64
+  72 002c 01       		.byte	1
+  73 002d 41       		.byte	65
+  74 002e 01       		.byte	1
+  75 002f 40       		.byte	64
+  76 0030 01       		.byte	1
+  77 0031 42       		.byte	66
+  78 0032 01       		.byte	1
+  79 0033 40       		.byte	64
+  80 0034 01       		.byte	1
+  81 0035 43       		.byte	67
+  82 0036 01       		.byte	1
+  83 0037 40       		.byte	64
+  84 0038 03       		.byte	3
+  85 0039 48       		.byte	72
+  86 003a 01       		.byte	1
+  87 003b 40       		.byte	64
+  88 003c 03       		.byte	3
+  89 003d 49       		.byte	73
+  90 003e 01       		.byte	1
+  91 003f 40       		.byte	64
+  92 0040 04       		.byte	4
+  93 0041 4C       		.byte	76
+  94 0042 01       		.byte	1
+  95 0043 40       		.byte	64
+  96 0044 0B       		.byte	11
+  97 0045 4D       		.byte	77
+  98 0046 01       		.byte	1
+  99 0047 40       		.byte	64
+ 100 0048 04       		.byte	4
+ 101 0049 50       		.byte	80
+ 102 004a 01       		.byte	1
+ 103 004b 40       		.byte	64
+ 104 004c 01       		.byte	1
+ 105 004d 51       		.byte	81
+ 106 004e 01       		.byte	1
+ 107 004f 40       		.byte	64
+ 108 0050 2F       		.byte	47
+ 109 0051 84       		.byte	-124
+ 110 0052 88       		.byte	-120
+ 111 0053 0F       		.byte	15
+ 112 0054 88       		.byte	-120
+ 113 0055 72       		.byte	114
+ 114 0056 8B       		.byte	-117
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 3
+
+
+ 115 0057 38       		.byte	56
+ 116 0058 00       		.byte	0
+ 117 0059 10       		.byte	16
+ 118 005a 03       		.byte	3
+ 119 005b 02       		.byte	2
+ 120 005c 04       		.byte	4
+ 121 005d 06       		.byte	6
+ 122 005e 05       		.byte	5
+ 123 005f 10       		.byte	16
+ 124 0060 08       		.byte	8
+ 125 0061 02       		.byte	2
+ 126 0062 09       		.byte	9
+ 127 0063 10       		.byte	16
+ 128 0064 0C       		.byte	12
+ 129 0065 08       		.byte	8
+ 130 0066 0D       		.byte	13
+ 131 0067 06       		.byte	6
+ 132 0068 0F       		.byte	15
+ 133 0069 01       		.byte	1
+ 134 006a 12       		.byte	18
+ 135 006b 01       		.byte	1
+ 136 006c 13       		.byte	19
+ 137 006d 06       		.byte	6
+ 138 006e 14       		.byte	20
+ 139 006f 06       		.byte	6
+ 140 0070 16       		.byte	22
+ 141 0071 01       		.byte	1
+ 142 0072 17       		.byte	23
+ 143 0073 01       		.byte	1
+ 144 0074 18       		.byte	24
+ 145 0075 07       		.byte	7
+ 146 0076 1B       		.byte	27
+ 147 0077 05       		.byte	5
+ 148 0078 1C       		.byte	28
+ 149 0079 04       		.byte	4
+ 150 007a 1F       		.byte	31
+ 151 007b 03       		.byte	3
+ 152 007c 21       		.byte	33
+ 153 007d 08       		.byte	8
+ 154 007e 22       		.byte	34
+ 155 007f 08       		.byte	8
+ 156 0080 24       		.byte	36
+ 157 0081 01       		.byte	1
+ 158 0082 25       		.byte	37
+ 159 0083 10       		.byte	16
+ 160 0084 26       		.byte	38
+ 161 0085 06       		.byte	6
+ 162 0086 28       		.byte	40
+ 163 0087 06       		.byte	6
+ 164 0088 29       		.byte	41
+ 165 0089 10       		.byte	16
+ 166 008a 2A       		.byte	42
+ 167 008b 01       		.byte	1
+ 168 008c 2C       		.byte	44
+ 169 008d 08       		.byte	8
+ 170 008e 30       		.byte	48
+ 171 008f 18       		.byte	24
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 4
+
+
+ 172 0090 32       		.byte	50
+ 173 0091 07       		.byte	7
+ 174 0092 33       		.byte	51
+ 175 0093 10       		.byte	16
+ 176 0094 35       		.byte	53
+ 177 0095 08       		.byte	8
+ 178 0096 37       		.byte	55
+ 179 0097 07       		.byte	7
+ 180 0098 38       		.byte	56
+ 181 0099 02       		.byte	2
+ 182 009a 3A       		.byte	58
+ 183 009b 28       		.byte	40
+ 184 009c 3B       		.byte	59
+ 185 009d 80       		.byte	-128
+ 186 009e 3F       		.byte	63
+ 187 009f 14       		.byte	20
+ 188 00a0 54       		.byte	84
+ 189 00a1 01       		.byte	1
+ 190 00a2 58       		.byte	88
+ 191 00a3 04       		.byte	4
+ 192 00a4 59       		.byte	89
+ 193 00a5 04       		.byte	4
+ 194 00a6 5B       		.byte	91
+ 195 00a7 04       		.byte	4
+ 196 00a8 5C       		.byte	92
+ 197 00a9 11       		.byte	17
+ 198 00aa 5D       		.byte	93
+ 199 00ab 10       		.byte	16
+ 200 00ac 5F       		.byte	95
+ 201 00ad 01       		.byte	1
+ 202 00ae 81       		.byte	-127
+ 203 00af 0C       		.byte	12
+ 204 00b0 83       		.byte	-125
+ 205 00b1 03       		.byte	3
+ 206 00b2 8C       		.byte	-116
+ 207 00b3 0A       		.byte	10
+ 208 00b4 8E       		.byte	-114
+ 209 00b5 04       		.byte	4
+ 210 00b6 8F       		.byte	-113
+ 211 00b7 0C       		.byte	12
+ 212 00b8 92       		.byte	-110
+ 213 00b9 08       		.byte	8
+ 214 00ba 95       		.byte	-107
+ 215 00bb 01       		.byte	1
+ 216 00bc 97       		.byte	-105
+ 217 00bd 06       		.byte	6
+ 218 00be 98       		.byte	-104
+ 219 00bf 03       		.byte	3
+ 220 00c0 9A       		.byte	-102
+ 221 00c1 0C       		.byte	12
+ 222 00c2 9D       		.byte	-99
+ 223 00c3 01       		.byte	1
+ 224 00c4 9F       		.byte	-97
+ 225 00c5 0E       		.byte	14
+ 226 00c6 A0       		.byte	-96
+ 227 00c7 03       		.byte	3
+ 228 00c8 A2       		.byte	-94
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 5
+
+
+ 229 00c9 04       		.byte	4
+ 230 00ca A3       		.byte	-93
+ 231 00cb 08       		.byte	8
+ 232 00cc AA       		.byte	-86
+ 233 00cd 05       		.byte	5
+ 234 00ce AC       		.byte	-84
+ 235 00cf 03       		.byte	3
+ 236 00d0 AE       		.byte	-82
+ 237 00d1 04       		.byte	4
+ 238 00d2 AF       		.byte	-81
+ 239 00d3 03       		.byte	3
+ 240 00d4 B1       		.byte	-79
+ 241 00d5 0F       		.byte	15
+ 242 00d6 B4       		.byte	-76
+ 243 00d7 0F       		.byte	15
+ 244 00d8 BA       		.byte	-70
+ 245 00d9 20       		.byte	32
+ 246 00da BB       		.byte	-69
+ 247 00db 02       		.byte	2
+ 248 00dc D8       		.byte	-40
+ 249 00dd 04       		.byte	4
+ 250 00de D9       		.byte	-39
+ 251 00df 04       		.byte	4
+ 252 00e0 DC       		.byte	-36
+ 253 00e1 11       		.byte	17
+ 254 00e2 DF       		.byte	-33
+ 255 00e3 01       		.byte	1
+ 256 00e4 00       		.byte	0
+ 257 00e5 80       		.byte	-128
+ 258 00e6 05       		.byte	5
+ 259 00e7 40       		.byte	64
+ 260 00e8 06       		.byte	6
+ 261 00e9 68       		.byte	104
+ 262 00ea 08       		.byte	8
+ 263 00eb 01       		.byte	1
+ 264 00ec 0A       		.byte	10
+ 265 00ed 48       		.byte	72
+ 266 00ee 0C       		.byte	12
+ 267 00ef 80       		.byte	-128
+ 268 00f0 0D       		.byte	13
+ 269 00f1 02       		.byte	2
+ 270 00f2 0E       		.byte	14
+ 271 00f3 24       		.byte	36
+ 272 00f4 11       		.byte	17
+ 273 00f5 C0       		.byte	-64
+ 274 00f6 12       		.byte	18
+ 275 00f7 88       		.byte	-120
+ 276 00f8 15       		.byte	21
+ 277 00f9 16       		.byte	22
+ 278 00fa 17       		.byte	23
+ 279 00fb 40       		.byte	64
+ 280 00fc 19       		.byte	25
+ 281 00fd 10       		.byte	16
+ 282 00fe 1A       		.byte	26
+ 283 00ff 08       		.byte	8
+ 284 0100 1C       		.byte	28
+ 285 0101 60       		.byte	96
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 6
+
+
+ 286 0102 1D       		.byte	29
+ 287 0103 04       		.byte	4
+ 288 0104 1E       		.byte	30
+ 289 0105 64       		.byte	100
+ 290 0106 20       		.byte	32
+ 291 0107 80       		.byte	-128
+ 292 0108 21       		.byte	33
+ 293 0109 01       		.byte	1
+ 294 010a 24       		.byte	36
+ 295 010b 04       		.byte	4
+ 296 010c 26       		.byte	38
+ 297 010d 84       		.byte	-124
+ 298 010e 29       		.byte	41
+ 299 010f 02       		.byte	2
+ 300 0110 2A       		.byte	42
+ 301 0111 42       		.byte	66
+ 302 0112 2D       		.byte	45
+ 303 0113 15       		.byte	21
+ 304 0114 2F       		.byte	47
+ 305 0115 08       		.byte	8
+ 306 0116 32       		.byte	50
+ 307 0117 84       		.byte	-124
+ 308 0118 33       		.byte	51
+ 309 0119 40       		.byte	64
+ 310 011a 34       		.byte	52
+ 311 011b 01       		.byte	1
+ 312 011c 35       		.byte	53
+ 313 011d 10       		.byte	16
+ 314 011e 36       		.byte	54
+ 315 011f 88       		.byte	-120
+ 316 0120 38       		.byte	56
+ 317 0121 40       		.byte	64
+ 318 0122 39       		.byte	57
+ 319 0123 02       		.byte	2
+ 320 0124 3C       		.byte	60
+ 321 0125 A0       		.byte	-96
+ 322 0126 3E       		.byte	62
+ 323 0127 06       		.byte	6
+ 324 0128 5C       		.byte	92
+ 325 0129 24       		.byte	36
+ 326 012a 5D       		.byte	93
+ 327 012b 81       		.byte	-127
+ 328 012c 8A       		.byte	-118
+ 329 012d 84       		.byte	-124
+ 330 012e C0       		.byte	-64
+ 331 012f F1       		.byte	-15
+ 332 0130 C2       		.byte	-62
+ 333 0131 FA       		.byte	-6
+ 334 0132 C4       		.byte	-60
+ 335 0133 FB       		.byte	-5
+ 336 0134 CA       		.byte	-54
+ 337 0135 E9       		.byte	-23
+ 338 0136 CC       		.byte	-52
+ 339 0137 FA       		.byte	-6
+ 340 0138 CE       		.byte	-50
+ 341 0139 F9       		.byte	-7
+ 342 013a D6       		.byte	-42
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 7
+
+
+ 343 013b F0       		.byte	-16
+ 344 013c E8       		.byte	-24
+ 345 013d 10       		.byte	16
+ 346 013e EE       		.byte	-18
+ 347 013f 08       		.byte	8
+ 348 0140 00       		.byte	0
+ 349 0141 08       		.byte	8
+ 350 0142 02       		.byte	2
+ 351 0143 01       		.byte	1
+ 352 0144 04       		.byte	4
+ 353 0145 38       		.byte	56
+ 354 0146 06       		.byte	6
+ 355 0147 02       		.byte	2
+ 356 0148 08       		.byte	8
+ 357 0149 0E       		.byte	14
+ 358 014a 09       		.byte	9
+ 359 014b 01       		.byte	1
+ 360 014c 0A       		.byte	10
+ 361 014d 30       		.byte	48
+ 362 014e 0C       		.byte	12
+ 363 014f 20       		.byte	32
+ 364 0150 0F       		.byte	15
+ 365 0151 02       		.byte	2
+ 366 0152 11       		.byte	17
+ 367 0153 01       		.byte	1
+ 368 0154 14       		.byte	20
+ 369 0155 38       		.byte	56
+ 370 0156 16       		.byte	22
+ 371 0157 04       		.byte	4
+ 372 0158 17       		.byte	23
+ 373 0159 02       		.byte	2
+ 374 015a 1A       		.byte	26
+ 375 015b 08       		.byte	8
+ 376 015c 1D       		.byte	29
+ 377 015d 02       		.byte	2
+ 378 015e 1E       		.byte	30
+ 379 015f 06       		.byte	6
+ 380 0160 20       		.byte	32
+ 381 0161 3E       		.byte	62
+ 382 0162 24       		.byte	36
+ 383 0163 30       		.byte	48
+ 384 0164 25       		.byte	37
+ 385 0165 01       		.byte	1
+ 386 0166 28       		.byte	40
+ 387 0167 10       		.byte	16
+ 388 0168 29       		.byte	41
+ 389 0169 02       		.byte	2
+ 390 016a 2F       		.byte	47
+ 391 016b 02       		.byte	2
+ 392 016c 31       		.byte	49
+ 393 016d 01       		.byte	1
+ 394 016e 32       		.byte	50
+ 395 016f 3E       		.byte	62
+ 396 0170 33       		.byte	51
+ 397 0171 02       		.byte	2
+ 398 0172 34       		.byte	52
+ 399 0173 01       		.byte	1
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 8
+
+
+ 400 0174 3A       		.byte	58
+ 401 0175 08       		.byte	8
+ 402 0176 3F       		.byte	63
+ 403 0177 04       		.byte	4
+ 404 0178 40       		.byte	64
+ 405 0179 64       		.byte	100
+ 406 017a 41       		.byte	65
+ 407 017b 01       		.byte	1
+ 408 017c 45       		.byte	69
+ 409 017d EB       		.byte	-21
+ 410 017e 46       		.byte	70
+ 411 017f 0C       		.byte	12
+ 412 0180 48       		.byte	72
+ 413 0181 07       		.byte	7
+ 414 0182 49       		.byte	73
+ 415 0183 FF       		.byte	-1
+ 416 0184 4A       		.byte	74
+ 417 0185 FF       		.byte	-1
+ 418 0186 4B       		.byte	75
+ 419 0187 FF       		.byte	-1
+ 420 0188 4E       		.byte	78
+ 421 0189 F0       		.byte	-16
+ 422 018a 4F       		.byte	79
+ 423 018b 44       		.byte	68
+ 424 018c 50       		.byte	80
+ 425 018d 0C       		.byte	12
+ 426 018e 56       		.byte	86
+ 427 018f 02       		.byte	2
+ 428 0190 57       		.byte	87
+ 429 0191 12       		.byte	18
+ 430 0192 58       		.byte	88
+ 431 0193 04       		.byte	4
+ 432 0194 59       		.byte	89
+ 433 0195 04       		.byte	4
+ 434 0196 5A       		.byte	90
+ 435 0197 04       		.byte	4
+ 436 0198 5B       		.byte	91
+ 437 0199 04       		.byte	4
+ 438 019a 5C       		.byte	92
+ 439 019b 11       		.byte	17
+ 440 019c 5D       		.byte	93
+ 441 019d 11       		.byte	17
+ 442 019e 5F       		.byte	95
+ 443 019f 01       		.byte	1
+ 444 01a0 66       		.byte	102
+ 445 01a1 C0       		.byte	-64
+ 446 01a2 6A       		.byte	106
+ 447 01a3 40       		.byte	64
+ 448 01a4 6B       		.byte	107
+ 449 01a5 02       		.byte	2
+ 450 01a6 80       		.byte	-128
+ 451 01a7 6C       		.byte	108
+ 452 01a8 82       		.byte	-126
+ 453 01a9 11       		.byte	17
+ 454 01aa 85       		.byte	-123
+ 455 01ab 01       		.byte	1
+ 456 01ac 86       		.byte	-122
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 9
+
+
+ 457 01ad 03       		.byte	3
+ 458 01ae 8C       		.byte	-116
+ 459 01af 5C       		.byte	92
+ 460 01b0 8E       		.byte	-114
+ 461 01b1 02       		.byte	2
+ 462 01b2 90       		.byte	-112
+ 463 01b3 09       		.byte	9
+ 464 01b4 92       		.byte	-110
+ 465 01b5 10       		.byte	16
+ 466 01b6 98       		.byte	-104
+ 467 01b7 70       		.byte	112
+ 468 01b8 9A       		.byte	-102
+ 469 01b9 0C       		.byte	12
+ 470 01ba 9C       		.byte	-100
+ 471 01bb 10       		.byte	16
+ 472 01bc A4       		.byte	-92
+ 473 01bd 14       		.byte	20
+ 474 01be AA       		.byte	-86
+ 475 01bf 20       		.byte	32
+ 476 01c0 B4       		.byte	-76
+ 477 01c1 1F       		.byte	31
+ 478 01c2 B6       		.byte	-74
+ 479 01c3 60       		.byte	96
+ 480 01c4 B7       		.byte	-73
+ 481 01c5 01       		.byte	1
+ 482 01c6 B8       		.byte	-72
+ 483 01c7 80       		.byte	-128
+ 484 01c8 BE       		.byte	-66
+ 485 01c9 40       		.byte	64
+ 486 01ca BF       		.byte	-65
+ 487 01cb 40       		.byte	64
+ 488 01cc C0       		.byte	-64
+ 489 01cd 01       		.byte	1
+ 490 01ce C5       		.byte	-59
+ 491 01cf 40       		.byte	64
+ 492 01d0 C9       		.byte	-55
+ 493 01d1 FF       		.byte	-1
+ 494 01d2 CA       		.byte	-54
+ 495 01d3 07       		.byte	7
+ 496 01d4 CB       		.byte	-53
+ 497 01d5 FF       		.byte	-1
+ 498 01d6 CC       		.byte	-52
+ 499 01d7 40       		.byte	64
+ 500 01d8 CD       		.byte	-51
+ 501 01d9 20       		.byte	32
+ 502 01da CE       		.byte	-50
+ 503 01db F0       		.byte	-16
+ 504 01dc CF       		.byte	-49
+ 505 01dd 05       		.byte	5
+ 506 01de D0       		.byte	-48
+ 507 01df 08       		.byte	8
+ 508 01e0 D8       		.byte	-40
+ 509 01e1 04       		.byte	4
+ 510 01e2 D9       		.byte	-39
+ 511 01e3 04       		.byte	4
+ 512 01e4 DA       		.byte	-38
+ 513 01e5 04       		.byte	4
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 10
+
+
+ 514 01e6 DC       		.byte	-36
+ 515 01e7 01       		.byte	1
+ 516 01e8 DD       		.byte	-35
+ 517 01e9 01       		.byte	1
+ 518 01ea DF       		.byte	-33
+ 519 01eb 01       		.byte	1
+ 520 01ec E0       		.byte	-32
+ 521 01ed 40       		.byte	64
+ 522 01ee E1       		.byte	-31
+ 523 01ef A8       		.byte	-88
+ 524 01f0 E2       		.byte	-30
+ 525 01f1 40       		.byte	64
+ 526 01f2 E3       		.byte	-29
+ 527 01f3 20       		.byte	32
+ 528 01f4 00       		.byte	0
+ 529 01f5 84       		.byte	-124
+ 530 01f6 01       		.byte	1
+ 531 01f7 40       		.byte	64
+ 532 01f8 02       		.byte	2
+ 533 01f9 80       		.byte	-128
+ 534 01fa 04       		.byte	4
+ 535 01fb 02       		.byte	2
+ 536 01fc 05       		.byte	5
+ 537 01fd 04       		.byte	4
+ 538 01fe 06       		.byte	6
+ 539 01ff 02       		.byte	2
+ 540 0200 07       		.byte	7
+ 541 0201 04       		.byte	4
+ 542 0202 0A       		.byte	10
+ 543 0203 48       		.byte	72
+ 544 0204 0B       		.byte	11
+ 545 0205 0A       		.byte	10
+ 546 0206 0D       		.byte	13
+ 547 0207 20       		.byte	32
+ 548 0208 0E       		.byte	14
+ 549 0209 22       		.byte	34
+ 550 020a 12       		.byte	18
+ 551 020b 28       		.byte	40
+ 552 020c 16       		.byte	22
+ 553 020d A8       		.byte	-88
+ 554 020e 18       		.byte	24
+ 555 020f 05       		.byte	5
+ 556 0210 1D       		.byte	29
+ 557 0211 20       		.byte	32
+ 558 0212 1E       		.byte	30
+ 559 0213 20       		.byte	32
+ 560 0214 1F       		.byte	31
+ 561 0215 08       		.byte	8
+ 562 0216 20       		.byte	32
+ 563 0217 02       		.byte	2
+ 564 0218 25       		.byte	37
+ 565 0219 06       		.byte	6
+ 566 021a 26       		.byte	38
+ 567 021b 03       		.byte	3
+ 568 021c 2C       		.byte	44
+ 569 021d 20       		.byte	32
+ 570 021e 2D       		.byte	45
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 11
+
+
+ 571 021f 40       		.byte	64
+ 572 0220 2F       		.byte	47
+ 573 0221 04       		.byte	4
+ 574 0222 36       		.byte	54
+ 575 0223 88       		.byte	-120
+ 576 0224 37       		.byte	55
+ 577 0225 41       		.byte	65
+ 578 0226 38       		.byte	56
+ 579 0227 04       		.byte	4
+ 580 0228 3D       		.byte	61
+ 581 0229 20       		.byte	32
+ 582 022a 3F       		.byte	63
+ 583 022b 80       		.byte	-128
+ 584 022c 40       		.byte	64
+ 585 022d 01       		.byte	1
+ 586 022e 46       		.byte	70
+ 587 022f 40       		.byte	64
+ 588 0230 47       		.byte	71
+ 589 0231 40       		.byte	64
+ 590 0232 49       		.byte	73
+ 591 0233 02       		.byte	2
+ 592 0234 4B       		.byte	75
+ 593 0235 02       		.byte	2
+ 594 0236 4D       		.byte	77
+ 595 0237 01       		.byte	1
+ 596 0238 4E       		.byte	78
+ 597 0239 24       		.byte	36
+ 598 023a 52       		.byte	82
+ 599 023b 08       		.byte	8
+ 600 023c 55       		.byte	85
+ 601 023d 40       		.byte	64
+ 602 023e 57       		.byte	87
+ 603 023f 40       		.byte	64
+ 604 0240 5E       		.byte	94
+ 605 0241 08       		.byte	8
+ 606 0242 6C       		.byte	108
+ 607 0243 28       		.byte	40
+ 608 0244 6D       		.byte	109
+ 609 0245 20       		.byte	32
+ 610 0246 6F       		.byte	111
+ 611 0247 01       		.byte	1
+ 612 0248 74       		.byte	116
+ 613 0249 80       		.byte	-128
+ 614 024a 76       		.byte	118
+ 615 024b 2A       		.byte	42
+ 616 024c 85       		.byte	-123
+ 617 024d 40       		.byte	64
+ 618 024e 87       		.byte	-121
+ 619 024f 04       		.byte	4
+ 620 0250 8A       		.byte	-118
+ 621 0251 48       		.byte	72
+ 622 0252 92       		.byte	-110
+ 623 0253 48       		.byte	72
+ 624 0254 95       		.byte	-107
+ 625 0255 05       		.byte	5
+ 626 0256 99       		.byte	-103
+ 627 0257 04       		.byte	4
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 12
+
+
+ 628 0258 9A       		.byte	-102
+ 629 0259 80       		.byte	-128
+ 630 025a 9D       		.byte	-99
+ 631 025b C2       		.byte	-62
+ 632 025c 9E       		.byte	-98
+ 633 025d 68       		.byte	104
+ 634 025e A0       		.byte	-96
+ 635 025f 40       		.byte	64
+ 636 0260 A2       		.byte	-94
+ 637 0261 84       		.byte	-124
+ 638 0262 A4       		.byte	-92
+ 639 0263 80       		.byte	-128
+ 640 0264 A5       		.byte	-91
+ 641 0265 42       		.byte	66
+ 642 0266 A6       		.byte	-90
+ 643 0267 08       		.byte	8
+ 644 0268 A7       		.byte	-89
+ 645 0269 08       		.byte	8
+ 646 026a A8       		.byte	-88
+ 647 026b 20       		.byte	32
+ 648 026c A9       		.byte	-87
+ 649 026d 40       		.byte	64
+ 650 026e C0       		.byte	-64
+ 651 026f FD       		.byte	-3
+ 652 0270 C2       		.byte	-62
+ 653 0271 EB       		.byte	-21
+ 654 0272 C4       		.byte	-60
+ 655 0273 76       		.byte	118
+ 656 0274 CA       		.byte	-54
+ 657 0275 70       		.byte	112
+ 658 0276 CC       		.byte	-52
+ 659 0277 D0       		.byte	-48
+ 660 0278 CE       		.byte	-50
+ 661 0279 32       		.byte	50
+ 662 027a D0       		.byte	-48
+ 663 027b 98       		.byte	-104
+ 664 027c D2       		.byte	-46
+ 665 027d 20       		.byte	32
+ 666 027e D6       		.byte	-42
+ 667 027f 40       		.byte	64
+ 668 0280 01       		.byte	1
+ 669 0281 01       		.byte	1
+ 670 0282 03       		.byte	3
+ 671 0283 0A       		.byte	10
+ 672 0284 0C       		.byte	12
+ 673 0285 01       		.byte	1
+ 674 0286 0E       		.byte	14
+ 675 0287 06       		.byte	6
+ 676 0288 11       		.byte	17
+ 677 0289 02       		.byte	2
+ 678 028a 13       		.byte	19
+ 679 028b 09       		.byte	9
+ 680 028c 15       		.byte	21
+ 681 028d 03       		.byte	3
+ 682 028e 18       		.byte	24
+ 683 028f 04       		.byte	4
+ 684 0290 19       		.byte	25
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 13
+
+
+ 685 0291 03       		.byte	3
+ 686 0292 1A       		.byte	26
+ 687 0293 01       		.byte	1
+ 688 0294 23       		.byte	35
+ 689 0295 04       		.byte	4
+ 690 0296 24       		.byte	36
+ 691 0297 07       		.byte	7
+ 692 0298 28       		.byte	40
+ 693 0299 07       		.byte	7
+ 694 029a 2C       		.byte	44
+ 695 029b 02       		.byte	2
+ 696 029c 2E       		.byte	46
+ 697 029d 01       		.byte	1
+ 698 029e 30       		.byte	48
+ 699 029f 07       		.byte	7
+ 700 02a0 31       		.byte	49
+ 701 02a1 03       		.byte	3
+ 702 02a2 35       		.byte	53
+ 703 02a3 03       		.byte	3
+ 704 02a4 37       		.byte	55
+ 705 02a5 0C       		.byte	12
+ 706 02a6 3F       		.byte	63
+ 707 02a7 40       		.byte	64
+ 708 02a8 58       		.byte	88
+ 709 02a9 04       		.byte	4
+ 710 02aa 59       		.byte	89
+ 711 02ab 04       		.byte	4
+ 712 02ac 5C       		.byte	92
+ 713 02ad 11       		.byte	17
+ 714 02ae 5F       		.byte	95
+ 715 02af 01       		.byte	1
+ 716 02b0 80       		.byte	-128
+ 717 02b1 01       		.byte	1
+ 718 02b2 85       		.byte	-123
+ 719 02b3 04       		.byte	4
+ 720 02b4 86       		.byte	-122
+ 721 02b5 01       		.byte	1
+ 722 02b6 89       		.byte	-119
+ 723 02b7 0C       		.byte	12
+ 724 02b8 8A       		.byte	-118
+ 725 02b9 02       		.byte	2
+ 726 02ba 8D       		.byte	-115
+ 727 02bb 21       		.byte	33
+ 728 02bc 93       		.byte	-109
+ 729 02bd 73       		.byte	115
+ 730 02be 95       		.byte	-107
+ 731 02bf 0F       		.byte	15
+ 732 02c0 96       		.byte	-106
+ 733 02c1 01       		.byte	1
+ 734 02c2 97       		.byte	-105
+ 735 02c3 70       		.byte	112
+ 736 02c4 99       		.byte	-103
+ 737 02c5 42       		.byte	66
+ 738 02c6 9D       		.byte	-99
+ 739 02c7 7F       		.byte	127
+ 740 02c8 9E       		.byte	-98
+ 741 02c9 04       		.byte	4
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 14
+
+
+ 742 02ca A1       		.byte	-95
+ 743 02cb 08       		.byte	8
+ 744 02cc A2       		.byte	-94
+ 745 02cd 02       		.byte	2
+ 746 02ce A4       		.byte	-92
+ 747 02cf 01       		.byte	1
+ 748 02d0 A5       		.byte	-91
+ 749 02d1 73       		.byte	115
+ 750 02d2 A7       		.byte	-89
+ 751 02d3 0C       		.byte	12
+ 752 02d4 A9       		.byte	-87
+ 753 02d5 1C       		.byte	28
+ 754 02d6 AA       		.byte	-86
+ 755 02d7 04       		.byte	4
+ 756 02d8 AB       		.byte	-85
+ 757 02d9 63       		.byte	99
+ 758 02da AD       		.byte	-83
+ 759 02db 63       		.byte	99
+ 760 02dc B1       		.byte	-79
+ 761 02dd 60       		.byte	96
+ 762 02de B2       		.byte	-78
+ 763 02df 02       		.byte	2
+ 764 02e0 B3       		.byte	-77
+ 765 02e1 1C       		.byte	28
+ 766 02e2 B4       		.byte	-76
+ 767 02e3 01       		.byte	1
+ 768 02e4 B5       		.byte	-75
+ 769 02e5 0F       		.byte	15
+ 770 02e6 B6       		.byte	-74
+ 771 02e7 04       		.byte	4
+ 772 02e8 B8       		.byte	-72
+ 773 02e9 20       		.byte	32
+ 774 02ea BB       		.byte	-69
+ 775 02eb 20       		.byte	32
+ 776 02ec BE       		.byte	-66
+ 777 02ed 44       		.byte	68
+ 778 02ee C0       		.byte	-64
+ 779 02ef 25       		.byte	37
+ 780 02f0 C1       		.byte	-63
+ 781 02f1 04       		.byte	4
+ 782 02f2 C2       		.byte	-62
+ 783 02f3 03       		.byte	3
+ 784 02f4 C4       		.byte	-60
+ 785 02f5 01       		.byte	1
+ 786 02f6 C5       		.byte	-59
+ 787 02f7 C0       		.byte	-64
+ 788 02f8 C6       		.byte	-58
+ 789 02f9 0E       		.byte	14
+ 790 02fa C8       		.byte	-56
+ 791 02fb 06       		.byte	6
+ 792 02fc C9       		.byte	-55
+ 793 02fd FF       		.byte	-1
+ 794 02fe CA       		.byte	-54
+ 795 02ff FF       		.byte	-1
+ 796 0300 CB       		.byte	-53
+ 797 0301 FF       		.byte	-1
+ 798 0302 CC       		.byte	-52
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 15
+
+
+ 799 0303 62       		.byte	98
+ 800 0304 CD       		.byte	-51
+ 801 0305 A0       		.byte	-96
+ 802 0306 CE       		.byte	-50
+ 803 0307 F0       		.byte	-16
+ 804 0308 CF       		.byte	-49
+ 805 0309 41       		.byte	65
+ 806 030a D0       		.byte	-48
+ 807 030b 0C       		.byte	12
+ 808 030c D4       		.byte	-44
+ 809 030d 18       		.byte	24
+ 810 030e D8       		.byte	-40
+ 811 030f 04       		.byte	4
+ 812 0310 D9       		.byte	-39
+ 813 0311 04       		.byte	4
+ 814 0312 DA       		.byte	-38
+ 815 0313 04       		.byte	4
+ 816 0314 DB       		.byte	-37
+ 817 0315 04       		.byte	4
+ 818 0316 DC       		.byte	-36
+ 819 0317 11       		.byte	17
+ 820 0318 DD       		.byte	-35
+ 821 0319 11       		.byte	17
+ 822 031a DF       		.byte	-33
+ 823 031b 01       		.byte	1
+ 824 031c E6       		.byte	-26
+ 825 031d 40       		.byte	64
+ 826 031e E7       		.byte	-25
+ 827 031f 02       		.byte	2
+ 828 0320 E9       		.byte	-23
+ 829 0321 10       		.byte	16
+ 830 0322 EA       		.byte	-22
+ 831 0323 30       		.byte	48
+ 832 0324 EB       		.byte	-21
+ 833 0325 10       		.byte	16
+ 834 0326 ED       		.byte	-19
+ 835 0327 10       		.byte	16
+ 836 0328 EE       		.byte	-18
+ 837 0329 10       		.byte	16
+ 838 032a EF       		.byte	-17
+ 839 032b 12       		.byte	18
+ 840 032c 00       		.byte	0
+ 841 032d 40       		.byte	64
+ 842 032e 05       		.byte	5
+ 843 032f 14       		.byte	20
+ 844 0330 06       		.byte	6
+ 845 0331 80       		.byte	-128
+ 846 0332 09       		.byte	9
+ 847 0333 20       		.byte	32
+ 848 0334 0E       		.byte	14
+ 849 0335 20       		.byte	32
+ 850 0336 0F       		.byte	15
+ 851 0337 01       		.byte	1
+ 852 0338 10       		.byte	16
+ 853 0339 28       		.byte	40
+ 854 033a 11       		.byte	17
+ 855 033b 40       		.byte	64
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 16
+
+
+ 856 033c 15       		.byte	21
+ 857 033d 04       		.byte	4
+ 858 033e 16       		.byte	22
+ 859 033f 40       		.byte	64
+ 860 0340 17       		.byte	23
+ 861 0341 24       		.byte	36
+ 862 0342 18       		.byte	24
+ 863 0343 40       		.byte	64
+ 864 0344 19       		.byte	25
+ 865 0345 01       		.byte	1
+ 866 0346 1A       		.byte	26
+ 867 0347 40       		.byte	64
+ 868 0348 1D       		.byte	29
+ 869 0349 50       		.byte	80
+ 870 034a 1F       		.byte	31
+ 871 034b 04       		.byte	4
+ 872 034c 21       		.byte	33
+ 873 034d A2       		.byte	-94
+ 874 034e 22       		.byte	34
+ 875 034f 20       		.byte	32
+ 876 0350 25       		.byte	37
+ 877 0351 18       		.byte	24
+ 878 0352 26       		.byte	38
+ 879 0353 01       		.byte	1
+ 880 0354 27       		.byte	39
+ 881 0355 24       		.byte	36
+ 882 0356 29       		.byte	41
+ 883 0357 01       		.byte	1
+ 884 0358 2C       		.byte	44
+ 885 0359 80       		.byte	-128
+ 886 035a 2D       		.byte	45
+ 887 035b 04       		.byte	4
+ 888 035c 2E       		.byte	46
+ 889 035d 40       		.byte	64
+ 890 035e 2F       		.byte	47
+ 891 035f 08       		.byte	8
+ 892 0360 30       		.byte	48
+ 893 0361 28       		.byte	40
+ 894 0362 31       		.byte	49
+ 895 0363 02       		.byte	2
+ 896 0364 34       		.byte	52
+ 897 0365 80       		.byte	-128
+ 898 0366 35       		.byte	53
+ 899 0367 04       		.byte	4
+ 900 0368 36       		.byte	54
+ 901 0369 22       		.byte	34
+ 902 036a 38       		.byte	56
+ 903 036b 02       		.byte	2
+ 904 036c 3D       		.byte	61
+ 905 036d 40       		.byte	64
+ 906 036e 3E       		.byte	62
+ 907 036f 28       		.byte	40
+ 908 0370 44       		.byte	68
+ 909 0371 80       		.byte	-128
+ 910 0372 45       		.byte	69
+ 911 0373 98       		.byte	-104
+ 912 0374 46       		.byte	70
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 17
+
+
+ 913 0375 80       		.byte	-128
+ 914 0376 4E       		.byte	78
+ 915 0377 02       		.byte	2
+ 916 0378 4F       		.byte	79
+ 917 0379 01       		.byte	1
+ 918 037a 56       		.byte	86
+ 919 037b 40       		.byte	64
+ 920 037c 5E       		.byte	94
+ 921 037d 02       		.byte	2
+ 922 037e 65       		.byte	101
+ 923 037f 40       		.byte	64
+ 924 0380 67       		.byte	103
+ 925 0381 08       		.byte	8
+ 926 0382 8C       		.byte	-116
+ 927 0383 01       		.byte	1
+ 928 0384 8D       		.byte	-115
+ 929 0385 40       		.byte	64
+ 930 0386 94       		.byte	-108
+ 931 0387 02       		.byte	2
+ 932 0388 95       		.byte	-107
+ 933 0389 04       		.byte	4
+ 934 038a 99       		.byte	-103
+ 935 038b 04       		.byte	4
+ 936 038c 9A       		.byte	-102
+ 937 038d A8       		.byte	-88
+ 938 038e 9F       		.byte	-97
+ 939 038f 04       		.byte	4
+ 940 0390 A0       		.byte	-96
+ 941 0391 A8       		.byte	-88
+ 942 0392 A2       		.byte	-94
+ 943 0393 12       		.byte	18
+ 944 0394 A3       		.byte	-93
+ 945 0395 08       		.byte	8
+ 946 0396 B0       		.byte	-80
+ 947 0397 01       		.byte	1
+ 948 0398 B5       		.byte	-75
+ 949 0399 84       		.byte	-124
+ 950 039a C0       		.byte	-64
+ 951 039b 71       		.byte	113
+ 952 039c C2       		.byte	-62
+ 953 039d A2       		.byte	-94
+ 954 039e C4       		.byte	-60
+ 955 039f 77       		.byte	119
+ 956 03a0 CA       		.byte	-54
+ 957 03a1 F1       		.byte	-15
+ 958 03a2 CC       		.byte	-52
+ 959 03a3 F7       		.byte	-9
+ 960 03a4 CE       		.byte	-50
+ 961 03a5 71       		.byte	113
+ 962 03a6 D0       		.byte	-48
+ 963 03a7 F0       		.byte	-16
+ 964 03a8 D2       		.byte	-46
+ 965 03a9 10       		.byte	16
+ 966 03aa D6       		.byte	-42
+ 967 03ab 80       		.byte	-128
+ 968 03ac D8       		.byte	-40
+ 969 03ad 30       		.byte	48
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 18
+
+
+ 970 03ae E8       		.byte	-24
+ 971 03af 10       		.byte	16
+ 972 03b0 EE       		.byte	-18
+ 973 03b1 08       		.byte	8
+ 974 03b2 33       		.byte	51
+ 975 03b3 20       		.byte	32
+ 976 03b4 CC       		.byte	-52
+ 977 03b5 10       		.byte	16
+ 978 03b6 A7       		.byte	-89
+ 979 03b7 20       		.byte	32
+ 980 03b8 A7       		.byte	-89
+ 981 03b9 20       		.byte	32
+ 982 03ba A7       		.byte	-89
+ 983 03bb 20       		.byte	32
+ 984 03bc 24       		.byte	36
+ 985 03bd 08       		.byte	8
+ 986 03be A7       		.byte	-89
+ 987 03bf 20       		.byte	32
+ 988 03c0 C8       		.byte	-56
+ 989 03c1 20       		.byte	32
+ 990 03c2 AF       		.byte	-81
+ 991 03c3 20       		.byte	32
+ 992 03c4 B4       		.byte	-76
+ 993 03c5 04       		.byte	4
+ 994 03c6 EE       		.byte	-18
+ 995 03c7 10       		.byte	16
+ 996 03c8 1F       		.byte	31
+ 997 03c9 80       		.byte	-128
+ 998 03ca 34       		.byte	52
+ 999 03cb 02       		.byte	2
+ 1000 03cc C6       		.byte	-58
+ 1001 03cd 01       		.byte	1
+ 1002 03ce CC       		.byte	-52
+ 1003 03cf 01       		.byte	1
+ 1004 03d0 12       		.byte	18
+ 1005 03d1 80       		.byte	-128
+ 1006 03d2 75       		.byte	117
+ 1007 03d3 02       		.byte	2
+ 1008 03d4 8E       		.byte	-114
+ 1009 03d5 80       		.byte	-128
+ 1010 03d6 99       		.byte	-103
+ 1011 03d7 02       		.byte	2
+ 1012 03d8 AF       		.byte	-81
+ 1013 03d9 80       		.byte	-128
+ 1014 03da B1       		.byte	-79
+ 1015 03db 02       		.byte	2
+ 1016 03dc B4       		.byte	-76
+ 1017 03dd 02       		.byte	2
+ 1018 03de C4       		.byte	-60
+ 1019 03df 08       		.byte	8
+ 1020 03e0 DE       		.byte	-34
+ 1021 03e1 04       		.byte	4
+ 1022 03e2 E2       		.byte	-30
+ 1023 03e3 02       		.byte	2
+ 1024 03e4 E8       		.byte	-24
+ 1025 03e5 09       		.byte	9
+ 1026 03e6 00       		.byte	0
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 19
+
+
+ 1027 03e7 02       		.byte	2
+ 1028 03e8 0C       		.byte	12
+ 1029 03e9 02       		.byte	2
+ 1030 03ea 10       		.byte	16
+ 1031 03eb 02       		.byte	2
+ 1032 03ec 1C       		.byte	28
+ 1033 03ed 02       		.byte	2
+ 1034 03ee 00       		.byte	0
+ 1035 03ef 03       		.byte	3
+ 1036 03f0 80       		.byte	-128
+ 1037 03f1 80       		.byte	-128
+ 1038 03f2 00       		.byte	0
+ 1039 03f3 00       		.byte	0
+ 1040 03f4 40       		.byte	64
+ 1041 03f5 00       		.byte	0
+ 1042 03f6 00       		.byte	0
+ 1043 03f7 00       		.byte	0
+ 1044 03f8 00       		.byte	0
+ 1045 03f9 00       		.byte	0
+ 1046 03fa 00       		.byte	0
+ 1047 03fb 00       		.byte	0
+ 1048 03fc 00       		.byte	0
+ 1049 03fd 00       		.byte	0
+ 1050 03fe 04       		.byte	4
+ 1051 03ff 00       		.byte	0
+ 1052 0400 80       		.byte	-128
+ 1053 0401 00       		.byte	0
+ 1054 0402 40       		.byte	64
+ 1055 0403 80       		.byte	-128
+ 1056 0404 80       		.byte	-128
+ 1057 0405 00       		.byte	0
+ 1058 0406 80       		.byte	-128
+ 1059 0407 00       		.byte	0
+ 1060 0408 00       		.byte	0
+ 1061 0409 00       		.byte	0
+ 1062 040a 00       		.byte	0
+ 1063 040b 00       		.byte	0
+ 1064 040c 00       		.byte	0
+ 1065 040d 02       		.byte	2
+ 1066 040e 02       		.byte	2
+ 1067 040f 00       		.byte	0
+ 1068 0410 00       		.byte	0
+ 1069 0411 00       		.byte	0
+ 1070 0412 08       		.byte	8
+ 1071 0413 00       		.byte	0
+ 1072              		.section	.cywolatch,"a",%progbits
+ 1073              		.align	2
+ 1074              		.type	cy_meta_wonvl, %object
+ 1075              		.size	cy_meta_wonvl, 4
+ 1076              	cy_meta_wonvl:
+ 1077 0000 BC       		.byte	-68
+ 1078 0001 90       		.byte	-112
+ 1079 0002 AC       		.byte	-84
+ 1080 0003 AF       		.byte	-81
+ 1081              		.section	.cycustnvl,"a",%progbits
+ 1082              		.align	2
+ 1083              		.type	cy_meta_custnvl, %object
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 20
+
+
+ 1084              		.size	cy_meta_custnvl, 4
+ 1085              	cy_meta_custnvl:
+ 1086 0000 00       		.byte	0
+ 1087 0001 00       		.byte	0
+ 1088 0002 40       		.byte	64
+ 1089 0003 05       		.byte	5
+ 1090              		.section	.cymeta,"a",%progbits
+ 1091              		.align	2
+ 1092              		.type	cy_metadata, %object
+ 1093              		.size	cy_metadata, 12
+ 1094              	cy_metadata:
+ 1095 0000 00       		.byte	0
+ 1096 0001 01       		.byte	1
+ 1097 0002 2E       		.byte	46
+ 1098 0003 16       		.byte	22
+ 1099 0004 10       		.byte	16
+ 1100 0005 69       		.byte	105
+ 1101 0006 00       		.byte	0
+ 1102 0007 01       		.byte	1
+ 1103 0008 00       		.byte	0
+ 1104 0009 00       		.byte	0
+ 1105 000a 00       		.byte	0
+ 1106 000b 00       		.byte	0
+ 1107              		.section	.cyflashprotect,"a",%progbits
+ 1108              		.align	2
+ 1109              		.type	cy_meta_flashprotect, %object
+ 1110              		.size	cy_meta_flashprotect, 256
+ 1111              	cy_meta_flashprotect:
+ 1112 0000 00000000 		.space	256
+ 1112      00000000 
+ 1112      00000000 
+ 1112      00000000 
+ 1112      00000000 
+ 1113              		.text
+ 1114              	.Letext0:
+ 1115              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 1116              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1117              		.section	.debug_info,"",%progbits
+ 1118              	.Ldebug_info0:
+ 1119 0000 36010000 		.4byte	0x136
+ 1120 0004 0400     		.2byte	0x4
+ 1121 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1122 000a 04       		.byte	0x4
+ 1123 000b 01       		.uleb128 0x1
+ 1124 000c 1C010000 		.4byte	.LASF18
+ 1125 0010 01       		.byte	0x1
+ 1126 0011 00000000 		.4byte	.LASF19
+ 1127 0015 58000000 		.4byte	.LASF20
+ 1128 0019 00000000 		.4byte	.Ldebug_line0
+ 1129 001d 02       		.uleb128 0x2
+ 1130 001e 01       		.byte	0x1
+ 1131 001f 06       		.byte	0x6
+ 1132 0020 CD010000 		.4byte	.LASF0
+ 1133 0024 02       		.uleb128 0x2
+ 1134 0025 01       		.byte	0x1
+ 1135 0026 08       		.byte	0x8
+ 1136 0027 38000000 		.4byte	.LASF1
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 21
+
+
+ 1137 002b 02       		.uleb128 0x2
+ 1138 002c 02       		.byte	0x2
+ 1139 002d 05       		.byte	0x5
+ 1140 002e B4010000 		.4byte	.LASF2
+ 1141 0032 02       		.uleb128 0x2
+ 1142 0033 02       		.byte	0x2
+ 1143 0034 07       		.byte	0x7
+ 1144 0035 99000000 		.4byte	.LASF3
+ 1145 0039 02       		.uleb128 0x2
+ 1146 003a 04       		.byte	0x4
+ 1147 003b 05       		.byte	0x5
+ 1148 003c C4010000 		.4byte	.LASF4
+ 1149 0040 02       		.uleb128 0x2
+ 1150 0041 04       		.byte	0x4
+ 1151 0042 07       		.byte	0x7
+ 1152 0043 46000000 		.4byte	.LASF5
+ 1153 0047 02       		.uleb128 0x2
+ 1154 0048 08       		.byte	0x8
+ 1155 0049 05       		.byte	0x5
+ 1156 004a A1010000 		.4byte	.LASF6
+ 1157 004e 02       		.uleb128 0x2
+ 1158 004f 08       		.byte	0x8
+ 1159 0050 07       		.byte	0x7
+ 1160 0051 E2000000 		.4byte	.LASF7
+ 1161 0055 03       		.uleb128 0x3
+ 1162 0056 04       		.byte	0x4
+ 1163 0057 05       		.byte	0x5
+ 1164 0058 696E7400 		.ascii	"int\000"
+ 1165 005c 02       		.uleb128 0x2
+ 1166 005d 04       		.byte	0x4
+ 1167 005e 07       		.byte	0x7
+ 1168 005f D5000000 		.4byte	.LASF8
+ 1169 0063 04       		.uleb128 0x4
+ 1170 0064 BE010000 		.4byte	.LASF21
+ 1171 0068 02       		.byte	0x2
+ 1172 0069 B4       		.byte	0xb4
+ 1173 006a 24000000 		.4byte	0x24
+ 1174 006e 02       		.uleb128 0x2
+ 1175 006f 04       		.byte	0x4
+ 1176 0070 04       		.byte	0x4
+ 1177 0071 32000000 		.4byte	.LASF9
+ 1178 0075 02       		.uleb128 0x2
+ 1179 0076 08       		.byte	0x8
+ 1180 0077 04       		.byte	0x4
+ 1181 0078 AC000000 		.4byte	.LASF10
+ 1182 007c 02       		.uleb128 0x2
+ 1183 007d 01       		.byte	0x1
+ 1184 007e 08       		.byte	0x8
+ 1185 007f AF010000 		.4byte	.LASF11
+ 1186 0083 05       		.uleb128 0x5
+ 1187 0084 63000000 		.4byte	0x63
+ 1188 0088 94000000 		.4byte	0x94
+ 1189 008c 06       		.uleb128 0x6
+ 1190 008d 94000000 		.4byte	0x94
+ 1191 0091 1304     		.2byte	0x413
+ 1192 0093 00       		.byte	0
+ 1193 0094 02       		.uleb128 0x2
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 22
+
+
+ 1194 0095 04       		.byte	0x4
+ 1195 0096 07       		.byte	0x7
+ 1196 0097 98010000 		.4byte	.LASF12
+ 1197 009b 07       		.uleb128 0x7
+ 1198 009c C3000000 		.4byte	.LASF13
+ 1199 00a0 01       		.byte	0x1
+ 1200 00a1 1C       		.byte	0x1c
+ 1201 00a2 AC000000 		.4byte	0xac
+ 1202 00a6 05       		.uleb128 0x5
+ 1203 00a7 03       		.byte	0x3
+ 1204 00a8 00000000 		.4byte	cy_meta_configecc
+ 1205 00ac 08       		.uleb128 0x8
+ 1206 00ad 83000000 		.4byte	0x83
+ 1207 00b1 05       		.uleb128 0x5
+ 1208 00b2 63000000 		.4byte	0x63
+ 1209 00b6 C1000000 		.4byte	0xc1
+ 1210 00ba 09       		.uleb128 0x9
+ 1211 00bb 94000000 		.4byte	0x94
+ 1212 00bf 03       		.byte	0x3
+ 1213 00c0 00       		.byte	0
+ 1214 00c1 07       		.uleb128 0x7
+ 1215 00c2 B3000000 		.4byte	.LASF14
+ 1216 00c6 01       		.byte	0x1
+ 1217 00c7 A9       		.byte	0xa9
+ 1218 00c8 D2000000 		.4byte	0xd2
+ 1219 00cc 05       		.uleb128 0x5
+ 1220 00cd 03       		.byte	0x3
+ 1221 00ce 00000000 		.4byte	cy_meta_custnvl
+ 1222 00d2 08       		.uleb128 0x8
+ 1223 00d3 B1000000 		.4byte	0xb1
+ 1224 00d7 07       		.uleb128 0x7
+ 1225 00d8 0E010000 		.4byte	.LASF15
+ 1226 00dc 01       		.byte	0x1
+ 1227 00dd B4       		.byte	0xb4
+ 1228 00de E8000000 		.4byte	0xe8
+ 1229 00e2 05       		.uleb128 0x5
+ 1230 00e3 03       		.byte	0x3
+ 1231 00e4 00000000 		.4byte	cy_meta_wonvl
+ 1232 00e8 08       		.uleb128 0x8
+ 1233 00e9 B1000000 		.4byte	0xb1
+ 1234 00ed 05       		.uleb128 0x5
+ 1235 00ee 63000000 		.4byte	0x63
+ 1236 00f2 FD000000 		.4byte	0xfd
+ 1237 00f6 09       		.uleb128 0x9
+ 1238 00f7 94000000 		.4byte	0x94
+ 1239 00fb FF       		.byte	0xff
+ 1240 00fc 00       		.byte	0
+ 1241 00fd 07       		.uleb128 0x7
+ 1242 00fe F9000000 		.4byte	.LASF16
+ 1243 0102 01       		.byte	0x1
+ 1244 0103 BF       		.byte	0xbf
+ 1245 0104 0E010000 		.4byte	0x10e
+ 1246 0108 05       		.uleb128 0x5
+ 1247 0109 03       		.byte	0x3
+ 1248 010a 00000000 		.4byte	cy_meta_flashprotect
+ 1249 010e 08       		.uleb128 0x8
+ 1250 010f ED000000 		.4byte	0xed
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 23
+
+
+ 1251 0113 05       		.uleb128 0x5
+ 1252 0114 63000000 		.4byte	0x63
+ 1253 0118 23010000 		.4byte	0x123
+ 1254 011c 09       		.uleb128 0x9
+ 1255 011d 94000000 		.4byte	0x94
+ 1256 0121 0B       		.byte	0xb
+ 1257 0122 00       		.byte	0
+ 1258 0123 07       		.uleb128 0x7
+ 1259 0124 26000000 		.4byte	.LASF17
+ 1260 0128 01       		.byte	0x1
+ 1261 0129 E9       		.byte	0xe9
+ 1262 012a 34010000 		.4byte	0x134
+ 1263 012e 05       		.uleb128 0x5
+ 1264 012f 03       		.byte	0x3
+ 1265 0130 00000000 		.4byte	cy_metadata
+ 1266 0134 08       		.uleb128 0x8
+ 1267 0135 13010000 		.4byte	0x113
+ 1268 0139 00       		.byte	0
+ 1269              		.section	.debug_abbrev,"",%progbits
+ 1270              	.Ldebug_abbrev0:
+ 1271 0000 01       		.uleb128 0x1
+ 1272 0001 11       		.uleb128 0x11
+ 1273 0002 01       		.byte	0x1
+ 1274 0003 25       		.uleb128 0x25
+ 1275 0004 0E       		.uleb128 0xe
+ 1276 0005 13       		.uleb128 0x13
+ 1277 0006 0B       		.uleb128 0xb
+ 1278 0007 03       		.uleb128 0x3
+ 1279 0008 0E       		.uleb128 0xe
+ 1280 0009 1B       		.uleb128 0x1b
+ 1281 000a 0E       		.uleb128 0xe
+ 1282 000b 10       		.uleb128 0x10
+ 1283 000c 17       		.uleb128 0x17
+ 1284 000d 00       		.byte	0
+ 1285 000e 00       		.byte	0
+ 1286 000f 02       		.uleb128 0x2
+ 1287 0010 24       		.uleb128 0x24
+ 1288 0011 00       		.byte	0
+ 1289 0012 0B       		.uleb128 0xb
+ 1290 0013 0B       		.uleb128 0xb
+ 1291 0014 3E       		.uleb128 0x3e
+ 1292 0015 0B       		.uleb128 0xb
+ 1293 0016 03       		.uleb128 0x3
+ 1294 0017 0E       		.uleb128 0xe
+ 1295 0018 00       		.byte	0
+ 1296 0019 00       		.byte	0
+ 1297 001a 03       		.uleb128 0x3
+ 1298 001b 24       		.uleb128 0x24
+ 1299 001c 00       		.byte	0
+ 1300 001d 0B       		.uleb128 0xb
+ 1301 001e 0B       		.uleb128 0xb
+ 1302 001f 3E       		.uleb128 0x3e
+ 1303 0020 0B       		.uleb128 0xb
+ 1304 0021 03       		.uleb128 0x3
+ 1305 0022 08       		.uleb128 0x8
+ 1306 0023 00       		.byte	0
+ 1307 0024 00       		.byte	0
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 24
+
+
+ 1308 0025 04       		.uleb128 0x4
+ 1309 0026 16       		.uleb128 0x16
+ 1310 0027 00       		.byte	0
+ 1311 0028 03       		.uleb128 0x3
+ 1312 0029 0E       		.uleb128 0xe
+ 1313 002a 3A       		.uleb128 0x3a
+ 1314 002b 0B       		.uleb128 0xb
+ 1315 002c 3B       		.uleb128 0x3b
+ 1316 002d 0B       		.uleb128 0xb
+ 1317 002e 49       		.uleb128 0x49
+ 1318 002f 13       		.uleb128 0x13
+ 1319 0030 00       		.byte	0
+ 1320 0031 00       		.byte	0
+ 1321 0032 05       		.uleb128 0x5
+ 1322 0033 01       		.uleb128 0x1
+ 1323 0034 01       		.byte	0x1
+ 1324 0035 49       		.uleb128 0x49
+ 1325 0036 13       		.uleb128 0x13
+ 1326 0037 01       		.uleb128 0x1
+ 1327 0038 13       		.uleb128 0x13
+ 1328 0039 00       		.byte	0
+ 1329 003a 00       		.byte	0
+ 1330 003b 06       		.uleb128 0x6
+ 1331 003c 21       		.uleb128 0x21
+ 1332 003d 00       		.byte	0
+ 1333 003e 49       		.uleb128 0x49
+ 1334 003f 13       		.uleb128 0x13
+ 1335 0040 2F       		.uleb128 0x2f
+ 1336 0041 05       		.uleb128 0x5
+ 1337 0042 00       		.byte	0
+ 1338 0043 00       		.byte	0
+ 1339 0044 07       		.uleb128 0x7
+ 1340 0045 34       		.uleb128 0x34
+ 1341 0046 00       		.byte	0
+ 1342 0047 03       		.uleb128 0x3
+ 1343 0048 0E       		.uleb128 0xe
+ 1344 0049 3A       		.uleb128 0x3a
+ 1345 004a 0B       		.uleb128 0xb
+ 1346 004b 3B       		.uleb128 0x3b
+ 1347 004c 0B       		.uleb128 0xb
+ 1348 004d 49       		.uleb128 0x49
+ 1349 004e 13       		.uleb128 0x13
+ 1350 004f 3F       		.uleb128 0x3f
+ 1351 0050 19       		.uleb128 0x19
+ 1352 0051 02       		.uleb128 0x2
+ 1353 0052 18       		.uleb128 0x18
+ 1354 0053 00       		.byte	0
+ 1355 0054 00       		.byte	0
+ 1356 0055 08       		.uleb128 0x8
+ 1357 0056 26       		.uleb128 0x26
+ 1358 0057 00       		.byte	0
+ 1359 0058 49       		.uleb128 0x49
+ 1360 0059 13       		.uleb128 0x13
+ 1361 005a 00       		.byte	0
+ 1362 005b 00       		.byte	0
+ 1363 005c 09       		.uleb128 0x9
+ 1364 005d 21       		.uleb128 0x21
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 25
+
+
+ 1365 005e 00       		.byte	0
+ 1366 005f 49       		.uleb128 0x49
+ 1367 0060 13       		.uleb128 0x13
+ 1368 0061 2F       		.uleb128 0x2f
+ 1369 0062 0B       		.uleb128 0xb
+ 1370 0063 00       		.byte	0
+ 1371 0064 00       		.byte	0
+ 1372 0065 00       		.byte	0
+ 1373              		.section	.debug_aranges,"",%progbits
+ 1374 0000 14000000 		.4byte	0x14
+ 1375 0004 0200     		.2byte	0x2
+ 1376 0006 00000000 		.4byte	.Ldebug_info0
+ 1377 000a 04       		.byte	0x4
+ 1378 000b 00       		.byte	0
+ 1379 000c 0000     		.2byte	0
+ 1380 000e 0000     		.2byte	0
+ 1381 0010 00000000 		.4byte	0
+ 1382 0014 00000000 		.4byte	0
+ 1383              		.section	.debug_line,"",%progbits
+ 1384              	.Ldebug_line0:
+ 1385 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1385      02004900 
+ 1385      00000201 
+ 1385      FB0E0D00 
+ 1385      01010101 
+ 1386              	.LASF19:
+ 1387 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1387      6E657261 
+ 1387      7465645F 
+ 1387      536F7572 
+ 1387      63655C50 
+ 1388              	.LASF17:
+ 1389 0026 63795F6D 		.ascii	"cy_metadata\000"
+ 1389      65746164 
+ 1389      61746100 
+ 1390              	.LASF9:
+ 1391 0032 666C6F61 		.ascii	"float\000"
+ 1391      7400
+ 1392              	.LASF1:
+ 1393 0038 756E7369 		.ascii	"unsigned char\000"
+ 1393      676E6564 
+ 1393      20636861 
+ 1393      7200
+ 1394              	.LASF5:
+ 1395 0046 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1395      20756E73 
+ 1395      69676E65 
+ 1395      6420696E 
+ 1395      7400
+ 1396              	.LASF20:
+ 1397 0058 433A5C55 		.ascii	"C:\\Users\\Digi-Key\\Documents\\PSoC Creator\\Desig"
+ 1397      73657273 
+ 1397      5C446967 
+ 1397      692D4B65 
+ 1397      795C446F 
+ 1398 0086 6E31325C 		.ascii	"n12\\Design12.cydsn\000"
+ 1398      44657369 
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 26
+
+
+ 1398      676E3132 
+ 1398      2E637964 
+ 1398      736E00
+ 1399              	.LASF3:
+ 1400 0099 73686F72 		.ascii	"short unsigned int\000"
+ 1400      7420756E 
+ 1400      7369676E 
+ 1400      65642069 
+ 1400      6E7400
+ 1401              	.LASF10:
+ 1402 00ac 646F7562 		.ascii	"double\000"
+ 1402      6C6500
+ 1403              	.LASF14:
+ 1404 00b3 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1404      6574615F 
+ 1404      63757374 
+ 1404      6E766C00 
+ 1405              	.LASF13:
+ 1406 00c3 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1406      6574615F 
+ 1406      636F6E66 
+ 1406      69676563 
+ 1406      6300
+ 1407              	.LASF8:
+ 1408 00d5 756E7369 		.ascii	"unsigned int\000"
+ 1408      676E6564 
+ 1408      20696E74 
+ 1408      00
+ 1409              	.LASF7:
+ 1410 00e2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1410      206C6F6E 
+ 1410      6720756E 
+ 1410      7369676E 
+ 1410      65642069 
+ 1411              	.LASF16:
+ 1412 00f9 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1412      6574615F 
+ 1412      666C6173 
+ 1412      6870726F 
+ 1412      74656374 
+ 1413              	.LASF15:
+ 1414 010e 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1414      6574615F 
+ 1414      776F6E76 
+ 1414      6C00
+ 1415              	.LASF18:
+ 1416 011c 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1416      4320342E 
+ 1416      382E3420 
+ 1416      32303134 
+ 1416      30353236 
+ 1417 014f 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1417      20726576 
+ 1417      6973696F 
+ 1417      6E203231 
+ 1417      31333538 
+ 1418 0182 67202D66 		.ascii	"g -ffunction-sections\000"
+ARM GAS  C:\Users\Digi-Key\AppData\Local\Temp\cch1wAIZ.s 			page 27
+
+
+ 1418      66756E63 
+ 1418      74696F6E 
+ 1418      2D736563 
+ 1418      74696F6E 
+ 1419              	.LASF12:
+ 1420 0198 73697A65 		.ascii	"sizetype\000"
+ 1420      74797065 
+ 1420      00
+ 1421              	.LASF6:
+ 1422 01a1 6C6F6E67 		.ascii	"long long int\000"
+ 1422      206C6F6E 
+ 1422      6720696E 
+ 1422      7400
+ 1423              	.LASF11:
+ 1424 01af 63686172 		.ascii	"char\000"
+ 1424      00
+ 1425              	.LASF2:
+ 1426 01b4 73686F72 		.ascii	"short int\000"
+ 1426      7420696E 
+ 1426      7400
+ 1427              	.LASF21:
+ 1428 01be 75696E74 		.ascii	"uint8\000"
+ 1428      3800
+ 1429              	.LASF4:
+ 1430 01c4 6C6F6E67 		.ascii	"long int\000"
+ 1430      20696E74 
+ 1430      00
+ 1431              	.LASF0:
+ 1432 01cd 7369676E 		.ascii	"signed char\000"
+ 1432      65642063 
+ 1432      68617200 
+ 1433              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
