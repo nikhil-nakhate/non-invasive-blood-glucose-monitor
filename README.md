@@ -1,5 +1,5 @@
 # Non-Invasive Blood Glucose Monitor
-Non invasive blood glucose monitor to find the blood glucose levels in humans
+Non invasive blood glucose monitor to obtain blood glucose levels
 
 For the Psoc Code check the src directory in the repo.
 
